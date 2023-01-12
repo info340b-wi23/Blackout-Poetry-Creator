@@ -31,6 +31,10 @@ header {
     margin-top: 0.5rem;
 }
 
+p, a {
+    font-family: 'Nunito Sans', 'Helvetica', sans-serif;
+}
+
 p {
     padding-left: 1rem;
 }
