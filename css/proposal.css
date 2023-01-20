@@ -12,15 +12,19 @@ header {
     text-align: center;
 }
 
+main {
+    display:flex;
+    flex-direction: column;
+}
+
 .container {
     border: solid black 1px;
     background-color: white;
     border-radius: 25px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.16), 0 1px 3px rgba(0, 0, 0, 0.23);
-    margin: 2rem;
-    width: 75%;
-    margin-left: 12.5%;
-    padding: 1em;
+    width: 50%;
+    padding: 1rem;
+    margin: 1rem auto;
 }
 
 .container h2 {
@@ -28,19 +32,11 @@ header {
     margin-bottom: 0.5rem;
 }
 
-.container ul {
-    margin-top: 0.5rem;
-}
-
-footer .container {
-    margin-bottom: 2rem;
-}
-
 p, a {
     font-family: 'Nunito Sans', 'Helvetica', sans-serif;
 }
 
-p {
+section > p {
     padding-left: 1rem;
 }
 
