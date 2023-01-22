@@ -1,7 +1,24 @@
-html {
-    box-sizing:border-box;
+html, body, main {
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    height: 100%;
+}
+
+main {
+    /* So the body content isn't hidden in the fixed nav bar*/
+    padding-top: 10rem;
 }
 
 p {
     font-family:'Crimson Pro', serif;
+}
+
+a.nav-link {
+    font-size: 32px;
+    font-weight: 800;
+    color: white;
+}
+
+.navbar-nav .nav-link.active, .navbar-nav .show>.nav-link {
+    color: #DBCEB4 !important;
 }

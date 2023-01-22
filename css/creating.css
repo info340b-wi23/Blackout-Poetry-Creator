@@ -4,15 +4,15 @@ html, body, main {
     height: 100%;
 }
 
+main {
+    /* So the body content isn't hidden in the fixed nav bar*/
+    padding-top: 10rem;
+}
+
 a.nav-link {
     font-size:32px;
     font-weight: 800;
     color:white;
-}
-
-h1 {
-    font-weight: bold;
-    padding-top: 1rem;
 }
 
 /* Must have !important to override Bootstrap CSS*/
@@ -20,19 +20,9 @@ h1 {
     color: #DBCEB4 !important;
 }
 
-
-.parent {
-    position: relative;
-}
-
-
 .flexbox-container {
     display: flex;
     height: 100%
-}
-
-main { /* So the body content isn't hidden in the fixed nav bar*/
-    padding-top: 10rem;
 }
 
 section {
@@ -58,6 +48,7 @@ section.creation-tab {
 
 .tab-item h1 {
    font-size: 32px;
+   font-weight: bold;
    color: white;
 }
 
@@ -86,9 +77,10 @@ section.creation-preview {
     flex-direction: column;
 }
 
-.creation-header {
+.creation-header h1 {
     margin-left:245px;
     padding-top: 1rem;
+    font-weight: bold;
     padding-bottom: 1rem;
 }
 
