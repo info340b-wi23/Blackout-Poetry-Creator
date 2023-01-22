@@ -1,7 +1,107 @@
-html {
+html, body, main {
     box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    height: 100%;
 }
 
-p {
-    font-family: 'Crimson Pro', serif;
+a.nav-link {
+    font-size:32px;
+    font-weight: 800;
+    color:white;
+}
+
+h1 {
+    font-weight: bold;
+    padding-top: 1rem;
+}
+
+/* Must have !important to override Bootstrap CSS*/
+.navbar-nav .nav-link.active, .navbar-nav .show>.nav-link {
+    color: #DBCEB4 !important;
+}
+
+
+.parent {
+    position: relative;
+}
+
+
+.flexbox-container {
+    display: flex;
+    height: 100%
+}
+
+main { /* So the body content isn't hidden in the fixed nav bar*/
+    padding-top: 10rem;
+}
+
+section {
+    flex-basis: 28%;
+}
+
+section.creation-tab {
+    background-color: black;
+}
+
+.creation-tab-splitter {
+    display: flex;
+    flex-direction: column;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.tab-item {
+    border-top: 1px solid white;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.tab-item h1 {
+   font-size: 32px;
+   color: white;
+}
+
+.tab-item p {
+    font-family: 'Inter', sans-serif;
+    font-size: 24px;
+    padding-top: 1rem;
+    color: white;
+}
+
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+    background-color: #F5F2EB !important;
+    color: black !important;
+    font-weight: bold;
+    --bs-btn-border-color: black;
+    --bs-btn-hover-border-color: #DBCEB4;
+}
+
+section.creation-preview {
+    flex-grow: 1;
+    background-color: white;
+}
+
+.creation-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.creation-header {
+    margin-left:245px;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.preview-paper {
+    width: 900px;
+    height: 600px;
+    background-color: #DBCEB4;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.preview-paper-words {
+    font-size: 24px;
+    padding: 1rem;
 }
