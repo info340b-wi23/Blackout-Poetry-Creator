@@ -9,8 +9,18 @@ main {
     padding-top: 10rem;
 }
 
+.bg-dark {
+    background-color: black !important;
+    border-bottom: solid 1px white;
+}
+
 p {
     font-family:'Crimson Pro', serif;
+    color: black;
+}
+
+a {
+    color: white;
 }
 
 a.nav-link {
@@ -21,4 +31,12 @@ a.nav-link {
 
 .navbar-nav .nav-link.active, .navbar-nav .show>.nav-link {
     color: #DBCEB4 !important;
+}
+
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+    background-color: #F5F2EB !important;
+    color: black !important;
+    font-weight: bold;
+    --bs-btn-border-color: black;
+    --bs-btn-hover-border-color: #DBCEB4;
 }
