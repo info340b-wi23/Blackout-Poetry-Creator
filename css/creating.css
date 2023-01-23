@@ -74,21 +74,13 @@ section.creation-preview {
     padding: 1rem;
 }
 
-.back-button {
-    flex-basis: 25%;
-}
-
-.next-button {
-    flex-grow: 1;
-}
-
 .navigation-buttons {
     margin-top: 1rem;
     width: 100%;
     background-color: #DBCEB4 !important;
 }
 
-/* All code below on the second creating page */
+/* All code below on the second / third creating page */
 
 .blackout {
     background-color: black;

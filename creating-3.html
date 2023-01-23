@@ -53,40 +53,87 @@
                         <h1>Add tags to help others find it!</h1>
                     </div>
                     <div class="tab-item">
-                        <div class="flexbox-container">
-                            <div class="form-item">
-                                <p>Language</p>
-                            </div>
-                            <div class="form-item">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-3">
+                                    <p>Language</p>
+                                </div>
+                                <div class="col">
                                 <select class="form-select" aria-label="Language selection">
                                     <option selected>English</option>
                                     <option value="1">Spanish</option>
                                     <option value="2">Chinese</option>
                                     <option value="3">French</option>
                                 </select>
-                            </div>                            
-                        </div>
-                        <div class="flexbox-container">
-                            <div class="form-item">
-                                <p>Subject</p>
+                                </div>
                             </div>
-                            <div class="form-item">
-                                <select class="form-select" aria-label="Language selection">
-                                    <option selected>Culture</option>
-                                    <option value="1">Ethnics</option>
-                                    <option value="2">Politics</option>
-                                    <option value="3">Drama</option>
-                                </select>
+                            <div class="row">
+                                <div class="col-3">
+                                    <p>Subject</p>
+                                </div>
+                                <div class="col">
+                                    <select class="form-select" aria-label="Language selection">
+                                        <option selected>Culture</option>
+                                        <option value="1">Ethnics</option>
+                                        <option value="2">Politics</option>
+                                        <option value="3">Drama</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="tab-item">
-                        <div class="flexbox-container">
-                            <div class="back-button">
-                                <a href="creating-2.html"><button type="button" class="navigation-buttons btn btn-primary">Back</button></a>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-4">
+                                    <p>Title</p>
+                                </div>
+                                <div class="col">
+                                    <input class="form-control" type="text" placeholder="My poem" aria-label="Title of your poem" style="margin-top:1rem;">
+                                </div>
                             </div>
-                            <div class="next-button">
-                                <a href="explore.html"><button type="button" class="navigation-buttons submit btn btn-primary">Submit</button></a>
+                        </div>
+                    </div>
+                    <div class="tab-item">
+                        <div class="container">
+                            <p style="margin-bottom:0"><b>Source</b></p>
+                            <div class="row" style="padding-left:1rem;">
+                                <div class="col-5">
+                                    <p>Piece Title</p>
+                                </div>
+                                <div class="col">
+                                    <input class="form-control" type="text" aria-label="Title of the source text you used" style="margin-top:1rem;">
+                                </div>
+                            </div>
+                            <div class="row" style="padding-left:1rem;">
+                                <div class="col-5">
+                                    <p>Author</p>
+                                </div>
+                                <div class="col">
+                                    <input class="form-control" type="text" aria-label="Author of the source text you used" style="margin-top:1rem;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-item">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-3">
+                                    <p>Description</p>
+                                </div>
+                            </div>
+                            <textarea class="form-control" id="description" placeholder="What is your poem about?" style="height: 65px; max-height: 65px"></textarea>
+                        </div>
+                    </div>
+                    <div class="tab-item">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-3">
+                                    <a href="creating-2.html"><button type="button" class="navigation-buttons btn btn-primary">Back</button></a>
+                                </div>          
+                                <div class="col">
+                                    <a href="explore.html"><button type="button" class="navigation-buttons submit btn btn-primary">Submit</button></a>
+                                </div>
                             </div>
                         </div>
                     </div>
