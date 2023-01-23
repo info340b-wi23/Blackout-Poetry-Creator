@@ -1,25 +1,3 @@
-html, body, main {
-    box-sizing: border-box;
-    font-family: 'Inter', sans-serif;
-    height: 100%;
-}
-
-main {
-    /* So the body content isn't hidden in the fixed nav bar*/
-    padding-top: 10rem;
-}
-
-a.nav-link {
-    font-size:32px;
-    font-weight: 800;
-    color:white;
-}
-
-/* Must have !important to override Bootstrap CSS*/
-.navbar-nav .nav-link.active, .navbar-nav .show>.nav-link {
-    color: #DBCEB4 !important;
-}
-
 .flexbox-container {
     display: flex;
     height: 100%
@@ -42,7 +20,6 @@ section.creation-tab {
 
 .tab-item {
     border-top: 1px solid white;
-    padding-top: 1rem;
     padding-bottom: 1rem;
 }
 
@@ -50,6 +27,7 @@ section.creation-tab {
    font-size: 32px;
    font-weight: bold;
    color: white;
+   padding-top: 2rem;
 }
 
 .tab-item p {
@@ -59,12 +37,9 @@ section.creation-tab {
     color: white;
 }
 
-.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
-    background-color: #F5F2EB !important;
-    color: black !important;
-    font-weight: bold;
-    --bs-btn-border-color: black;
-    --bs-btn-hover-border-color: #DBCEB4;
+.tab-item select {
+    margin-top: 1rem;
+    margin-left: 2rem;
 }
 
 section.creation-preview {
@@ -91,9 +66,38 @@ section.creation-preview {
     border-radius: 10px;
     margin-left: auto;
     margin-right: auto;
+    box-shadow: inset 0px 0px 5px #000000;
 }
 
 .preview-paper-words {
     font-size: 24px;
     padding: 1rem;
+}
+
+.back-button {
+    flex-basis: 25%;
+}
+
+.next-button {
+    flex-grow: 1;
+}
+
+.navigation-buttons {
+    margin-top: 1rem;
+    width: 100%;
+    background-color: #DBCEB4 !important;
+}
+
+/* All code below on the second creating page */
+
+.blackout {
+    background-color: black;
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Standard */
+}
+
+.submit {
+    background-color: #ACAAA3 !important;
 }
