@@ -1,3 +1,5 @@
+/* Shared CSS */
+
 html, body, main {
     box-sizing: border-box;
     font-family: 'Inter', sans-serif;
@@ -39,4 +41,107 @@ a.nav-link {
     font-weight: bold;
     --bs-btn-border-color: black;
     --bs-btn-hover-border-color: #DBCEB4;
+}
+
+/* Creation Pages */
+
+.flexbox-container {
+    display: flex;
+    height: 100vh;
+}
+
+section {
+    flex-basis: 28%;
+}
+
+section.creation-tab {
+    background-color: black;
+}
+
+.creation-tab-splitter {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.tab-item {
+    border-top: 1px solid white;
+    padding-bottom: 1rem;
+}
+
+.tab-item h1 {
+    font-size: 32px;
+    font-weight: bold;
+    color: white;
+    padding-top: 2rem;
+}
+
+.tab-item p {
+    font-family: 'Inter', sans-serif;
+    font-size: 24px;
+    padding-top: 1rem;
+    color: white;
+}
+
+.tab-item select {
+    margin-top: 1rem;
+    margin-left: 2rem;
+}
+
+section.creation-preview {
+    flex-grow: 1;
+    background-color: white;
+}
+
+.creation-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.creation-header h1 {
+    margin-left: 5vh;
+    padding-top: 1rem;
+    font-weight: bold;
+    padding-bottom: 1rem;
+}
+
+.preview-paper {
+    width: 900px;
+    height: 600px;
+    background-color: #DBCEB4;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: inset 0px 0px 5px #000000;
+}
+
+.preview-paper-words {
+    font-size: 24px;
+    padding: 1rem;
+}
+
+.navigation-buttons {
+    margin-top: 1rem;
+    width: 100%;
+    background-color: #DBCEB4 !important;
+}
+
+/* All code below on the second / third creating page */
+
+.blackout {
+    background-color: black;
+    -webkit-user-select: none;
+    /* Safari */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Standard */
+}
+
+.submit {
+    background-color: #ACAAA3 !important;
 }
