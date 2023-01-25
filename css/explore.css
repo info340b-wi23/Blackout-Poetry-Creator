@@ -23,6 +23,8 @@ main> div{
     display: flex;
     height: 100vh;
 }
+
+/* lest side of the screen, section with the search bar */
 section:nth-of-type(1){
     flex-basis: 300px;
     padding: 1em;
@@ -30,17 +32,14 @@ section:nth-of-type(1){
 
 }
   
+/* right side of the screan, section with the cards */
 section:nth-of-type(2){
     flex: 1; 
     padding: 1em;
 }
 
-.navigation-buttons {
-    margin-top: 1rem;
-    width: 100%;
-    background-color: #DBCEB4 !important;
-}
 
+/* css for the search bar on the left side of the explore page */
 .search-bar{
     box-sizing: border-box;
     background-color: white;
@@ -60,8 +59,8 @@ section:nth-of-type(2){
 .history a {
     color: black;
     text-decoration: none;
-    flex-grow: 3; /* get 1 share of extra space */
-    flex-shrink: 0; /* do not shrink if items overflow container */
+    flex-grow: 3; 
+    flex-shrink: 0; 
 }
 
 .history a:hover {
@@ -72,6 +71,8 @@ section:nth-of-type(2){
     text-decoration: underline;
 }
 
+/* this section is for the buttons at the top of the explore page */
+/* New Lit, Poems, both, Filter, and Sort */
 .filter-sort{
     position: sticky;
     /* fixed to the top-right corner */
@@ -81,7 +82,7 @@ section:nth-of-type(2){
     text-align: auto;
 }
 
-.filter-sort li{
+.filter-buttons{
     display: inline-block;
     padding: 1rem;
     padding-left: 2rem;
@@ -90,25 +91,25 @@ section:nth-of-type(2){
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.16), 0 1px 3px rgba(0, 0, 0, 0.23) ;
     margin: 1rem;
     background-color: #F5F2EB;
-    border: 1px solid #726D6D;
-    
-}
-.filter-sort a{
+    border: 1px solid #726D6D;    
     color: black;
     text-decoration: none;
 }
-.filter-sort li:hover{
+
+.filter-buttons.active{
+    background-color: #DBCEB4 !important;
+    border: 1px solid #726D6D;
+}
+
+.filter-buttons:hover{
     background-color: #DBCEB4;
 }
 
+/* for the cards of text, the lit and poems with descriptions */
 .container{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-}
-
-.search-history{
-    text-decoration: underline;
 }
 
 .card{
@@ -141,12 +142,9 @@ section:nth-of-type(2){
     list-style-type: none;
 }
 
+/* blacks out text on the poem cards */
 em{
     background-color: black;
     padding-right: .25rem;
     padding-left: .25rem;    
-}
-
-li.active{
-    background-color: #DBCEB4 !important;
 }
