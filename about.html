@@ -10,8 +10,8 @@
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro&display=swap" rel="stylesheet">    
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">  
-        <link rel='stylesheet' type='text/css' media='screen' href='css/style.css'>
         <link rel='stylesheet' type='text/css' media='screen' href='css/about.css'>
+        <link rel='stylesheet' type='text/css' media='screen' href='css/style.css'>
     </head>
 
     <body>
@@ -46,30 +46,43 @@
 
         <main>
             <div class="container">
+                <div class="row">
                 <!-- first card: overview -->
-                <div class="card mb-4" style="width: 18rem">
-                    <img src="img/Cartoon-Style.jpg">
-                    <div class="card-body text">
-                        <h1 class="card-title">What is Blackout Poetry?</h1>
+                <div class="col mx-auto">
+                    <div class="card mb-4" style="width: 18rem;">
+                        <img class="card-image" src="img/Cartoon-Style.jpg">
+                        <div class="card-body text">
+                            <h1 class="card-title">What is Blackout Poetry?</h1>
+                        </div>
                     </div>
                 </div>
-
-                <!-- second card: how-to -->
-                <div class="card mb-4" style="width: 18rem">
-                    <img src="img/People-passing.jpg">
-                    <div class="card-body">
-                        <h1 class="card-title">Create a Blackout Poem</h1>
+                <div class="col mx-auto">
+                    <!-- second card: how-to -->
+                    <div class="card mb-4" style="width: 18rem">
+                        <img class="card-image" src="img/People-passing.jpg">
+                        <div class="card-body">
+                            <h1 class="card-title">Create a Blackout Poem</h1>
+                        </div>
                     </div>
                 </div>
-
-                <!-- third card: example -->
-                <div class="card mb-4" style="width: 18rem">
-                    <img src="img/People-passing.jpg">
-                    <div class="card-body">
-                        <h1>Example</h1>
+                <div class="col mx-auto">
+                    <!-- third card: example -->
+                    <div class="card mb-4" style="width: 18rem">
+                        <img class="card-image" src="img/People-passing.jpg">
+                        <div class="card-body">
+                            <h1>Example</h1>
+                        </div>
+                        <!-- could be either image or animation? -->
                     </div>
-                <!-- could be either image or animation? -->
+                </div>
             </div>
         </main>
+        <footer class="bg-dark text-center text-lg-start"></footer>
+            <!-- Copyright -->
+            <div class="text-center p-3" style="color:white;background-color: rgba(0, 0, 0);">
+                © 2023 Copyright: INFO 340
+            </div>
+            <!-- Copyright -->
+        </footer>
     </body>
 </html>

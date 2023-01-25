@@ -1,4 +1,25 @@
+html, body, main {
+    height: 100%;
+}
+
 main {
     margin-top: .5rem;
     background-color: #DBCEB4;
+}
+
+.container {
+    padding-top: 5rem;
+}
+
+img.card-image {
+    height: 12rem;
+    border: 1px solid black;
+    border-radius:20px;
+}
+
+.card {
+    height: 400px;
+    border: 2px solid black;
+    border-radius: 20px;
+    box-shadow: 5px 0px 20px #000000;
 }

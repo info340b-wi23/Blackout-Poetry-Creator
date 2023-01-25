@@ -81,16 +81,15 @@ section.creation-preview {
     background-color: #DBCEB4 !important;
 }
 
-/* All code below on the second / third creating page */
 
-.blackout {
-    background-color: black;
-    -webkit-user-select: none; /* Safari */
-    -moz-user-select: none; /* Firefox */
-    -ms-user-select: none; /* Internet Explorer/Edge */
-    user-select: none; /* Standard */
+.description{
+    background-color: white;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 10px;
 }
 
-.submit {
-    background-color: #ACAAA3 !important;
+.description li{
+    list-style-type: none;
 }
