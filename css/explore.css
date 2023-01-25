@@ -71,6 +71,10 @@ section:nth-of-type(2){
     text-decoration: underline;
 }
 
+.delete{
+    text-align: right;
+}
+
 /* this section is for the buttons at the top of the explore page */
 /* New Lit, Poems, both, Filter, and Sort */
 .filter-sort{
