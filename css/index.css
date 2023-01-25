@@ -53,9 +53,15 @@ img {
     font-weight: bolder;
     font-size: larger;
     padding-left: auto;
+    
+ }
+
+ .container:hover a  {
+    background-color: black;
+    color: #6e887c;
  }
 
  a {
-  color: inherit;
-  font-style: normal;
+    color: inherit;
+    text-decoration: none;
  }
