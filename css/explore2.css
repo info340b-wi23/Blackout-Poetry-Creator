@@ -19,29 +19,29 @@ section.creation-tab {
     padding-right: 2rem;
 }
 
-.tab-item {
+/* .tab-item {
     border-top: 1px solid white;
     padding-bottom: 1rem;
-}
+} */
 
-.tab-item h1 {
+/* .tab-item h1 {
    font-size: 32px;
    font-weight: bold;
    color: white;
    padding-top: 2rem;
-}
+} */
 
-.tab-item p {
+/* .tab-item p {
     font-family: 'Inter', sans-serif;
     font-size: 24px;
     padding-top: 1rem;
     color: white;
-}
+} */
 
-.tab-item select {
+/* .tab-item select {
     margin-top: 1rem;
     margin-left: 2rem;
-}
+} */
 
 section.creation-preview {
     flex-grow: 1;
@@ -65,8 +65,8 @@ section.creation-preview {
     height: 600px;
     background-color: #F5F2EB;
     border-radius: 10px;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 2rem;
+    margin-right: 1rem;
     box-shadow: 0px 0px 5px #000000;
 }
 
