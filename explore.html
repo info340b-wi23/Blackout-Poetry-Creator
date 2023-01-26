@@ -47,12 +47,13 @@
     
     <main>
         <section>
-            <!-- Search bar/ side -->
-            <nav class="search-bar">
-                <p>
-                    Search
-                </p>
-            </nav>
+            <form>
+                <div>
+                  <input
+                    type="search" id="mySearch" name="search-bar" class="search-bar"
+                    placeholder="Search" />
+                </div>
+            </form>
             <div class="history">
                 <a  href="trending" class="sidebar"> Trending </a> 
             </div>
@@ -85,15 +86,35 @@
         </section>
 
         <section>
-            <!-- explore page side -->
+        <!-- explore page side -->
             <nav class="filter-sort">
                 <!-- filter buttons at the top of the page -->
                 <ul>
-                    <a href="explore-newLit.html"><button type="button" class="filter-buttons btn btn-primary">New Lit</button></a>
-                    <a href="explore-poems.html"><button type="button" class="filter-buttons btn btn-primary">Poems</button></a>
-                    <a href="explore.html"><button type="button" class="filter-buttons btn active btn-primary">Both</button></a>
-                    <a href="filter"><button type="button" class="filter-buttons btn btn-primary">Filter -o--</button></a>
-                    <a href="#sort"><button type="button" class="filter-buttons btn btn-primary">Sort V</button></a>
+                    <a href="explore-newLit.html"><button type="button" class="filter-buttons btn btn-primary" aria-label="literature">
+                        Literature</button></a>
+                    <a href="explore-poems.html"><button type="button" class="filter-buttons btn btn-primary" aria-label="Poems">
+                        Poems</button></a>
+                    <a href="explore.html"><button type="button" class="filter-buttons active btn btn-primary" aria-label="Both new literature and poems">
+                        Both</button></a>
+                   <!-- Filter button check box -->
+                   <div id="filter" class="filter-check filter-buttons btn btn-primary" tabindex="100">
+                    <span class="anchor">Filter</span>
+                    <ul class="items">
+                        <li><input type="checkbox" class="checkbox"/>Culture </li>
+                        <li><input type="checkbox" class="checkbox"/>Ethnic</li>
+                        <li><input type="checkbox" class="checkbox"/>Politics </li>
+                        <li><input type="checkbox" class="checkbox"/>Drama </li>
+                    </ul>
+                </div>
+                    <!-- Sort By button and dropdown menu -->
+                    <select type="button" class="form-select filter-buttons btn btn-primary"  aria-label="Sort">
+                        <option value="">Sort By</option>
+                        <option value="newest">Newest</option>
+                        <option value="oldest">Oldest</option>
+                        <option value="a-z">A - Z</option>
+                        <option value="z-a">Z - A</option>
+                        <option value="popular">Popular</option>
+                   </select>
                 </ul>
             </nav>
             <div class="container">
@@ -230,12 +251,12 @@
 
         </section>
     </main>
-    <footer class="bg-dark text-center text-lg-start"></footer>
+</body>
+<footer class="bg-dark text-center text-lg-start"></footer>
         <!-- Copyright -->
          <div class="text-center p-3" style="color:white;background-color: rgba(0, 0, 0);">
          © 2023 Copyright: INFO 340
          </div>
          <!-- Copyright -->
-        </footer>
-</body>
+</footer>
 </html>
