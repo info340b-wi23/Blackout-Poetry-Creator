@@ -7,17 +7,18 @@ html, body, main {
 
 main {
     /* So the body content isn't hidden in the fixed nav bar*/
-    padding-top: 10rem;
+    padding-top: 8.75rem;
 }
 
-/* Used for the creation page */
-footer.creating-padding {   
-    padding-top: 2.25rem;
+footer {
+    background-color: black;
 }
+
 
 .bg-dark {
-    background-color: black !important;
+    background-color: rgba(0, 0, 0, 0.95) !important;
     border-bottom: solid 1px white;
+    border-top: solid 1px white;
 }
 
 p {
@@ -39,6 +40,20 @@ a.nav-link {
     color: #DBCEB4 !important;
 }
 
+.navbar {
+    fill: white !important;
+    --bs-navbar-toggler-border-color: rgba(255, 255, 255);
+    --bs-navbar-color: white;
+}
+
+.navbar-toggler {
+    background-color: white;
+}
+
+.navbar-toggler-icon {
+    background-image: url("../img/Hamburger.svg") !important;
+}
+
 .btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
     background-color: #F5F2EB !important;
     color: black !important;
@@ -47,107 +62,9 @@ a.nav-link {
     --bs-btn-hover-border-color: #DBCEB4;
 }
 
-/* Creation Pages */
-
-/* All code below on the second / third creating page */
-.blackout {
-    background-color: black;
-    -webkit-user-select: none;
-    /* Safari */
-    -moz-user-select: none;
-    /* Firefox */
-    -ms-user-select: none;
-    /* Internet Explorer/Edge */
-    user-select: none;
-    /* Standard */
-}
-
-.submit {
-    background-color: #ACAAA3 !important;
-}
-
-/* CSS For large screens */
 @media (min-width: 768px) {
-    .flexbox-container {
-        display: flex;
-        height: 100vh;
-    }
-
-    section {
-        flex-basis: 28%;
-    }
-
-    section.creation-tab {
-        background-color: black;
-    }
-
-    .creation-tab-splitter {
-        background-color: black;
-        display: flex;
-        flex-direction: column;
-        padding-left: 2rem;
-        padding-right: 2rem;
-    }
-
-    .tab-item {
-        border-top: 1px solid white;
-        padding-bottom: 1rem;
-    }
-
-    .tab-item h1 {
-        font-size: 32px;
-        font-weight: bold;
-        color: white;
-        padding-top: 2rem;
-    }
-
-    .tab-item p {
-        font-family: 'Inter', sans-serif;
-        font-size: 24px;
-        padding-top: 1rem;
-        color: white;
-    }
-
-    .tab-item select {
-        margin-top: 1rem;
-        margin-left: 2rem;
-    }
-
-    section.creation-preview {
-        flex-grow: 1;
-        background-color: white;
-    }
-
-    .creation-container {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .creation-header h1 {
-        margin-left: 5vh;
-        padding-top: 1rem;
-        font-weight: bold;
-        padding-bottom: 1rem;
-    }
-
-    .preview-paper {
-        width: 900px;
-        height: 600px;
-        background-color: #DBCEB4;
-        border-radius: 10px;
-        margin-left: auto;
-        margin-right: auto;
-        box-shadow: inset 0px 0px 5px #000000;
-    }
-
-    .preview-paper-words {
-        font-size: 24px;
-        padding: 1rem;
-    }
-
-    .navigation-buttons {
-        margin-top: 1rem;
-        width: 100%;
-        background-color: #DBCEB4 !important;
+    main {
+        /* So the body content isn't hidden in the fixed nav bar*/
+        padding-top: 10rem;
     }
 }

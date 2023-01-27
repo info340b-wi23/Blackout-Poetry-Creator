@@ -14,9 +14,73 @@
     background-color: #ACAAA3 !important;
 }
 
-@media (min-width: 768px) {
+body {
+    height: 100vh;
+    background-color: black;
+}
+
+.tab-item h1 {
+    font-size: 22px;
+    font-weight: bold;
+    color: white;
+    padding-top: 0.5rem;
+    padding-left: 1rem;
+}
+
+.tab-item p {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    padding-top: 1rem;
+    color: white;
+    padding-left: 0.5rem;
+}
+
+.brand img {
+    width: 250px;
+    height: 110px;
+}
+
 .flexbox-container {
-        display: flex;
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+}
+
+.tab-item {
+    border-top: 1px solid white;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+section.creation-tab {
+    background-color: black;
+}
+
+.creation-header {
+    border-top: 1px solid white;
+    padding-top:1rem;
+}
+
+.creation-header h1 {
+    background-color: black;
+    margin-bottom: 0;
+    font-weight: bold;
+    color: white;
+}
+
+.preview-paper-words p {
+    background-color: #DBCEB4;
+}
+
+.next-button {
+    background-color: black;
+    padding-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+
+    .flexbox-container {
+        flex-direction: row;
         height: 100vh;
     }
 
@@ -24,8 +88,9 @@
         flex-basis: 28%;
     }
 
-    section.creation-tab {
-        background-color: black;
+    .brand img {
+        width: 400px;
+        height: 133px;
     }
 
     .creation-tab-splitter {
@@ -39,6 +104,7 @@
     .tab-item {
         border-top: 1px solid white;
         padding-bottom: 1rem;
+        padding-top: 0;
     }
 
     .tab-item h1 {
@@ -46,6 +112,7 @@
         font-weight: bold;
         color: white;
         padding-top: 2rem;
+        padding-left: 0;
     }
 
     .tab-item p {
@@ -53,6 +120,7 @@
         font-size: 24px;
         padding-top: 1rem;
         color: white;
+        padding-left: 0;
     }
 
     .tab-item select {
@@ -71,6 +139,8 @@
     }
 
     .creation-header h1 {
+        background-color: white;
+        color: black;
         margin-left: 5vh;
         padding-top: 1rem;
         font-weight: bold;
@@ -87,9 +157,10 @@
         box-shadow: inset 0px 0px 5px #000000;
     }
 
-    .preview-paper-words {
+    .preview-paper-words p {
         font-size: 24px;
         padding: 1rem;
+        background-color: #DBCEB4;
     }
 
     .navigation-buttons {
