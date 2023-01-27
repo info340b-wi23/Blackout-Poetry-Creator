@@ -7,6 +7,8 @@ html, body {
 body {
     height: 100vh;
     background-color: #DBCEB4;
+    display: flex;
+    flex-direction: column;
 }
 
 main {
@@ -14,10 +16,7 @@ main {
 }
 
 footer {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    margin-top: auto;
 }
 
 .container {
