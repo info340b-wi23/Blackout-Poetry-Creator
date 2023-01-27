@@ -1,10 +1,23 @@
-html, body, main {
+html, body {
     height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    background-color: #DBCEB4;
 }
 
 main {
     margin-top: .5rem;
-    background-color: #DBCEB4;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
 
 .container {
@@ -22,4 +35,9 @@ img.card-image {
     border: 2px solid black;
     border-radius: 20px;
     box-shadow: 5px 0px 20px #000000;
+}
+
+.brand img {
+    width: 250px;
+    height: 110px;
 }
