@@ -18,6 +18,7 @@
 </head>
 
 <body>
+    <!-- Navbar taken from Bootstrap documentation -->
     <nav class="navbar fixed-top navbar-expand-lg bg-dark">
         <div class="container-fluid">
             <a class="navbar brand" href="index.html">
@@ -53,13 +54,13 @@
 
     <main>
         <div class="flexbox-container">
-            <section class="creation-tab">
+            <section class="creation-tab creating-3">
                 <div class="creation-tab-splitter">
                     <div class="tab-item">
                         <h1>Add tags to help others find it!</h1>
                     </div>
                     <div class="tab-item">
-                        <div class="container">
+                        <div class="container"> 
                             <div class="row">
                                 <div class="col-4">
                                     <p>Language</p>
@@ -95,21 +96,21 @@
                                     <p>Title</p>
                                 </div>
                                 <div class="col">
-                                    <input class="form-control" type="text" placeholder="My poem" aria-label="Title of your poem" style="margin-top:1rem;">
+                                    <input class="form-control form-input-margin" type="text" placeholder="My poem" aria-label="Title of your poem">
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="tab-item">
                         <div class="container">
-                            <p style="margin-bottom:0"><b>Source</b></p>
+                            <p class ="p-source-adjustment"><b>Source</b></p>
                             <div class="row" style="padding-left:1rem;">
                                 <div class="col-5">
                                     <p>Piece Title</p>
                                 </div>
                                 <div class="col">
                                     <!-- Remove placeholder for final product-->
-                                    <input class="form-control" type="text" placeholder="What A. Philip Randolph Knew About Jobs and Freedom" aria-label="Title of the source text you used" style="margin-top:1rem;">
+                                    <input class="form-control form-input-margin" type="text" placeholder="What A. Philip Randolph Knew About Jobs and Freedom" aria-label="Title of the source text you used">
                                 </div>
                             </div>
                             <div class="row" style="padding-left:1rem;">
@@ -118,7 +119,7 @@
                                 </div>
                                 <div class="col">
                                     <!-- Remove placeholder for final product-->
-                                    <input class="form-control" type="text" placeholder="Jamelle Bouie" aria-label="Author of the source text you used" style="margin-top:1rem;">
+                                    <input class="form-control form-input-margin" type="text" placeholder="Jamelle Bouie" aria-label="Author of the source text you used">
                                 </div>
                             </div>
                         </div>
@@ -133,7 +134,7 @@
                             <textarea class="form-control" id="description" placeholder="What is your poem about?" style="height: 65px; max-height: 65px"></textarea>
                         </div>
                     </div>
-                    <div class="tab-item">
+                    <div class="tab-item d-none d-md-inline-block">
                         <div class="container">
                             <div class="row">
                                 <div class="col-4">
@@ -150,7 +151,7 @@
             <section class="creation-preview">
                 <div class="creation-container">
                     <div class="creation-header">
-                        <h1>Finalize</h1>
+                        <h1 class="d-none d-md-block">Finalize</h1>
                     </div>
                     <div class="creation-content">
                         <div class="preview-paper">
@@ -175,6 +176,10 @@
                     </div>
                 </div>
             </section>
+            <div class="flexbox-container d-block d-md-none"> <!-- Figure out how to center the buttons-->
+                <a href="creating-2.html"><button type="button" class="px-5 navigation-buttons btn btn-primary">Back</button></a>
+                <a href="explore.html"><button type="button" class="px-5 navigation-buttons submit btn btn-primary">Submit</button></a>
+            </div>
         </div>
 
     </main>

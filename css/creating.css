@@ -27,12 +27,22 @@ body {
     padding-left: 1rem;
 }
 
+.creation-tab.creating-3 p {
+    padding-top: 0;
+    font-size: 20px;
+    margin: 0;
+}
+
 .tab-item p {
     font-family: 'Inter', sans-serif;
     font-size: 16px;
     padding-top: 1rem;
     color: white;
     padding-left: 0.5rem;
+}
+
+.p-source-adjustment {
+    margin-bottom: 0.5rem;
 }
 
 .brand img {
@@ -72,10 +82,6 @@ section.creation-tab {
     background-color: #DBCEB4;
 }
 
-.next-button {
-    background-color: black;
-    padding-bottom: 1rem;
-}
 
 @media (min-width: 768px) {
 
@@ -102,25 +108,27 @@ section.creation-tab {
     }
 
     .tab-item {
-        border-top: 1px solid white;
-        padding-bottom: 1rem;
         padding-top: 0;
     }
 
     .tab-item h1 {
         font-size: 32px;
-        font-weight: bold;
-        color: white;
         padding-top: 2rem;
         padding-left: 0;
     }
 
-    .tab-item p {
-        font-family: 'Inter', sans-serif;
-        font-size: 24px;
+    .creation-tab.creating-3 p {
         padding-top: 1rem;
-        color: white;
+        font-size: 24px;
+    }
+
+    .tab-item p {
+        font-size: 24px;
         padding-left: 0;
+    }
+
+    .p-source-adjustment {
+        margin-bottom: 0;
     }
 
     .tab-item select {
@@ -139,12 +147,15 @@ section.creation-tab {
     }
 
     .creation-header h1 {
-        background-color: white;
+        background-color: transparent;
         color: black;
         margin-left: 5vh;
         padding-top: 1rem;
-        font-weight: bold;
         padding-bottom: 1rem;
+    }
+
+    .form-input-margin {
+        margin-top: 1rem;
     }
 
     .preview-paper {
@@ -160,13 +171,12 @@ section.creation-tab {
     .preview-paper-words p {
         font-size: 24px;
         padding: 1rem;
-        background-color: #DBCEB4;
+        background-color: transparent;
     }
 
     .navigation-buttons {
         margin-top: 1rem;
         width: 100%;
-        background-color: #DBCEB4 !important;
     }
 
 }

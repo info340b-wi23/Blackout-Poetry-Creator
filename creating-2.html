@@ -19,6 +19,7 @@
 
 <body>
     <header>
+        <!-- Navbar taken from Bootstrap documentation -->
         <nav class="navbar fixed-top navbar-expand-lg bg-dark">
             <div class="container-fluid">
                 <a class="navbar brand" href="index.html">
@@ -57,17 +58,19 @@
             <section class="creation-tab">
                 <div class="creation-tab-splitter">
                     <div class="tab-item">
-                        <h1>Click on the words you want to black out.</h1>
+                        <h1 class="d-inline-block d-md-none">Tap on the words you want to black out.</h1>
+                        <h1 class="d-none d-md-inline-block">Click on the words you want to black out.</h1>
                     </div>
                     <div class="tab-item">
-                        <p>Made a mistake? Click on words to undo!</p>
-                        <button type="button" class="btn btn-primary">Clear All Blackouts</button>
+                        <p class="d-inline-block d-lg-none">Tap on words to undo blackouts</p>
+                        <p class="d-none d-md-inline-block">Made a mistake? Click on words to undo!</p>
+                        <button type="button" class="clear-button btn btn-primary">Clear All Blackouts</button>
                     </div>
                     <div class="tab-item">
-                        <p>Not sure how to blackout poetry?</p>
-                        <a href="about.html#">Check out our helpful guide!</a>  <!-- Need to select the ID on about page with "tips and tricks" -->
+                        <p class="d-none d-lg-block">Not sure how to blackout poetry?</p>
+                        <a href="about.html#" style="padding-left: 0.5rem;">Check out our helpful guide!</a>  <!-- Need to select the ID on about page with "tips and tricks" -->
                     </div>
-                    <div class="tab-item">
+                    <div class="tab-item d-none d-lg-inline-block">
                         <div class="container">
                             <div class="row">
                                 <div class="col-4">
@@ -76,7 +79,7 @@
                                 </div>
                                 <div class="col">
                                     <a href="creating-3.html"><button type="button"
-                                            class="navigation-buttons btn btn-primary">Next</button></a>
+                                            class="navigation-buttons submit btn btn-primary">Next</button></a>
                                 </div>
                             </div>
                         </div>
@@ -86,7 +89,7 @@
             <section class="creation-preview">
                 <div class="creation-container">
                     <div class="creation-header">
-                        <h1>Blackout</h1>
+                        <h1 class="d-none d-md-block">Blackout</h1>
                     </div>
                     <div class="creation-content">
                         <div class="preview-paper">
@@ -114,7 +117,10 @@
                     </div>
                 </div>
             </section>
-        </div>
+            <div class="flexbox-container d-block d-md-none"> <!-- Figure out how to center the buttons-->
+                <a href="creating.html"><button type="button" class="px-5 navigation-buttons btn btn-primary">Back</button></a>
+                <a href="creating-3.html"><button type="button" class="px-5 navigation-buttons submit btn btn-primary">Next</button></a>
+            </div>
 
     </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
