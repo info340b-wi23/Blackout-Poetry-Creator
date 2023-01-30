@@ -10,7 +10,7 @@ body{
 }
 
 main{
-    display: flex;
+    display: inline-block;
     flex: 1;
     padding-top: 10rem;
   }
@@ -19,17 +19,9 @@ html{
     height: 100%;
 }
 
-main> div{
-    display: flex;
-    height: 100vh;
-}
-
-/* lest side of the screen, section with the search bar */
+/* left side of the screen, section with the search bar */
 section:nth-of-type(1){
-    flex-basis: 300px;
-    padding: 1em;
-    background-color: #F5F2EB;
-
+text-align: center;
 }
   
 /* right side of the screan, section with the cards */
@@ -38,41 +30,21 @@ section:nth-of-type(2){
     padding: 1em;
 }
 
-
 /* css for the search bar on the left side of the explore page */
+.history{
+    display: none;
+}
+
 .search-bar{
+    display: inline;
     box-sizing: border-box;
     background-color: white;
     text-align: center;
     padding: .75rem;
     border-radius: 10px;
     margin-bottom: 1rem;
-    margin-left: 1.5rem;
-}
-
-.history{
-    display: flex;
-    padding: 1rem;
-    border-top: 1px solid #726D6D;
-}
-
-.history a {
-    color: black;
-    text-decoration: none;
-    flex-grow: 3; 
-    flex-shrink: 0; 
-}
-
-.history a:hover {
-    color: #8b8371;
-}
-
-.history .search-history{
-    text-decoration: underline;
-}
-
-.delete{
-    text-align: right;
+    margin-top: 5rem;
+    margin-left: 1rem;
 }
 
 /* this section is for the buttons at the top of the explore page */
@@ -83,17 +55,17 @@ section:nth-of-type(2){
     top: 4rem;
     right: 0;
     background-color: white;
-    text-align: center;
+    text-align: space-between;
 }
 
 .filter-buttons{
     display: inline-block;
     padding: 1rem;
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
     border-radius: 10px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.16), 0 1px 3px rgba(0, 0, 0, 0.23) ;
-    margin: 1.5rem;
+    margin: 0.5rem;
     background-color: #F5F2EB;
     border: 1px solid #726D6D;    
     color: black;
@@ -133,14 +105,10 @@ section:nth-of-type(2){
     padding: 5px 50px 5px 10px;
 }
   
-  
 .filter-check .anchor:active:after {
     right: 8px;
     top: 21%;
 }
-  
-  
-  
 
 /* for the cards of text, the lit and poems with descriptions */
 .container{
@@ -160,7 +128,6 @@ section:nth-of-type(2){
     border: 1px solid #726D6D;
     height: 75%;
 }
-
 
 .lit{
     padding: 1rem;
@@ -195,3 +162,90 @@ em{
     padding-left: .25rem;    
 }
 
+@media (min-width: 768px) {
+
+    main{
+        display: flex;
+        flex: 1;
+        padding-top: 10rem;
+      }
+    .navigation-buttons {
+        margin-top: 1rem;
+        width: 100%;
+    }
+
+    /* left side of the screen, section with the search bar */
+    section:nth-of-type(1){
+        flex-basis: 300px;
+        padding: 1em;
+        background-color: #F5F2EB;
+        display: block;
+    }
+  
+    /* right side of the screan, section with the cards */
+    section:nth-of-type(2){
+        flex: 1; 
+        padding: 1em;
+    }
+
+    /* css for the search bar on the left side of the explore page */
+    .search-bar{
+        display: block;
+        box-sizing: border-box;
+        background-color: white;
+        text-align: center;
+        padding: .75rem;
+        border-radius: 10px;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        margin-left: 1rem;
+    }
+
+    .history{
+        display: flex;
+        padding: 1rem;
+        border-top: 1px solid #726D6D;
+    }
+
+    .history a {
+        color: black;
+        text-decoration: none;
+        flex-grow: 3; 
+        flex-shrink: 0; 
+    }
+
+    .history a:hover {
+        color: #8b8371;
+    }
+
+    .history .search-history{
+        text-decoration: underline;
+    }
+
+    .delete{
+        text-align: right;
+    }
+    .filter-sort{
+        position: static;
+        /* fixed to the top-right corner */
+        top: 4rem;
+        right: 0;
+        background-color: white;
+        text-align: justify;
+        margin-top: 3rem;
+    }
+    .filter-buttons{
+        display: inline-block;
+        padding: 1rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.16), 0 1px 3px rgba(0, 0, 0, 0.23) ;
+        margin: 0.75rem; 
+        background-color: #F5F2EB;
+        border: 1px solid #726D6D;    
+        color: black;
+        text-decoration: none;
+    }
+
+}

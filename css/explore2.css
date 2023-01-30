@@ -1,56 +1,58 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column; 
+}
+
+main{
+    display: inline-block;
+    flex: 1;
+    padding-top: 10rem;
+  }
+  
+html{
+    height: 100%;
+}
+section:nth-of-type(2){
+    flex: 1; 
+    padding: 1em;
+}
+
+
 .flexbox-container {
     display: flex;
     height: 100vh;
-}
-
-section {
-    flex-basis: 28%;
-}
-
-section.creation-tab {
-    background-color: black;
+    flex-direction: row;
 }
 
 .creation-tab-splitter {
-    background-color: black;
     display: flex;
     flex-direction: column;
     padding-left: 2rem;
     padding-right: 2rem;
+    /* change this later */
+    display: none;
 }
-
-/* .tab-item {
-    border-top: 1px solid white;
-    padding-bottom: 1rem;
-} */
-
-/* .tab-item h1 {
-   font-size: 32px;
-   font-weight: bold;
-   color: white;
-   padding-top: 2rem;
-} */
-
-/* .tab-item p {
-    font-family: 'Inter', sans-serif;
-    font-size: 24px;
-    padding-top: 1rem;
-    color: white;
-} */
-
-/* .tab-item select {
-    margin-top: 1rem;
-    margin-left: 2rem;
-} */
-
+.creation-header{
+    margin-top: 2rem;
+}
 section.creation-preview {
     flex-grow: 1;
     background-color: white;
 }
 
-.creation-container {
+.view-content {
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
+    flex-basis: 300px;
+    box-sizing: auto;
+
 }
 
 .creation-header h1 {
@@ -61,8 +63,8 @@ section.creation-preview {
 }
 
 .preview-paper {
-    width: 900px;
-    height: 600px;
+    width: auto;
+    height: auto;
     background-color: #F5F2EB;
     border-radius: 10px;
     margin-left: 2rem;
@@ -75,21 +77,50 @@ section.creation-preview {
     padding: 1rem;
 }
 
-.navigation-buttons {
-    margin-top: 1rem;
-    width: 100%;
-    background-color: #DBCEB4 !important;
-}
-
 
 .description{
+    box-sizing: border-box;
+    border: 1px solid #726D6D;    
     background-color: white;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding: 1rem;
     margin-bottom: 1rem;
     border-radius: 10px;
 }
 
 .description li{
     list-style-type: none;
+}
+
+
+@media (min-width: 768px) {
+    .navigation-buttons {
+        margin-top: 1rem;
+        width: 100%;
+        background-color: #DBCEB4 !important;
+    }
+    section {
+        flex-basis: 28%;
+    }
+    section.creation-tab {
+        background-color: black;
+    }
+    .creation-tab-splitter {
+        background-color: black;
+        display: flex;
+        flex-direction: column;
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+    .description{
+        background-color: white;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        margin-bottom: 1rem;
+        border-radius: 10px;
+    }
+    .creation-container {
+        display: flex;
+        flex-direction: column;
+    }
+
 }
