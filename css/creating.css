@@ -14,9 +14,14 @@
     background-color: #ACAAA3 !important;
 }
 
-body {
-    height: 100vh;
+.creating-body {
     background-color: black;
+}
+
+.tab-item {
+    border-top: 1px solid white;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 
 .tab-item h1 {
@@ -27,18 +32,18 @@ body {
     padding-left: 1rem;
 }
 
-.creation-tab.creating-3 p {
-    padding-top: 0;
-    font-size: 20px;
-    margin: 0;
-}
-
 .tab-item p {
     font-family: 'Inter', sans-serif;
     font-size: 16px;
     padding-top: 1rem;
     color: white;
     padding-left: 0.5rem;
+}
+
+.creation-tab.creating-3 p {
+    padding-top: 0;
+    font-size: 20px;
+    margin: 0;
 }
 
 .p-source-adjustment {
@@ -56,19 +61,13 @@ body {
     background-color: black;
 }
 
-.tab-item {
-    border-top: 1px solid white;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-}
-
 section.creation-tab {
     background-color: black;
 }
 
 .creation-header {
     border-top: 1px solid white;
-    padding-top:1rem;
+    padding-top: 1rem;
 }
 
 .creation-header h1 {

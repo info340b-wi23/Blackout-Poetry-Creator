@@ -10,10 +10,14 @@ main {
     padding-top: 8.75rem;
 }
 
+body {
+    height: 100vh;
+    background-color: white;
+}
+
 footer {
     background-color: black;
 }
-
 
 .bg-dark {
     background-color: rgba(0, 0, 0, 0.95) !important;
