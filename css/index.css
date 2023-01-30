@@ -1,21 +1,14 @@
 main.index {
-padding-top: 1%;
-padding-bottom: 1%;
+  padding: 0;
 }
 
 html.index {
-  transform: scale(1.2);
-  transform-origin: 0 5;
+  width: 100%;
 }
 
 img.index {
-    height: 100%;
-    width: 100%;
-    position: static;
-    top: 0;
-    right: 0;
-    left: 0;
-    align-items: center;
+    height: 300px;
+    width: 1300px;
 }
   
 .center {
@@ -25,15 +18,8 @@ img.index {
  }
 
 .menu {
-    position: relative;
-    top: 100%;
-    right: 0%;
-    left: 0%;
     list-style-type: none;
     font-size: 4rem;
-    margin-top: -9rem;
-    margin-left: auto;
-    margin-right: auto;
     text-align: center;
     color: black;
     line-height: 9rem;
@@ -42,12 +28,8 @@ img.index {
 
 .container:hover.index {
     background: black;
-    opacity: 1;
     color: #6e887c;
     font-weight: bolder;
-    font-size: larger;
-    padding-left: auto;
-    
  }
 
  .container:hover.index a  {
@@ -69,12 +51,8 @@ img.index {
  }
 
  @media (min-width: 768px) {
-    main {
-        padding-top: 10rem;
-    }
-
     img.index {
-      height: 1rem;
-      width: 1rem;
+      height: 300px;
+      width: 1300px;
     }
 }
