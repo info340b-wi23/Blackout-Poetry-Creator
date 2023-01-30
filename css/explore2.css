@@ -1,89 +1,130 @@
+body.explore-body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+main.explore-main {
+    display: inline-block;
+    flex: 1;
+    padding-top: 10rem;
+}
+
+/* right side of the screen, section with a preview of the card */
+section.explore-preview {
+    flex: 1;
+    padding: 1em;
+}
+
+.explore-card {
+    display: flex;
+    flex-wrap: wrap;
+    flex-basis: 300px;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.16), 0 1px 3px rgba(0, 0, 0, 0.23);
+    margin: 1rem;
+    background-color: #F5F2EB;
+    border: 1px solid #726D6D;
+    height: 75%;
+}
+/* trying something new */
+/* left side of the screen, section with the description */
+section.preview-tab{
+    flex-basis: 300px;
+    padding: 1em;
+    background-color: #F5F2EB;
+    display: block;
+    background-color: black;
+    text-align: center;
+}
+
+.preview-container {
+    display: flex;
+    height: 100vh;
+    flex-direction: row;
+}
+.preview-tab-splitter {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.preview-header{
+    margin-top: 2rem;
+}
+section.explore-preview {
+    flex-grow: 1;
+    background-color: white;
+}
+
+.view-content {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    flex-basis: 300px;
+    box-sizing: auto;
+}
+
+.preview-header h1 {
+    margin-left:5vh;
+    padding-top: 1rem;
+    font-weight: bold;
+    padding-bottom: 1rem;
+}
+.preview-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.preview-text {
+    width: auto;
+    height: auto;
+    background-color: #F5F2EB;
+    border-radius: 10px;
+    margin-left: 2rem;
+    margin-right: 1rem;
+    box-shadow: 0px 0px 5px #000000;
+}
+
+.preview-text-words {
+    font-size: 24px;
+    padding: 1rem;
+}
+
+.description{
+    box-sizing: border-box;
+    border: 1px solid #726D6D;    
+    background-color: white;
+    padding: 1rem;
+    padding-left: 2rem;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    text-align: left;
+}
+
+.description li{
+    list-style-type: none;
+}
+section.preview-tab, section.explore-preview {
+    flex-basis: 28%;
+}
+footer.explore2-footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
 @media (min-width: 768px) {
     .navigation-buttons {
         margin-top: 1rem;
         width: 100%;
         background-color: #DBCEB4 !important;
     }
-    section {
-        flex-basis: 28%;
-    }
+    
 
-    /* left side of the screen, section with the description */
-    section.preview-tab{
-        flex-basis: 300px;
-        padding: 1em;
-        background-color: #F5F2EB;
-        display: block;
-        background-color: black;
-    }
-  
-    .flexbox-container {
-        display: flex;
-        height: 100vh;
-        flex-direction: row;
-    }
-    .preview-tab-splitter {
-        background-color: black;
-        display: flex;
-        flex-direction: column;
-        padding-left: 2rem;
-        padding-right: 2rem;
-    }
     
-    .preview-header{
-        margin-top: 2rem;
-    }
-    section.creation-preview {
-        flex-grow: 1;
-        background-color: white;
-    }
-    
-    .view-content {
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        flex-basis: 300px;
-        box-sizing: auto;
-    
-    }
-    
-    .preview-header h1 {
-        margin-left:5vh;
-        padding-top: 1rem;
-        font-weight: bold;
-        padding-bottom: 1rem;
-    }
-    .preview-container {
-        display: flex;
-        flex-direction: column;
-    }
-    
-    .preview-paper {
-        width: auto;
-        height: auto;
-        background-color: #F5F2EB;
-        border-radius: 10px;
-        margin-left: 2rem;
-        margin-right: 1rem;
-        box-shadow: 0px 0px 5px #000000;
-    }
-    
-    .preview-paper-words {
-        font-size: 24px;
-        padding: 1rem;
-    }
-    
-    .description{
-        box-sizing: border-box;
-        border: 1px solid #726D6D;    
-        background-color: white;
-        padding: 1rem;
-        margin-bottom: 1rem;
-        border-radius: 10px;
-    }
-    
-    .description li{
-        list-style-type: none;
-    }
 
 }

@@ -143,7 +143,7 @@ label {
     box-sizing: auto;
 }
 
-.description{
+.description-card{
     background-color: #DBCEB4;
     border-top: 1px solid #726D6D;
     padding-top: 1rem;
@@ -153,7 +153,7 @@ label {
     color: black;
 }
 
-.description li{
+.description-card li{
     list-style-type: none;
 }
 .explore-card a{

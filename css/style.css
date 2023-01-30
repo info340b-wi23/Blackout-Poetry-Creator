@@ -366,7 +366,7 @@ label {
     box-sizing: auto;
 }
 
-.description {
+.description-card {
     background-color: #DBCEB4;
     border-top: 1px solid #726D6D;
     padding-top: 1rem;
@@ -376,7 +376,7 @@ label {
     color: black;
 }
 
-.description li {
+.description-card li {
     list-style-type: none;
 }
 
@@ -410,17 +410,11 @@ main.explore-main {
     padding-top: 10rem;
 }
 
-/* left side of the screen, section with the description */
-section.preview-tab {
-    text-align: center;
-}
-
 /* right side of the screen, section with a preview of the card */
-section.creation-preview {
+section.explore-preview {
     flex: 1;
     padding: 1em;
 }
-
 
 .explore-card {
     display: flex;
@@ -432,6 +426,95 @@ section.creation-preview {
     background-color: #F5F2EB;
     border: 1px solid #726D6D;
     height: 75%;
+}
+/* trying something new */
+/* left side of the screen, section with the description */
+section.preview-tab{
+    flex-basis: 300px;
+    padding: 1em;
+    background-color: #F5F2EB;
+    display: block;
+    background-color: black;
+    text-align: center;
+}
+
+.preview-container {
+    display: flex;
+    height: 100vh;
+    flex-direction: row;
+}
+.preview-tab-splitter {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.preview-header{
+    margin-top: 2rem;
+}
+section.explore-preview {
+    flex-grow: 1;
+    background-color: white;
+}
+
+.view-content {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    flex-basis: 300px;
+    box-sizing: auto;
+}
+
+.preview-header h1 {
+    margin-left:5vh;
+    padding-top: 1rem;
+    font-weight: bold;
+    padding-bottom: 1rem;
+}
+.preview-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.preview-text {
+    width: auto;
+    height: auto;
+    background-color: #F5F2EB;
+    border-radius: 10px;
+    margin-left: 2rem;
+    margin-right: 1rem;
+    box-shadow: 0px 0px 5px #000000;
+}
+
+.preview-text-words {
+    font-size: 24px;
+    padding: 1rem;
+}
+
+.description{
+    box-sizing: border-box;
+    border: 1px solid #726D6D;    
+    background-color: white;
+    padding: 1rem;
+    padding-left: 2rem;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    text-align: left;
+}
+
+.description li{
+    list-style-type: none;
+}
+section.preview-tab, section.explore-preview {
+    flex-basis: 28%;
+}
+footer.explore2-footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
 }
 
 @media (min-width: 768px) {
@@ -539,7 +622,7 @@ section.creation-preview {
 
     /* Explore Main Page(s) */
 
-        main.explore-main {
+    main.explore-main {
         display: flex;
     }
 
@@ -603,9 +686,6 @@ section.creation-preview {
         width: 100%;
         background-color: #DBCEB4 !important;
     }
-    section {
-        flex-basis: 28%;
-    }
 
     /* left side of the screen, section with the description */
     section.preview-tab{
@@ -616,7 +696,7 @@ section.creation-preview {
         background-color: black;
     }
   
-    .flexbox-container {
+    .preview-container {
         display: flex;
         height: 100vh;
         flex-direction: row;
@@ -633,7 +713,7 @@ section.creation-preview {
         margin-top: 2rem;
     }
     
-    section.creation-preview {
+    section.explore-preview {
         flex-grow: 1;
         background-color: white;
     }
@@ -644,7 +724,6 @@ section.creation-preview {
         flex-wrap: wrap;
         flex-basis: 300px;
         box-sizing: auto;
-    
     }
     
     .preview-header h1 {
@@ -658,7 +737,7 @@ section.creation-preview {
         flex-direction: column;
     }
     
-    .preview-paper {
+    .preview-text {
         width: auto;
         height: auto;
         background-color: #F5F2EB;
@@ -668,7 +747,7 @@ section.creation-preview {
         box-shadow: 0px 0px 5px #000000;
     }
     
-    .preview-paper-words {
+    .preview-text-words {
         font-size: 24px;
         padding: 1rem;
     }
@@ -678,8 +757,10 @@ section.creation-preview {
         border: 1px solid #726D6D;    
         background-color: white;
         padding: 1rem;
+        padding-left: 2rem;
         margin-bottom: 1rem;
         border-radius: 10px;
+        text-align: left;
     }
     
     .description li{
