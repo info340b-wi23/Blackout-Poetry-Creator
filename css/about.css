@@ -36,6 +36,19 @@ img.card-image {
     box-shadow: 5px 0px 20px #000000;
 }
 
+article {
+    margin-left: .5rem;
+    margin-right: .5rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
 .brand img {
     width: 250px;
     height: 110px;
