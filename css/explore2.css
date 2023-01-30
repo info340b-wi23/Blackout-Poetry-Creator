@@ -14,6 +14,7 @@ main.explore-main {
 section.explore-preview {
     flex: 1;
     padding: 1em;
+    background-color: white;
 }
 
 .explore-card {
@@ -27,7 +28,7 @@ section.explore-preview {
     border: 1px solid #726D6D;
     height: 75%;
 }
-/* trying something new */
+
 /* left side of the screen, section with the description */
 section.preview-tab{
     flex-basis: 300px;
@@ -38,11 +39,6 @@ section.preview-tab{
     text-align: center;
 }
 
-.preview-container {
-    display: flex;
-    height: 100vh;
-    flex-direction: row;
-}
 .preview-tab-splitter {
     background-color: black;
     display: flex;
@@ -54,10 +50,6 @@ section.preview-tab{
 .preview-header{
     margin-top: 2rem;
 }
-section.explore-preview {
-    flex-grow: 1;
-    background-color: white;
-}
 
 .view-content {
     display: flex;
@@ -65,17 +57,19 @@ section.explore-preview {
     flex-wrap: wrap;
     flex-basis: 300px;
     box-sizing: auto;
+    margin-bottom: 6rem;
+}
+
+.preview-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
 }
 
 .preview-header h1 {
     margin-left:5vh;
-    padding-top: 1rem;
+    padding: 1rem;
     font-weight: bold;
-    padding-bottom: 1rem;
-}
-.preview-container {
-    display: flex;
-    flex-direction: column;
 }
 
 .preview-text {
@@ -118,13 +112,50 @@ footer.explore2-footer{
 }
 
 @media (min-width: 768px) {
-    .navigation-buttons {
+    /* .navigation-buttons {
         margin-top: 1rem;
         width: 100%;
         background-color: #DBCEB4 !important;
+    } */
+    
+    .preview-container {
+        flex-direction: row;
+        height: 100vh;
     }
-    
 
-    
+    .tab-item {
+        padding-top: 0;
+    }
+
+    .preview-tab p {
+        padding-top: 1rem;
+        font-size: 24px;
+    }
+
+    .tab-item p {
+        font-size: 24px;
+        padding-left: 0;
+    }
+
+
+    .tab-item select {
+        margin-top: 1rem;
+        margin-left: 2rem;
+    }
+
+    .preview-container {
+        flex-direction: row;
+    }
+
+    .preview-header{
+        flex-direction: row;
+    }
+
+    .preview-text {
+        width: 900px;
+        height: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
 
 }
