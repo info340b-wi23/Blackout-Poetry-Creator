@@ -410,10 +410,6 @@ main.explore-main {
     padding-top: 10rem;
 }
 
-html {
-    height: 100%;
-}
-
 /* left side of the screen, section with the description */
 section.preview-tab {
     text-align: center;
@@ -633,9 +629,10 @@ section.creation-preview {
         padding-right: 2rem;
     }
     
-    .preview-header{
+    .preview-header {
         margin-top: 2rem;
     }
+    
     section.creation-preview {
         flex-grow: 1;
         background-color: white;
