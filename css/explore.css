@@ -8,9 +8,9 @@ main.explore-main {
     display: inline-block;
     flex: 1;
     padding-top: 10rem;
-  }
+}
   
-html{
+html.explore {
     height: 100%;
 }
 
@@ -30,10 +30,16 @@ section.right-side{
     display: none;
 }
 
+label {
+    font-size: 18px;
+    font-weight: bold;
+}
+
 .search-bar{
     display: inline;
     background-color: white;
     text-align: center;
+    padding: .75rem;
     border-radius: 10px;
     margin-bottom: 1rem;
     margin-left: 1rem;
@@ -159,7 +165,7 @@ section.right-side{
 } 
 
 /* blacks out text on the poem cards */
-em{
+em {
     background-color: black;
     padding-right: .25rem;
     padding-left: .25rem;    
@@ -169,9 +175,8 @@ em{
 
     main.explore-main{
         display: flex;
-        flex: 1;
-        padding-top: 10rem;
       }
+
     .navigation-buttons {
         margin-top: 1rem;
         width: 100%;
@@ -184,24 +189,10 @@ em{
         background-color: #F5F2EB;
         display: block;
     }
-  
-    /* right side of the screan, section with the cards */
-    section.right-side{
-        flex: 1; 
-        padding: 1em;
-    }
 
     /* css for the search bar on the left side of the explore page */
     .search-bar{
         display: block;
-        box-sizing: border-box;
-        background-color: white;
-        text-align: center;
-        padding: .75rem;
-        border-radius: 10px;
-        margin-top: 2rem;
-        margin-bottom: 1rem;
-        margin-left: 1rem;
     }
 
     .history{
@@ -229,26 +220,13 @@ em{
         text-align: right;
     }
     .filter-sort{
-        position: static;
-        /* fixed to the top-right corner */
-        top: 4rem;
-        right: 0;
-        background-color: white;
         text-align: justify;
         margin-top: 3rem;
     }
     .filter-buttons{
-        display: inline-block;
-        padding: 1rem;
         padding-left: 2rem;
         padding-right: 2rem;
-        border-radius: 10px;
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.16), 0 1px 3px rgba(0, 0, 0, 0.23) ;
         margin: 0.75rem; 
-        background-color: #F5F2EB;
-        border: 1px solid #726D6D;    
-        color: black;
-        text-decoration: none;
     }
 
 }

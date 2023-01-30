@@ -154,6 +154,289 @@ section.creation-tab {
     background-color: #DBCEB4;
 }
 
+/*            */
+/* About Page */
+/*            */
+
+html.about, body.about {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body.about {
+    background-color: #DBCEB4;
+    display: flex;
+    flex-direction: column;
+}
+
+main.about {
+    margin-top: .5rem;
+}
+
+footer.about {
+    margin-top: auto;
+}
+
+.container.about {
+    padding-top: 5rem;
+}
+
+img.card-image {
+    height: 12rem;
+    border: 1px solid black;
+    border-radius: 20px;
+}
+
+.card.about {
+    height: 400px;
+    border: 1px solid black;
+    border-radius: 20px;
+    box-shadow: 5px 0px 20px #000000;
+}
+
+article {
+    margin-left: .5rem;
+    margin-right: .5rem;
+}
+
+a.about {
+    text-decoration: none;
+}
+
+a:hover.about {
+    text-decoration: underline;
+}
+
+.card:hover {
+    border: 2px;
+}
+
+.brand img {
+    width: 250px;
+    height: 110px;
+}
+
+
+/* Explore Main Page(s) */
+
+body.explore-body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+main.explore-main {
+    display: inline-block;
+    flex: 1;
+    padding-top: 10rem;
+}
+
+html.explore {
+    height: 100%;
+}
+
+/* left side of the screen, section with the search bar */
+section.left-side {
+    text-align: center;
+}
+
+/* right side of the screan, section with the cards */
+section.right-side {
+    flex: 1;
+    padding: 1em;
+}
+
+/* css for the search bar on the left side of the explore page */
+.history {
+    display: none;
+}
+
+label {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.search-bar {
+    display: inline;
+    background-color: white;
+    text-align: center;
+    padding: .75rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+}
+
+/* this section is for the buttons at the top of the explore page */
+/* New Lit, Poems, both, Filter, and Sort */
+.filter-sort {
+    position: static;
+    /* fixed to the top-right corner */
+    top: 4rem;
+    right: 0;
+    background-color: white;
+}
+
+.items {
+    padding: 0;
+}
+
+
+.filter-check ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+.filter-buttons {
+    display: inline-block;
+    padding: 1rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.16), 0 1px 3px rgba(0, 0, 0, 0.23);
+    margin: 0.5rem;
+    background-color: #F5F2EB;
+    border: 1px solid #726D6D;
+    color: black;
+    text-decoration: none;
+}
+
+.form-select.filter-buttons {
+    width: 9rem;
+}
+
+.filter-buttons.active {
+    background-color: #DBCEB4 !important;
+    border: 1px solid #726D6D;
+}
+
+.filter-buttons:hover {
+    background-color: #DBCEB4;
+}
+
+/* filter dropdown checklist */
+.filter-check li {
+    text-align: left;
+    list-style: none;
+}
+
+.filter-check input {
+    margin: 0.5rem;
+}
+
+.filter-check {
+    display: inline-block;
+}
+
+.filter-check .anchor {
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    padding: 5px 50px 5px 10px;
+}
+
+.filter-check .anchor:active:after {
+    right: 8px;
+    top: 21%;
+}
+
+/* for the cards of text, the lit and poems with descriptions */
+.explore-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.explore-card {
+    display: flex;
+    flex-wrap: wrap;
+    flex-basis: 300px;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.16), 0 1px 3px rgba(0, 0, 0, 0.23);
+    margin: 1rem;
+    background-color: #F5F2EB;
+    border: 1px solid #726D6D;
+    height: 75%;
+}
+
+.lit {
+    padding: 1rem;
+    box-sizing: auto;
+}
+
+.description {
+    background-color: #DBCEB4;
+    border-top: 1px solid #726D6D;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin-bottom: 0;
+    border-radius: 0 0 9px 9px;
+    color: black;
+}
+
+.description li {
+    list-style-type: none;
+}
+
+.explore-card a {
+    text-decoration: none;
+}
+
+.explore-card a:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* blacks out text on the poem cards */
+em {
+    background-color: black;
+    padding-right: .25rem;
+    padding-left: .25rem;
+}
+
+/* Explore 2 CSS */
+
+body.explore-body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+main.explore-main {
+    display: inline-block;
+    flex: 1;
+    padding-top: 10rem;
+}
+
+html {
+    height: 100%;
+}
+
+/* left side of the screen, section with the description */
+section.preview-tab {
+    text-align: center;
+}
+
+/* right side of the screen, section with a preview of the card */
+section.creation-preview {
+    flex: 1;
+    padding: 1em;
+}
+
+
+.explore-card {
+    display: flex;
+    flex-wrap: wrap;
+    flex-basis: 300px;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.16), 0 1px 3px rgba(0, 0, 0, 0.23);
+    margin: 1rem;
+    background-color: #F5F2EB;
+    border: 1px solid #726D6D;
+    height: 75%;
+}
 
 @media (min-width: 768px) {
     main {
@@ -256,5 +539,153 @@ section.creation-tab {
     .navigation-buttons {
         margin-top: 1rem;
         width: 100%;
+    }
+
+    /* Explore Main Page(s) */
+
+        main.explore-main {
+        display: flex;
+    }
+
+    .navigation-buttons {
+        margin-top: 1rem;
+        width: 100%;
+    }
+
+    /* left side of the screen, section with the search bar */
+    section.left-side {
+        flex-basis: 300px;
+        padding: 1em;
+        background-color: #F5F2EB;
+        display: block;
+    }
+
+    /* css for the search bar on the left side of the explore page */
+    .search-bar {
+        display: block;
+    }
+
+    .history {
+        display: flex;
+        padding: 1rem;
+        border-top: 1px solid #726D6D;
+    }
+
+    .history a {
+        color: black;
+        text-decoration: none;
+        flex-grow: 3;
+        flex-shrink: 0;
+    }
+
+    .history a:hover {
+        color: #8b8371;
+    }
+
+    .history .search-history {
+        text-decoration: underline;
+    }
+
+    .delete {
+        text-align: right;
+    }
+
+    .filter-sort {
+        text-align: justify;
+        margin-top: 3rem;
+    }
+
+    .filter-buttons {
+        padding-left: 2rem;
+        padding-right: 2rem;
+        margin: 0.75rem;
+    }
+
+    /* Explore 2 Page*/
+    .navigation-buttons {
+        margin-top: 1rem;
+        width: 100%;
+        background-color: #DBCEB4 !important;
+    }
+    section {
+        flex-basis: 28%;
+    }
+
+    /* left side of the screen, section with the description */
+    section.preview-tab{
+        flex-basis: 300px;
+        padding: 1em;
+        background-color: #F5F2EB;
+        display: block;
+        background-color: black;
+    }
+  
+    .flexbox-container {
+        display: flex;
+        height: 100vh;
+        flex-direction: row;
+    }
+    .preview-tab-splitter {
+        background-color: black;
+        display: flex;
+        flex-direction: column;
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+    
+    .preview-header{
+        margin-top: 2rem;
+    }
+    section.creation-preview {
+        flex-grow: 1;
+        background-color: white;
+    }
+    
+    .view-content {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        flex-basis: 300px;
+        box-sizing: auto;
+    
+    }
+    
+    .preview-header h1 {
+        margin-left:5vh;
+        padding-top: 1rem;
+        font-weight: bold;
+        padding-bottom: 1rem;
+    }
+    .preview-container {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .preview-paper {
+        width: auto;
+        height: auto;
+        background-color: #F5F2EB;
+        border-radius: 10px;
+        margin-left: 2rem;
+        margin-right: 1rem;
+        box-shadow: 0px 0px 5px #000000;
+    }
+    
+    .preview-paper-words {
+        font-size: 24px;
+        padding: 1rem;
+    }
+    
+    .description{
+        box-sizing: border-box;
+        border: 1px solid #726D6D;    
+        background-color: white;
+        padding: 1rem;
+        margin-bottom: 1rem;
+        border-radius: 10px;
+    }
+    
+    .description li{
+        list-style-type: none;
     }
 }
