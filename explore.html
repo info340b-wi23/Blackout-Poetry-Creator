@@ -16,7 +16,7 @@
 
     <script src='main.js'></script>
 </head>
-<body>
+<body class="explore-body">
     <nav class="navbar fixed-top navbar-expand-lg bg-dark">
         <div class="container-fluid">
             <a class="navbar brand" href="index.html">
@@ -45,13 +45,12 @@
         </div>
     </nav>
     
-    <main>
-        <section>
-            <form>
+    <main class="explore-main">
+        <section class="left-side">
+            <form> <!-- FORM TAG REQUIREMENT -->
                 <div>
-                  <input
-                    type="search" id="mySearch" name="search-bar" class="search-bar"
-                    placeholder="Search" />
+                    <label for="search bar">Search Bar</label>
+                  <input type="search" id="mySearch" name="search-bar" class="search-bar" placeholder="Look for New Poems" />
                 </div>
             </form>
             <div class="history">
@@ -85,7 +84,7 @@
             </div>
         </section>
 
-        <section>
+        <section class="right-side">
         <!-- explore page side -->
             <nav class="filter-sort">
                 <!-- filter buttons at the top of the page -->
@@ -99,7 +98,7 @@
                     
                     <!-- Sort By button and dropdown menu -->
                     <select type="button" class="form-select filter-buttons btn btn-primary"  aria-label="Sort">
-                        <option value="">Sort By</option>
+                        <option disabled selected>Sort By</option>
                         <option value="newest">Newest</option>
                         <option value="oldest">Oldest</option>
                         <option value="a-z">A - Z</option>
@@ -119,10 +118,10 @@
                     </div>
                 </ul>
             </nav>
-            <div class="container">
+            <div class="explore-container">
                 <!-- set of cards with lit and poems on them -->
 
-                <div class="card"> <a href="explore2.html" aria-label="card 1">
+                <div class="explore-card"> <a href="explore2.html" aria-label="card 1">
                     <!-- card 1 -->
                     <p class="lit">
                         Hermione stopped dead; Harry had heard it too.
@@ -148,7 +147,7 @@
                 </a>
                 </div>
 
-                <div class="card"> <a href="explore2.html" aria-label="card 2">
+                <div class="explore-card"> <a href="explore2.html" aria-label="card 2">
                     <!-- card 2 -->
                     <p class="lit">
                         Well, Tamatoa hasn't always been this glam
@@ -180,7 +179,7 @@
                     </ul>
                 </a></div>
 
-                <div class="card"> <a href="explore2.html" aria-label="card 3">
+                <div class="explore-card"> <a href="explore2.html" aria-label="card 3">
                     <!-- card 3 -->
                     <p class="lit">
                         This is an example of text<em>. It will include part of the project description.</em> For this <em>deliverable, you will submit a draft of your </em> Project <em>. Your draft should be </em> a "static mockup" <em>—the completed page design, but </em> no interactivity <em> (so the content is there, but "static"). In short: all of the HTML/CSS work should be done, but it will not have any JavaScript/React (yet!). Yes, that means all of the "pages" and views for your app. Think through every possible screen that the user might see, and implement all of those! </em>
@@ -193,7 +192,7 @@
                     </ul>
                 </a>
                 </div> 
-                <div class="card"> <a href="explore2.html" aria-label="card 4">
+                <div class="explore-card"> <a href="explore2.html" aria-label="card 4">
                     <!-- card 4 -->
                     <p class="lit">
                         the sun <em>did not shine.
@@ -228,7 +227,7 @@
                     </ul>
                 </a>
                 </div>
-                <div class="card"> <a href="explore2.html" aria-label="card 5">
+                <div class="explore-card"> <a href="explore2.html" aria-label="card 5">
                     <!-- card 5 -->
                     <p class="lit">
                         <em>Web development is the process of implementing (programming) web sites and applications that users can access over the internet. However, the internet is a network involving many different computers all communicating with one another. These computers can be divided into</em> two different groups <em> servers store (“:</em> host <em>”) content and provide (“</em>serve <em>") it to other computers, while clients request that content and then</em> present <em>it </em> to the human <em>users.</em>
@@ -241,7 +240,7 @@
                     </ul>
                 </a>
                 </div>
-                <div class="card"> <a href="explore2.html" aria-label="card 6">
+                <div class="explore-card"> <a href="explore2.html" aria-label="card 6">
                     <!-- card 6 -->
                     <p class="lit">
                         This is an example of text. It will include part of the project description. For this deliverable, you will submit a draft of your Project. Your draft should be a "static mockup"—the completed page design, but no interactivity (so the content is there, but "static"). In short: all of the HTML/CSS work should be done, but it will not have any JavaScript/React (yet!). Yes, that means all of the "pages" and views for your app. Think through every possible screen that the user might see, and implement all of those!

@@ -16,7 +16,7 @@
 
     <script src='main.js'></script>
 </head>
-<body>
+<body class="explore-body">
     <nav class="navbar fixed-top navbar-expand-lg bg-dark">
         <div class="container-fluid">
             <a class="navbar brand" href="index.html">
@@ -45,8 +45,8 @@
         </div>
     </nav>
     
-    <main>
-        <section>
+    <main class="explore-main">
+        <section class="left-side">
             <!-- Search bar/ side -->
             <form>
                 <div>
@@ -86,7 +86,7 @@
             </div>
         </section>
 
-        <section>
+        <section class="right-side">
             <!-- explore page side -->
             <nav class="filter-sort">
                 <!-- filter buttons at the top of the page -->
@@ -97,6 +97,15 @@
                         Poems</button></a>
                     <a href="explore.html"><button type="button" class="filter-buttons btn btn-primary" aria-label="Both new literature and poems">
                         Both</button></a>
+                    <!-- Sort By button and dropdown menu -->
+                    <select type="button" class="form-select filter-buttons btn btn-primary" aria-label="Sort">
+                        <option disabled selected>Sort By</option>
+                        <option value="newest">Newest</option>
+                        <option value="oldest">Oldest</option>
+                        <option value="a-z">A - Z</option>
+                        <option value="z-a">Z - A</option>
+                        <option value="popular">Popular</option>
+                    </select>
                     <!-- Filter button check box -->
                     <div id="filter" class="filter-check filter-buttons btn btn-primary" tabindex="100">
                         <span class="anchor">Filter</span>
@@ -107,21 +116,12 @@
                             <li><input type="checkbox" class="checkbox"/>Drama </li>
                         </ul>
                     </div>
-                    <!-- Sort By button and dropdown menu -->
-                    <select type="button" class="form-select filter-buttons btn btn-primary"  aria-label="Sort">
-                        <option value="">Sort By</option>
-                        <option value="newest">Newest</option>
-                        <option value="oldest">Oldest</option>
-                        <option value="a-z">A - Z</option>
-                        <option value="z-a">Z - A</option>
-                        <option value="popular">Popular</option>
-                    </select>
                 </ul>
             </nav>
-            <div class="container">
+            <div class="explore-container">
                  <!-- set of cards with lit on them -->
 
-                <div class="card"> <a href="explore2.html" aria-label="card 1">
+                <div class="explore-card"> <a href="explore2.html" aria-label="card 1">
                     <!-- card 1 -->
                     <p class="lit">
                         Hermione stopped dead; Harry had heard it too.
@@ -147,7 +147,7 @@
                     </a>
                 </div>
 
-                <div class="card"> <a href="explore2.html" aria-label="card 2">
+                <div class="explore-card"> <a href="explore2.html" aria-label="card 2">
                     <!-- card 2 -->
                     <p class="lit">
                         Well, Tamatoa hasn't always been this glam
@@ -180,7 +180,7 @@
                 </a>
                 </div>
 
-                <div class="card"> <a href="explore2.html" aria-label="card 3">
+                <div class="explore-card"> <a href="explore2.html" aria-label="card 3">
                     <!-- card 6 -->
                     <p class="lit">
                         This is an example of text. It will include part of the project description. For this deliverable, you will submit a draft of your Project. Your draft should be a "static mockup"—the completed page design, but no interactivity (so the content is there, but "static"). In short: all of the HTML/CSS work should be done, but it will not have any JavaScript/React (yet!). Yes, that means all of the "pages" and views for your app. Think through every possible screen that the user might see, and implement all of those!

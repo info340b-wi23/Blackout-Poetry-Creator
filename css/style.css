@@ -2,7 +2,7 @@
 
 html, body, main {
     box-sizing: border-box;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Inter', 'Helvetica', sans-serif;
 }
 
 main {
@@ -66,9 +66,195 @@ a.nav-link {
     --bs-btn-hover-border-color: #DBCEB4;
 }
 
+
+/*                  */
+/* Creating Page(s) */
+/*                  */
+
+.blackout {
+    background-color: black;
+    -webkit-user-select: none;
+    /* Safari */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Standard */
+}
+
+.submit {
+    background-color: #ACAAA3 !important;
+}
+
+.creating-body {
+    background-color: black;
+}
+
+.tab-item {
+    border-top: 1px solid white;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.tab-item h1 {
+    font-size: 22px;
+    font-weight: bold;
+    color: white;
+    padding-top: 0.5rem;
+    padding-left: 1rem;
+}
+
+.tab-item p {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    padding-top: 1rem;
+    color: white;
+    padding-left: 0.5rem;
+}
+
+.creation-tab.creating-3 p {
+    padding-top: 0;
+    font-size: 20px;
+    margin: 0;
+}
+
+.p-source-adjustment {
+    margin-bottom: 0.5rem;
+}
+
+.brand img {
+    width: 250px;
+    height: 110px;
+}
+
+.flexbox-container {
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+}
+
+section.creation-tab {
+    background-color: black;
+}
+
+.creation-header {
+    border-top: 1px solid white;
+    padding-top: 1rem;
+}
+
+.creation-header h1 {
+    background-color: black;
+    margin-bottom: 0;
+    font-weight: bold;
+    color: white;
+}
+
+.preview-paper-words p {
+    background-color: #DBCEB4;
+}
+
+
 @media (min-width: 768px) {
     main {
         /* So the body content isn't hidden in the fixed nav bar*/
         padding-top: 10rem;
+    }
+
+    /*                  */
+    /* Creating Page(s) */
+    /*                  */
+    .flexbox-container {
+        flex-direction: row;
+        height: 100vh;
+    }
+
+    section {
+        flex-basis: 28%;
+    }
+
+    .brand img {
+        width: 400px;
+        height: 133px;
+    }
+
+    .creation-tab-splitter {
+        background-color: black;
+        display: flex;
+        flex-direction: column;
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+    .tab-item {
+        padding-top: 0;
+    }
+
+    .tab-item h1 {
+        font-size: 32px;
+        padding-top: 2rem;
+        padding-left: 0;
+    }
+
+    .creation-tab.creating-3 p {
+        padding-top: 1rem;
+        font-size: 24px;
+    }
+
+    .tab-item p {
+        font-size: 24px;
+        padding-left: 0;
+    }
+
+    .p-source-adjustment {
+        margin-bottom: 0;
+    }
+
+    .tab-item select {
+        margin-top: 1rem;
+        margin-left: 2rem;
+    }
+
+    section.creation-preview {
+        flex-grow: 1;
+        background-color: white;
+    }
+
+    .creation-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .creation-header h1 {
+        background-color: transparent;
+        color: black;
+        margin-left: 5vh;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    .form-input-margin {
+        margin-top: 1rem;
+    }
+
+    .preview-paper {
+        width: 900px;
+        height: 600px;
+        background-color: #DBCEB4;
+        border-radius: 10px;
+        margin-left: auto;
+        margin-right: auto;
+        box-shadow: inset 0px 0px 5px #000000;
+    }
+
+    .preview-paper-words p {
+        font-size: 24px;
+        padding: 1rem;
+        background-color: transparent;
+    }
+
+    .navigation-buttons {
+        margin-top: 1rem;
+        width: 100%;
     }
 }
