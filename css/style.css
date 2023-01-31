@@ -182,6 +182,13 @@ footer.about {
     padding-top: 5rem;
 }
 
+header img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
 img.card-image {
     height: 12rem;
     border: 1px solid black;
