@@ -12,38 +12,45 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro&display=swap" rel="stylesheet">
     <link rel='stylesheet' type='text/css' media='screen' href='css/style.css'>
+    <script src='main.js'></script>
 </head>
 
 <body class="explore-body">
     <header>
-    <nav class="navbar fixed-top navbar-expand-lg bg-dark" role="navigation">
-        <div class="container-fluid">
-            <a class="navbar brand" href="index.html">
-                <img src="img/logo.svg" width="400" height="133" class="d-inline-block align-top" alt="Logo which links to homepage">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
-                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarText">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link px-5" aria-current="page" href="creating.html">Create</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active px-5" href="explore.html">Explore</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link px-5" href="about.html">About</a>
-                    </li>
-                </ul>
-                <span class="navbar-text px-5">
-                    <img src="img/profile-icon.png" width="50" height="50" class="d-inline-block align-top" alt="Logo which links to homepage">
+        <nav class="navbar fixed-top navbar-expand-lg bg-dark" role="navigation">
+            <div class="container-fluid">
+                <a class="navbar brand" href="menu.html">
+                    <img src="img/logo.svg" class="d-inline-block align-top" alt="Logo which links to homepage">
+                </a>
+                <span class="d-inline-block d-md-none" style="margin-right: 10px">
+                    <img src="img/profile-icon.png" width="50" height="50" class="d-md-inline-block align-top"
+                        alt="Logo which links to homepage">
                 </span>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link px-5" aria-current="page" href="creating.html">Create</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active px-5" href="index.html">Explore</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-5" href="about.html">About</a>
+                        </li>
+                    </ul>
+                    <span class="px-lg-5 d-none d-md-block">
+                        <img src="img/profile-icon.png" width="50" height="50" class="d-md-inline-block align-top"
+                            alt="Logo which links to homepage">
+                    </span>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
     </header>
+
     <main class="explore2-main">
         <div class="preview-container">
             <section class="preview-tab">
@@ -69,7 +76,7 @@
 
                     <div class="tab-item">
                         <div class="back-button">
-                            <a href="explore.html"><button type="button" class="navigation-buttons btn btn-primary">Back to Explore Page</button></a>
+                            <a href="index.html"><button type="button" class="navigation-buttons btn btn-primary">Back to Explore Page</button></a>
                         </div>
                     </div>
                 </div>

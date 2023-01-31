@@ -1,12 +1,12 @@
-main.index {
+main.menu {
   padding: 0;
 }
 
-html.index {
+html.menu {
   width: 100%;
 }
 
-img.index {
+img.menu {
     height: 300px;
     width: 1300px;
 }
@@ -17,7 +17,7 @@ img.index {
     margin-right: auto;
  }
 
-.menu {
+.options {
     list-style-type: none;
     font-size: 4rem;
     text-align: center;
@@ -26,18 +26,18 @@ img.index {
     padding-left: 0;
 }
 
-.container:hover.index {
+.container:hover.menu {
     background: black;
     color: #6e887c;
     font-weight: bolder;
  }
 
- .container:hover.index a  {
+ .container:hover.menu a  {
     background-color: black;
     color: #6e887c;
  }
 
- a.index {
+ a.menu {
     color: inherit;
     text-decoration: none;
     -webkit-user-select: none;
@@ -51,7 +51,7 @@ img.index {
  }
 
  @media (min-width: 768px) {
-    img.index {
+    img.menu {
       height: 300px;
       width: 1300px;
     }
