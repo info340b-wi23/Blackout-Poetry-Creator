@@ -1,12 +1,12 @@
-main.menu {
+main.home-menu {
   padding: 0;
 }
 
-html.menu {
+html.home-menu {
   width: 100%;
 }
 
-img.menu {
+img.home-menu {
     height: 300px;
     width: 1300px;
 }
@@ -26,18 +26,18 @@ img.menu {
     padding-left: 0;
 }
 
-.container:hover.menu {
+.container:hover.home-menu {
     background: black;
     color: #6e887c;
     font-weight: bolder;
  }
 
- .container:hover.menu a  {
+ .container:hover.home-menu a  {
     background-color: black;
     color: #6e887c;
  }
 
- a.menu {
+ a.home-menu {
     color: inherit;
     text-decoration: none;
     -webkit-user-select: none;
@@ -51,7 +51,7 @@ img.menu {
  }
 
  @media (min-width: 768px) {
-    img.menu {
+    img.home-menu {
       height: 300px;
       width: 1300px;
     }
