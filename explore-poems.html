@@ -16,39 +16,39 @@
 </head>
 <body class="explore-body">
     <header>
-        <nav class="navbar fixed-top navbar-expand-lg bg-dark" role="navigation">
-            <div class="container-fluid">
-                <a class="navbar brand" href="menu.html">
-                    <img src="img/logo.svg" class="d-inline-block align-top" alt="Logo which links to homepage">
-                </a>
-                <span class="d-inline-block d-md-none" style="margin-right: 10px">
-                    <img src="img/profile-icon.png" width="50" height="50" class="d-md-inline-block align-top"
-                        alt="Logo which links to homepage">
-                </span>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto">
-                        <li class="nav-item">
-                            <a class="nav-link px-5" aria-current="page" href="creating.html">Create</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active px-5" href="index.html">Explore</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link px-5" href="about.html">About</a>
-                        </li>
-                    </ul>
-                    <span class="px-lg-5 d-none d-md-block">
+        <!-- Navbar taken from Bootstrap documentation -->
+            <nav class="dark-bg navbar fixed-top navbar-expand-lg" role="navigation">
+                <div class="container-fluid">
+                    <a class="navbar brand" href="menu.html">
+                        <img src="img/logo.svg" class="d-inline-block align-top" alt="Logo which links to homepage">
+                    </a>
+                    <span class="d-inline-block d-md-none mr-10">
                         <img src="img/profile-icon.png" width="50" height="50" class="d-md-inline-block align-top"
-                            alt="Logo which links to homepage">
+                        alt="Logo which links to homepage">
                     </span>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="navbar-collapse collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto">
+                            <li class="nav-item">
+                                <a class="nav-link active px-5" aria-current="page" href="creating.html">Create</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link px-5" href="index.html">Explore</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link px-5" href="about.html">About</a>
+                            </li>
+                        </ul>
+                        <span class="px-lg-5 d-none d-md-block">
+                            <img src="img/profile-icon.png" width="50" height="50" class="d-md-inline-block align-top" alt="Logo which links to homepage">
+                        </span>
+                    </div>
                 </div>
-            </div>
-        </nav>
-    </header>
+            </nav>
+        </header>
     
     <main class="explore-main">
         <section class="left-side">
@@ -194,12 +194,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
     </script> 
-    <footer class="bg-dark text-center text-lg-start">
-        <!-- Copyright -->
-        <div class="text-center p-3" style="color:white;background-color: rgba(0, 0, 0);">
-            © 2023 Copyright: INFO 340
-        </div>
-        <!-- Copyright -->
+    <footer class="dark-bg text-center text-lg-start">
+        <p class="text-center p-3 footer-text">© 2023 Copyright: INFO 340</p>
     </footer>
 </body>
 
