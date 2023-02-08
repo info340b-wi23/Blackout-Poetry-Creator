@@ -182,11 +182,10 @@ footer.about {
     padding-top: 5rem;
 }
 
-header img {
+header.about img {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
 }
 
 img.card-image {
@@ -517,10 +516,71 @@ footer.explore2-footer{
     width: 100%;
 }
 
+/* Menu CSS */
+
+main.menu {
+    padding: 0;
+}
+
+html.menu {
+    width: 100%;
+}
+
+img.menu {
+    height: 300px;
+    width: 1300px;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.options {
+    list-style-type: none;
+    font-size: 4rem;
+    text-align: center;
+    color: black;
+    line-height: 9rem;
+    padding-left: 0;
+}
+
+.container:hover.menu {
+    background: black;
+    color: #6e887c;
+    font-weight: bolder;
+}
+
+.container:hover.menu a {
+    background-color: black;
+    color: #6e887c;
+}
+
+a.menu {
+    color: inherit;
+    text-decoration: none;
+    -webkit-user-select: none;
+    /* Safari */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Standard */
+}
+
 @media (min-width: 768px) {
     main {
         /* So the body content isn't hidden in the fixed nav bar*/
         padding-top: 10rem;
+    }
+
+    /* Menu CSS */
+
+    img.menu {
+        height: 300px;
+        width: 1300px;
     }
 
     /*                  */
