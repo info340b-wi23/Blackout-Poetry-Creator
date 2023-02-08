@@ -19,10 +19,16 @@ footer {
     background-color: black;
 }
 
-.bg-dark {
-    background-color: rgba(0, 0, 0, 0.95) !important;
+.dark-bg {
+    background-color: rgb(0, 0, 0);
     border-bottom: solid 1px white;
     border-top: solid 1px white;
+}
+
+.footer-text {
+    font-family: 'Inter';
+    background-color: rgb(0, 0, 0);
+    color: white;
 }
 
 p {
@@ -41,11 +47,12 @@ a.nav-link {
 }
 
 .navbar-nav .nav-link.active, .navbar-nav .show>.nav-link {
-    color: #DBCEB4 !important;
+    color: #DBCEB4;
 }
 
 .navbar {
-    fill: white !important;
+    fill: white;
+    /* Overriding bootstrap properties */
     --bs-navbar-toggler-border-color: rgba(255, 255, 255);
     --bs-navbar-color: white;
 }
@@ -55,12 +62,12 @@ a.nav-link {
 }
 
 .navbar-toggler-icon {
-    background-image: url("../img/Hamburger.svg") !important;
+    background-image: url("../img/Hamburger.svg");
 }
 
 .btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
-    background-color: #F5F2EB !important;
-    color: black !important;
+    background-color: #F5F2EB;
+    color: black;
     font-weight: bold;
     --bs-btn-border-color: black;
     --bs-btn-hover-border-color: #DBCEB4;
@@ -73,6 +80,7 @@ a.nav-link {
 
 .blackout {
     background-color: black;
+    /* From https: //stackoverflow.com/questions/6900124/how-to-make-certain-text-not-selectable-with-css */
     -webkit-user-select: none;
     /* Safari */
     -moz-user-select: none;
@@ -84,7 +92,7 @@ a.nav-link {
 }
 
 .submit {
-    background-color: #ACAAA3 !important;
+    background-color: #ACAAA3;
 }
 
 .creating-body {
@@ -113,12 +121,6 @@ a.nav-link {
     padding-left: 0.5rem;
 }
 
-.creation-tab.creating-3 p {
-    padding-top: 0;
-    font-size: 20px;
-    margin: 0;
-}
-
 .p-source-adjustment {
     margin-bottom: 0.5rem;
 }
@@ -131,10 +133,6 @@ a.nav-link {
 .flexbox-container {
     display: flex;
     flex-direction: column;
-    background-color: black;
-}
-
-section.creation-tab {
     background-color: black;
 }
 
@@ -314,7 +312,7 @@ label {
 }
 
 .filter-buttons.active {
-    background-color: #DBCEB4 !important;
+    background-color: #DBCEB4;
     border: 1px solid #726D6D;
 }
 
@@ -616,11 +614,6 @@ a.menu {
         font-size: 32px;
         padding-top: 2rem;
         padding-left: 0;
-    }
-
-    .creation-tab.creating-3 p {
-        padding-top: 1rem;
-        font-size: 24px;
     }
 
     .tab-item p {

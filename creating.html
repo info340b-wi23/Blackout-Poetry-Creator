@@ -2,7 +2,6 @@
 <html>
 
 <head>
-    <meta name="author" value="Trevor Tang">
     <meta name="description" value="first page of creation screen">
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
@@ -18,12 +17,12 @@
 <body class="creating-body">
     <header>
     <!-- Navbar taken from Bootstrap documentation -->
-        <nav class="navbar fixed-top navbar-expand-lg bg-dark" role="navigation">
+        <nav class="dark-bg navbar fixed-top navbar-expand-lg" role="navigation">
             <div class="container-fluid">
                 <a class="navbar brand" href="menu.html">
                     <img src="img/logo.svg" class="d-inline-block align-top" alt="Logo which links to homepage">
                 </a>
-                <span class="d-inline-block d-md-none" style="margin-right: 10px">
+                <span class="d-inline-block d-md-none mr-10">
                     <img src="img/profile-icon.png" width="50" height="50" class="d-md-inline-block align-top"
                     alt="Logo which links to homepage">
                 </span>
@@ -53,22 +52,13 @@
 
     <main>
         <div class="flexbox-container">
-            <section class="creation-tab">
                 <div class="creation-tab-splitter">
                     <div class="tab-item">
                         <h1>Choose an uploading method:</h1>
                     </div>
-                    <div class="tab-item d-none d-md-block">
-                        <p>a. From Your Device</p>
-                        <!-- All form controls below from Bootstrap Documentation -->
-                        <div class="input-group mb-3">
-                            <input type="file" class="form-control" id="inputGroupFile02">
-                            <label class="input-group-text" for="inputGroupFile02">Upload</label>
-                        </div>
-                    </div>
                     <div class="tab-item d-block">
                         <p class="d-inline d-md-none">a. Text Entry</p>
-                        <p class="d-none d-md-inline-block">b. Enter Custom Text</p>
+                        <p class="d-none d-md-inline-block">a. Enter Custom Text</p>
                         <div class="form-floating">
                             <textarea class="form-control" id="floatingTextarea2"
                                 style="height: 250px; max-height: 250px;"></textarea>
@@ -76,16 +66,14 @@
                         </div>
                     </div>
                     <div class="tab-item">
-                        <p class="d-inline-block d-md-none">b. Browse the community</p>
-                        <p class="d-none d-md-block">c. Browse the community</p>
+                        <p>b. Browse the community</p>
                         <a href="index.html"><button type="button" class="btn d-inline mx-5 mx-md-0 d-md-inline-block btn-primary">Browse</button></a> <!-- Need to make popup of explore tab-->
                     </div>
                     <div class="tab-item d-none d-md-block">
                         <a href="creating-2.html"><button type="button" class="navigation-buttons submit btn btn-primary">Next</button></a>
                     </div>
                 </div>
-            </section>
-            <section class="creation-preview">
+            <section class="creation-preview px-md-3">
                 <div class="creation-container">
                     <div class="creation-header">
                         <h1>Preview</h1>
@@ -116,12 +104,8 @@
             <a href="creating-2.html"><button type="button" class="px-5 navigation-buttons submit btn btn-primary">Next</button></a>
         </div>
     </main>
-    <footer class="bg-dark text-center text-lg-start">
-        <!-- Copyright -->
-        <div class="text-center p-3" style="color:white;background-color: rgba(0, 0, 0);">
-            © 2023 Copyright: INFO 340
-        </div>
-        <!-- Copyright -->
+    <footer class="dark-bg text-center text-lg-start">
+        <p class="text-center p-3 footer-text">© 2023 Copyright: INFO 340</p>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
