@@ -16,39 +16,40 @@
 
 <body>
     <header>
-    <!-- Navbar taken from Bootstrap documentation -->
-    <nav class="navbar fixed-top navbar-expand-lg bg-dark" role="navigation">
-        <div class="container-fluid">
-            <a class="navbar brand" href="menu.html">
-                <img src="img/logo.svg" class="d-inline-block align-top" alt="Logo which links to homepage">
-            </a>
-            <span class="d-inline-block d-md-none mr-10">
-                <img src="img/profile-icon.png" width="50" height="50" class="d-md-inline-block align-top"
-                    alt="Logo which links to homepage">
-            </span>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="navbar-collapse collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active px-5" aria-current="page" href="creating.html">Create</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link px-5" href="index.html">Explore</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link px-5" href="about.html">About</a>
-                    </li>
-                </ul>
-                <span class="px-lg-5 d-none d-md-block">
+        <!-- Navbar taken from Bootstrap documentation -->
+        <nav class="dark-bg navbar fixed-top navbar-expand-lg" role="navigation">
+            <div class="container-fluid">
+                <a class="navbar brand" href="menu.html">
+                    <img src="img/logo.svg" class="d-inline-block align-top" alt="Logo which links to homepage">
+                </a>
+                <span class="d-inline-block d-md-none mr-10">
                     <img src="img/profile-icon.png" width="50" height="50" class="d-md-inline-block align-top"
                         alt="Logo which links to homepage">
                 </span>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active px-5" aria-current="page" href="creating-upload-page.html">Create</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-5" href="index.html">Explore</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-5" href="about.html">About</a>
+                        </li>
+                    </ul>
+                    <span class="px-lg-5 d-none d-md-block">
+                        <img src="img/profile-icon.png" width="50" height="50" class="d-md-inline-block align-top"
+                            alt="Logo which links to homepage">
+                    </span>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
     </header>
     <main>
         <div class="flexbox-container">
@@ -88,7 +89,7 @@
                     <div class="tab-item">
                         <div class="container">
                             <p class ="p-source-adjustment"><b>Source</b></p>
-                            <div class="row" style="padding-left:1rem;">
+                            <div class="row">
                                 <div class="col-5">
                                     <p>Piece Title</p>
                                 </div>
@@ -97,7 +98,7 @@
                                     <input class="form-control form-input-margin" type="text" placeholder="What A. Philip Randolph Knew About Jobs and Freedom" aria-label="Title of the source text you used">
                                 </div>
                             </div>
-                            <div class="row" style="padding-left:1rem;">
+                            <div class="row">
                                 <div class="col-5">
                                     <p>Author</p>
                                 </div>
@@ -115,14 +116,14 @@
                                     <p>Description</p>
                                 </div>
                             </div>
-                            <textarea class="form-control" id="description" placeholder="What is your poem about?" style="height: 65px; max-height: 65px"></textarea>
+                            <textarea class="form-control" id="description" placeholder="What is your poem about?"></textarea>
                         </div>
                     </div>
                     <div class="tab-item d-none d-md-inline-block">
                         <div class="container">
                             <div class="row">
                                 <div class="col-4">
-                                    <a href="creating-2.html"><button type="button" class="navigation-buttons btn btn-primary">Back</button></a>
+                                    <a href="creating-blackout-page.html"><button type="button" class="navigation-buttons btn btn-primary">Back</button></a>
                                 </div>          
                                 <div class="col">
                                     <a href="index.html"><button type="button" class="navigation-buttons submit btn btn-primary">Submit</button></a>
@@ -160,8 +161,8 @@
                 </div>
             </section>
             <div class="flexbox-container d-block d-md-none"> <!-- Figure out how to center the buttons-->
-                <a href="creating-2.html"><button type="button" class="px-5 navigation-buttons btn btn-primary">Back</button></a>
-                <a href="index.html"><button type="button" class="px-5 navigation-buttons submit btn btn-primary">Submit</button></a>
+                <a href="creating-blackout-page.html" aria-label="back button"><button type="button" class="px-5 navigation-buttons btn btn-primary">Back</button></a>
+                <a href="index.html" aria-label="submit button"><button type="button" class="px-5 navigation-buttons submit btn btn-primary">Submit</button></a>
             </div>
         </div>
 

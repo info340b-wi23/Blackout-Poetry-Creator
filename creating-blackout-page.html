@@ -17,23 +17,24 @@
 <body>
     <header>
         <!-- Navbar taken from Bootstrap documentation -->
-        <nav class="navbar fixed-top navbar-expand-lg bg-dark" role="navigation">
+        <nav class="dark-bg navbar fixed-top navbar-expand-lg" role="navigation">
             <div class="container-fluid">
                 <a class="navbar brand" href="menu.html">
                     <img src="img/logo.svg" class="d-inline-block align-top" alt="Logo which links to homepage">
                 </a>
-                <span class="d-inline-block d-md-none" style="margin-right: 10px">
+                <span class="d-inline-block d-md-none mr-10">
                     <img src="img/profile-icon.png" width="50" height="50" class="d-md-inline-block align-top"
                         alt="Logo which links to homepage">
                 </span>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item">
-                            <a class="nav-link active px-5" aria-current="page" href="creating.html">Create</a>
+                            <a class="nav-link active px-5" aria-current="page" href="creating-upload-page.html">Create</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link px-5" href="index.html">Explore</a>
@@ -64,17 +65,17 @@
                     </div>
                     <div class="tab-item">
                         <p class="d-none d-lg-block">Not sure how to blackout poetry?</p>
-                        <a href="about.html#" style="padding-left: 0.5rem;">Check out our helpful guides!</a>  <!-- Need to select the ID on about page with "tips and tricks" -->
+                        <a href="about.html">Check out our helpful guides!</a>  <!-- Need to select the ID on about page with "tips and tricks" -->
                     </div>
                     <div class="tab-item d-none d-lg-inline-block">
                         <div class="container">
                             <div class="row">
                                 <div class="col-4">
-                                    <a href="creating.html"><button type="button"
+                                    <a href="creating-upload-page.html"><button type="button"
                                             class="navigation-buttons btn btn-primary">Back</button></a>
                                 </div>
                                 <div class="col">
-                                    <a href="creating-3.html"><button type="button"
+                                    <a href="creating-final-page.html"><button type="button"
                                             class="navigation-buttons submit btn btn-primary">Next</button></a>
                                 </div>
                             </div>
@@ -113,10 +114,9 @@
                 </div>
             </section>
             <div class="flexbox-container d-block d-md-none"> <!-- Figure out how to center the buttons-->
-                <a href="creating.html"><button type="button" class="px-5 navigation-buttons btn btn-primary">Back</button></a>
-                <a href="creating-3.html"><button type="button" class="px-5 navigation-buttons submit btn btn-primary">Next</button></a>
+                <a href="creating-upload-page.html" aria-label="back button"><button type="button" class="px-5 navigation-buttons btn btn-primary">Back</button></a>
+                <a href="creating-final-page.html" aria-label="next button"><button type="button" class="px-5 navigation-buttons submit btn btn-primary">Next</button></a>
             </div>
-
     </main>
     <footer class="dark-bg text-center text-lg-start">
         <p class="text-center p-3 footer-text">© 2023 Copyright: INFO 340</p>

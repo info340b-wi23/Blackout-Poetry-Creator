@@ -55,6 +55,7 @@ a.nav-link {
     /* Overriding bootstrap properties */
     --bs-navbar-toggler-border-color: rgba(255, 255, 255);
     --bs-navbar-color: white;
+    --bs-navbar-hover-color: yellow;
 }
 
 .navbar-toggler {
@@ -89,6 +90,16 @@ a.nav-link {
     /* Internet Explorer/Edge */
     user-select: none;
     /* Standard */
+}
+
+textarea.form-control{
+    height: 250px;
+    max-height: 250px;
+}
+
+textarea#description {
+    height: 65px;
+    max-height: 65px;
 }
 
 .submit {
