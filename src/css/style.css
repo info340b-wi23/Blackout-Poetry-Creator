@@ -63,7 +63,7 @@ a.nav-link {
 }
 
 .navbar-toggler-icon {
-    background-image: url("../img/Hamburger.svg");
+    background-image: url("../../public/img/Hamburger.svg");
 }
 
 .btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
