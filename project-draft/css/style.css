@@ -197,6 +197,23 @@ header.about img {
     margin-right: auto;
 }
 
+article img {
+    align-items: center;
+}
+
+.about article {
+    padding-left: auto;
+    padding-right: auto;
+}
+
+.about p {
+    font-size: larger;
+}
+
+.about h1 {
+    text-align: center;
+}
+
 img.card-image {
     height: 12rem;
     border: 1px solid black;
@@ -208,11 +225,6 @@ img.card-image {
     border: 1px solid black;
     border-radius: 20px;
     box-shadow: 5px 0px 20px #000000;
-}
-
-article {
-    margin-left: .5rem;
-    margin-right: .5rem;
 }
 
 a.about {
@@ -783,5 +795,10 @@ a.menu {
         height: 600px;
         margin-left: auto;
         margin-right: auto;
+    }
+
+    .about article {
+        padding-right: 7rem;
+        padding-left: 7rem;
     }
 }
