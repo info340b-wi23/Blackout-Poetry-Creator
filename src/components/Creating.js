@@ -1,28 +1,39 @@
 import React from "react";
 
-import { NavBar } from './Navbar.js';
-import { UploadTab } from "./CreatingSideTabs.js";
+import { UploadTab, BlackoutTab, FinalizingTab } from "./CreatingSideTabs.js";
+import { BlackoutPreview, UploadingPreview, FinalizingPreview } from "./CreatingPreview.js";
 
 export function CreatingUpload() {
   return (
-    <body class="creating-body">
-        <header>
-            <NavBar currentPage="Creating"/>
-        </header>
-        <main>
-            <div className="flexbox-container">
-                <UploadTab />
-            </div>
-        </main>
-    </body>
+    <main>
+        <div className="flexbox-container">
+            <UploadTab />
+            <UploadingPreview />
+        </div>
+    </main>
   );
 }
 
 export function CreatingBlackout() {
-
+  return (
+    <main>
+        <div className="flexbox-container">
+            <BlackoutTab />
+            <BlackoutPreview/>
+        </div>
+    </main>
+  );
 }
 
-export function CreatingFinalizing() {
 
+export function CreatingFinalizing() {
+  return (
+    <main>
+        <div className="flexbox-container">
+            <FinalizingTab />
+            <FinalizingPreview/>
+        </div>
+    </main>
+  );
 }
 
