@@ -36,8 +36,8 @@ export function NavBar(props) {
                     <img src="img/logo.svg" className="d-inline-block align-top" alt="Logo which links to homepage"/>
                 </a>
                 <span className="d-inline-block d-md-none mr-10">
-                    <img src="img/profile-icon.png" width="50" height="50" className="d-md-inline-block align-top"
-                    alt="Logo which links to homepage"/>
+                    <a href="userprofile.html" aria-label="profile icon that links to user's profile"><img src="img/profile-icon.png" width="50" height="50" class="d-md-inline-block align-top"
+                    alt="Logo which links to homepage"/></a>
                 </span>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -48,7 +48,8 @@ export function NavBar(props) {
                         <NavItems currentPage={props.currentPage}/>
                     </ul>
                     <span className="px-lg-5 d-none d-md-block">
-                        <img src="img/profile-icon.png" width="50" height="50" className="d-md-inline-block align-top" alt="Logo which links to homepage"/>
+                        <a href="userprofile.html" aria-label="profile icon that links to user's profile"><img src="img/profile-icon.png" width="50" height="50" class="d-md-inline-block align-top"
+                        alt="Logo which links to homepage"/></a>
                     </span>
                 </div>
             </div>

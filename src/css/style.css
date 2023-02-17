@@ -17,6 +17,8 @@ body {
 
 footer {
     background-color: black;
+    bottom: 0;
+    width: 100%;
 }
 
 .dark-bg {
@@ -48,6 +50,15 @@ a.nav-link {
 
 .navbar-nav .nav-link.active, .navbar-nav .show>.nav-link {
     color: #DBCEB4;
+}
+
+.nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link.active {
+    color: grey;
+}
+
+.nav-tabs .nav-link {
+    color: grey;
 }
 
 .navbar {
@@ -114,6 +125,10 @@ textarea#description {
     background-color: black;
 }
 
+.tab-selection {
+    width: 100%;
+}
+
 .tab-item {
     border-top: 1px solid white;
     padding-top: 1rem;
@@ -170,29 +185,17 @@ textarea#description {
 /*            */
 /* About Page */
 /*            */
-
-html.about, body.about {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-}
-
 body.about {
     background-color: #DBCEB4;
-    display: flex;
-    flex-direction: column;
 }
 
 main.about {
     margin-top: .5rem;
 }
 
-footer.about {
-    margin-top: auto;
-}
-
 .container.about {
-    padding-top: 5rem;
+    padding-top: 10rem;
+    height: 100vh;
 }
 
 header.about img {
@@ -581,6 +584,47 @@ a.menu {
     /* Internet Explorer/Edge */
     user-select: none;
     /* Standard */
+}
+
+/* User Profile */
+
+.user-profile.flexbox-container {
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-info {
+    padding-top: 10px;
+}
+
+.user-info h1 {
+    font-weight: bold;
+}
+
+.user-info img {
+    margin-left: 20px;
+    margin-bottom: 50px;
+}
+
+.nav-item.user-tab a {
+    color: rgb(0, 0, 0);
+}
+
+.nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link.active{
+    color: white; /* For the active tab */
+}
+
+.tab-content {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.tab-pane {
+    background-color: grey;
+    flex: 1;
 }
 
 @media (min-width: 768px) {
