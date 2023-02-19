@@ -189,6 +189,7 @@ footer.about {
 
 .container.about {
     padding-top: 5rem;
+    -ms-flex-direction: column;
 }
 
 header.about img {
@@ -212,6 +213,7 @@ article img {
 
 .about h1 {
     text-align: center;
+    font-size: 1.5em;
 }
 
 img.card-image {
@@ -221,7 +223,9 @@ img.card-image {
 }
 
 .card.about {
-    height: 400px;
+    /* height: 400px; */
+    width: 33.3333%;
+    flex-basis: 300px;
     border: 1px solid black;
     border-radius: 20px;
     box-shadow: 5px 0px 20px #000000;
