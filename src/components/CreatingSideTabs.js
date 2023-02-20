@@ -1,5 +1,7 @@
 import React from "react";
 
+import { Link } from "react-router-dom";
+
 
 export function UploadTab() {
     return(
@@ -17,13 +19,13 @@ export function UploadTab() {
             </div>
             <div className="tab-item">
                 <p>b. Browse the community</p>
-                <a href="index.html"><button type="button" className="btn d-inline mx-5 mx-md-0 d-md-inline-block btn-primary">Browse</button></a>
+                <a href="/index.html"><button type="button" className="btn d-inline mx-5 mx-md-0 d-md-inline-block btn-primary">Browse</button></a>
             </div>
             <div className="tab-item d-none d-md-block">
-                <a href="creating-blackout-page.html"><button type="button" className="navigation-buttons submit btn btn-primary">Next</button></a>
+                <Link to="/creating/blackout"><button type="button" className="navigation-buttons submit btn btn-primary">Next</button></Link>
             </div>
             <div className="d-md-none d-block mx-4.5">
-                <a href="creating-blackout-page.html" aria-label="next button"><button type="button" className="px-5 navigation-buttons submit btn btn-primary">Next</button></a>
+                <Link to="/creating/blackout"><button type="button" className="px-5 navigation-buttons submit btn btn-primary">Next</button></Link>
             </div>
         </div> 
     );
@@ -49,17 +51,17 @@ export function BlackoutTab() {
                 <div className="container">
                     <div className="row">
                         <div className="col-4">
-                            <a href="creating-upload-page.html"><button type="button" className="navigation-buttons btn btn-primary">Back</button></a>
+                            <Link to="/creating/upload"><button type="button" className="navigation-buttons btn btn-primary">Back</button></Link>
                         </div>
                         <div className="col">
-                            <a href="creating-final-page.html"><button type="button" className="navigation-buttons submit btn btn-primary">Next</button></a>
+                            <Link to="/creating/finalizing"><button type="button" className="navigation-buttons submit btn btn-primary">Next</button></Link>
                         </div>
                     </div>
                 </div>
             </div>
             <div className="flexbox-container d-block d-md-none">
-                <a href="creating-upload-page.html" aria-label="back button"><button type="button" className="px-5 navigation-buttons btn btn-primary">Back</button></a>
-                <a href="creating-final-page.html" aria-label="next button"><button type="button" className="px-5 navigation-buttons submit btn btn-primary">Next</button></a>
+                <Link to="/creating/upload"><button type="button" className="px-5 navigation-buttons btn btn-primary">Back</button></Link>
+                <Link to="/creating/finalizing" aria-label="next button"><button type="button" className="px-5 navigation-buttons submit btn btn-primary">Next</button></Link>
             </div>
         </div>
     );
@@ -135,16 +137,16 @@ export function FinalizingTab() {
                 <div className="container">
                     <div className="row">
                         <div className="col-4">
-                            <a href="creating-blackout-page.html"><button type="button" className="navigation-buttons btn btn-primary">Back</button></a>
+                            <Link to="/creating/blackout"><button type="button" className="navigation-buttons btn btn-primary">Back</button></Link>
                         </div>          
                         <div className="col">
-                            <a href="index.html"><button type="button" className="navigation-buttons submit btn btn-primary">Submit</button></a>
+                            <a href="/index.html"><button type="button" className="navigation-buttons submit btn btn-primary">Submit</button></a>
                         </div>
                     </div>
                 </div>
                 <div className="flexbox-container d-block d-md-none">
-                    <a href="creating-blackout-page.html" aria-label="back button"><button type="button" className="px-5 navigation-buttons btn btn-primary">Back</button></a>
-                    <a href="index.html" aria-label="submit button"><button type="button" className="px-5 navigation-buttons submit btn btn-primary">Submit</button></a>
+                    <Link to="/creating/blackout"><button type="button" className="px-5 navigation-buttons btn btn-primary">Back</button></Link>
+                    <a href="/index.html"><button type="button" className="px-5 navigation-buttons submit btn btn-primary">Submit</button></a>
                 </div>
             </div>
         </div>
