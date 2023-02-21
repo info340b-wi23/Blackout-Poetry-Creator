@@ -16,8 +16,8 @@ export function UploadTab() {
                 <p className="d-inline d-md-none">a. Text Entry</p>
                 <p className="d-none d-md-inline-block">a. Enter Custom Text</p>
                 <div className="form-floating">
-                    <textarea className="form-control" id="floatingTextarea2" value={words} onChange={handleTextChange}></textarea>
-                    <label for="floatingTextarea2" className="d-none d-md-inline">(Max 1,330 characters)</label>
+                    <textarea className="form-control" id="floatingTextarea2" maxLength="1000" value={words} onChange={handleTextChange}></textarea>
+                    <label htmlFor="floatingTextarea2" className="d-none d-md-inline">(Max 1,000 characters)</label>
                 </div>
             </div>
             <div className="tab-item">
