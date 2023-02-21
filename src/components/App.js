@@ -10,8 +10,6 @@ import { CreatingPreview } from './CreatingPreview.js';
 import { Route, Routes } from 'react-router-dom';
 import { UserProfile } from './UserProfile.js';
 
-// This component is for testing purposes only! Create your own component that follows the app template below (replacing with your components)
-
 function App() {
   return (
     <>
