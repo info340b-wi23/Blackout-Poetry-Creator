@@ -619,7 +619,6 @@ a.menu {
 .tab-content {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
 }
 
 .tab-pane {
@@ -835,7 +834,6 @@ a.menu {
 
     /* User Profile */
      .user-profile.flexbox-container {
-        margin-top: 10rem;
         background-color: white;
         flex-direction: column;
         justify-content: center;
@@ -843,7 +841,8 @@ a.menu {
      }
 
      .user-info {
-         padding-top: 0;
+        margin-top: 10rem;
+        padding-top: 0;
      }
 
      .user-info h1 {
@@ -865,16 +864,11 @@ a.menu {
          /* For the active tab */
      }
 
-     .tab-selection {
-        background-color: black;
-     }
-
      .tab-content {
         flex-direction: column;
      }
 
      .tab-pane {
-        background-color: grey;
         flex: 0;
         margin-bottom: 3rem;
      }

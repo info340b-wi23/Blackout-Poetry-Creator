@@ -25,14 +25,14 @@ function Poem(props) {
     );
 }
 
-export function UserProfile(props) {
+export function UserProfile() {
     return (
         <main>
         <div className="user-profile flexbox-container">
             <div className="user-info">
                 <h1>Username</h1>
                 <img src="img/profile-icon.png" width="100" height="100" className="d-md-inline-block align-top"
-                            alt="Your profile photo"/>
+                            alt="Your profile icon"/>
             </div>
             <div className="tab-selection">
                 <ul className="nav nav-tabs" id="myTab" role="tablist">
@@ -41,14 +41,12 @@ export function UserProfile(props) {
                             role="tab" aria-controls="home-tab-pane" aria-selected="true">Your Posts</button>
                     </li>
                     <li className="nav-item user-tab" role="presentation">
-                        <button className="nav-link bg-dark" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button"
-                            role="tab" aria-controls="profile-tab-pane" aria-selected="false">Liked</button>
+                        <button className="nav-link bg-dark" id="liked-tab" data-bs-toggle="tab" data-bs-target="#liked-tab-pane" type="button"
+                            role="tab" aria-controls="liked-tab-pane" aria-selected="false">Liked</button>
                     </li>
                 </ul>
                 <div className="tab-content" id="myTabContent">
-                    <div className="tab-pane fade show active" id="users-tab-pane" role="tabpanel" aria-labelledby="users-posts" tabindex="0">
-                        <div className="container">
-                            <div className="row">
+                    <div className="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
                                 <Poem textContent="Hermione stopped dead; Harry had heard it too.
                                                 Somebody had moved close behind them among the
                                                 dark bookshelves. They waited, and a moment later
@@ -65,9 +63,8 @@ export function UserProfile(props) {
                                                 interactivity (so the content is there, but static). In short: all of the HTML/CSS work should be done,
                                                 but it will not have any JavaScript/React (yet!). Yes, that means all of the pages and views for your app.
                                                 Think through every possible screen that the user might see, and implement all of those!" 
-                                                sourceInfo={["Name of Lit", "Author", "#hashtags"]}/>             
-                            </div>
-                        </div>
+                                                sourceInfo={["Name of Lit", "Author", "#hashtags"]}/>            
+
                     </div>
                     <div className="tab-pane fade" id="liked-tab-pane" role="tabpanel" aria-labelledby="liked-tab" tabindex="0">
                         <Poem textContent={<div>the sun <em>did not shine.
@@ -93,7 +90,7 @@ export function UserProfile(props) {
                                         we looked!
                                         and we saw him!
                                         the cat in the hat!</em>
-                                </div>} sourceInfo={["In my feels + The Cat in The Hat", "@User12367 + Dr.Seuse", "description: exploration of love and...", "#Dr.Seuse #emo"]}/>
+                            </div>} sourceInfo={["In my feels + The Cat in The Hat", "@User12367 + Dr.Seuse", "description: exploration of love and...", "#Dr.Seuse #emo"]}/>
                     </div>
                 </div>
             </div>

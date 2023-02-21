@@ -1,9 +1,12 @@
 import React from "react";
 
-import { Link } from "react-router-dom";
-
+import { Link, useOutletContext } from "react-router-dom";
 
 export function UploadTab() {
+    const handleTextChange = useOutletContext()[0];
+    // Join the word array so that it can be maintained in the textarea tag
+    const words = useOutletContext()[1].join(" "); // https://stackoverflow.com/questions/37957862/how-to-join-array-of-strings-in-javascript
+
     return(
         <div className="creation-tab-splitter">
             <div className="tab-item">
@@ -13,7 +16,7 @@ export function UploadTab() {
                 <p className="d-inline d-md-none">a. Text Entry</p>
                 <p className="d-none d-md-inline-block">a. Enter Custom Text</p>
                 <div className="form-floating">
-                    <textarea className="form-control" id="floatingTextarea2"></textarea>
+                    <textarea className="form-control" id="floatingTextarea2" value={words} onChange={handleTextChange}></textarea>
                     <label for="floatingTextarea2" className="d-none d-md-inline">(Max 1,330 characters)</label>
                 </div>
             </div>

@@ -1,6 +1,46 @@
-import React from "react";
+import {useState, React} from "react";
+import { useOutletContext } from "react-router-dom";
 
-export function UploadingPreview() {
+export function CreatingPreview() {
+    const words = useOutletContext()[1].map((word) => {
+        return word + " "; 
+    });
+
+    // I use a set which I learned in a CSE course since it is easier to add and check if something is in it
+    // clickedWords will have words that are black out
+    // https://www.geeksforgeeks.org/sets-in-javascript/
+    const [clickedWords, setClickedWords] = useState(new Set());
+
+    // This is called if a word is clicked and will toggle blacking out. Note that newClickedWords will only have words that are blacked out
+    function handleWordClick(word) {
+        setClickedWords((prevClickedWords) => {
+            const newClickedWords = new Set(prevClickedWords); // Create a new set with the previous words, since we cannot modify it according to React rules
+            if (newClickedWords.has(word)) { // If the word is blacked out then we don't want it black ed out
+                newClickedWords.delete(word);
+            } else { // If the word isn't blacked out, then black it out!
+                newClickedWords.add(word); 
+            }
+            return newClickedWords;
+        })
+    }
+
+    // The way this works is that I map each word in words, if the word is in clickedWords (such that it should be blacked out),
+    // Then the className will have the "blackout" class in it. Notice that I use onClick() which will go into the method
+    // that will result in it being toggled. I use the array index as the key
+    const wordTag = <p>
+        {words.map((word, index) => {
+            const isClicked = clickedWords.has(word);
+            return(
+                <span
+                    key={index}
+                    className={isClicked ? "blackout" : ""}
+                    onClick={() => handleWordClick(word)}>
+                {word}
+                </span>
+            );
+        })}
+    </p>;
+
     return(
         <section className="creation-preview px-md-3">
                 <div className="creation-container">
@@ -10,92 +50,11 @@ export function UploadingPreview() {
                     <div className="creation-content">
                         <div className="preview-paper">
                             <div className="preview-paper-words">
-                            <p>I keep a running list of ideas and observations that could be used for columns or essays, and this week, my original
-                                plan was to write about A. Philip Randolph, the labor leader and civil rights activist whose work in the 1930s, ’40s
-                                and
-                                ’50s was crucial to the growth and success of the civil rights movement. He had a starring role at the 1963 March on
-                                Washington for Jobs and Freedom, which itself was the culmination of an effort Randolph had begun in 1941 with his
-                                fellow activist Bayard Rustin and other allies in the civil rights and labor movements.
-                            
-                                I couldn’t make the column work — these things happen! — but I still want to share some of the material, both
-                                because
-                                it’s intrinsically interesting and because it illustrates a point I have made, and will continue to make, in my work
-                                for
-                                The Times.
-                        </p>
-                        </div>
+                                {wordTag}
+                            </div>
                     </div>
                 </div>
             </div>
-        </section>
-    );
-}
-
-export function BlackoutPreview() {
-    return (
-        <section className="creation-preview px-md-3">
-            <div className="creation-container">
-                <div className="creation-header">
-                    <h1 className="d-none d-md-block">Blackout</h1>
-                </div>
-                <div className="creation-content">
-                    <div className="preview-paper">
-                        <div className="preview-paper-words">
-                            <p>I <span className="blackout">keep</span> <span className="blackout">a running</span>list <span className="blackout">of</span>
-                                ideas and observations that could be used <span className="blackout">for columns or essays,</span>
-                                <span className="blackout">and</span>this week,
-                                <span className="blackout">my original
-                                    plan was to write about A. Philip Randolph, the labor leader and civil rights activist whose</span> work
-                                <span className="blackout">in the 1930s, ’40s and ’50s</span>
-                                was crucial to the growth <span className="blackout">and success of the civil rights movement. He had a starring role at
-                                    the 1963 March on
-                                    Washington for Jobs and Freedom, which itself was the culmination of an effort Randolph had begun in 1941 with
-                                    his
-                                    fellow activist Bayard Rustin and other allies in the civil rights and labor movements. </span>
-                            
-                                <span className="blackout">I couldn’t</span> make <span className="blackout">the column work —</span> these things happen!
-                                <span className="blackout">— but I still want to share some of the material, both because
-                                    it’s intrinsically interesting and because it illustrates a point I have made, and will continue to make, in my
-                                    work for
-                                    The Times.</span>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    );
-}
-
-export function FinalizingPreview() {
-    return (
-        <section className="creation-preview px-md-3">
-        <div className="creation-container">
-            <div className="creation-header">
-                <h1 className="d-none d-md-block">Finalize</h1>
-            </div>
-            <div className="creation-content">
-                <div className="preview-paper">
-                    <div className="preview-paper-words">
-                        <p>I <span className="blackout">keep</span> <span className="blackout">a running</span>list <span className="blackout">of</span>
-                        ideas and observations that could be used <span className="blackout">for columns or essays,</span>
-                        <span className="blackout">and</span>this week, 
-                        <span className="blackout">my original
-                        plan was to write about A. Philip Randolph, the labor leader and civil rights activist whose</span> work 
-                        <span className="blackout">in the 1930s, ’40s and ’50s</span> 
-                        was crucial to the growth <span className="blackout">and success of the civil rights movement. He had a starring role at the 1963 March on
-                        Washington for Jobs and Freedom, which itself was the culmination of an effort Randolph had begun in 1941 with his
-                        fellow activist Bayard Rustin and other allies in the civil rights and labor movements. </span>
-                        
-                        <span className="blackout">I couldn’t</span> make <span className="blackout">the column work —</span> these things happen! 
-                        <span className="blackout">— but I still want to share some of the material, both because
-                        it’s intrinsically interesting and because it illustrates a point I have made, and will continue to make, in my work for
-                        The Times.</span>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
         </section>
     );
 }
