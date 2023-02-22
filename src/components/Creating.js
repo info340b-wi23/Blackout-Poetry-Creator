@@ -19,6 +19,7 @@ export function Creating(props) {
         // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions
         const newWords = textValue.split(/\s+/); // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split
         setWords(newWords);
+        // This below code acts as a "cleanup" as when the user changes the text, it will reset the clickedWords array and all blackouts will be removed
         setClickedWords(new Array(newWords.length).fill(false)); // Create an array that is the length of newWords and then set every value to be false
     }
 

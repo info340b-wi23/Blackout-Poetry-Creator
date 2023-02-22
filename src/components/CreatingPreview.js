@@ -49,7 +49,7 @@ export function CreatingPreview() {
                             <div className="preview-paper-words">
                                 {wordTag}
                             </div>
-                    </div>
+                        </div>
                 </div>
             </div>
         </section>

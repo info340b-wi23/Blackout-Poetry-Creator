@@ -187,6 +187,13 @@ textarea#description {
     background-color: #DBCEB4;
 }
 
+.preview-paper {
+    max-height:400px;
+    min-height:400px;
+    height:400px;
+    background-color: #DBCEB4;
+}
+
 /*            */
 /* About Page */
 /*            */
@@ -718,7 +725,8 @@ a.menu {
     .preview-paper {
         width: 900px;
         height: 600px;
-        background-color: #DBCEB4;
+        max-height: 600px;
+        min-height: 600px;
         border-radius: 10px;
         margin-left: auto;
         margin-right: auto;
@@ -816,7 +824,6 @@ a.menu {
         padding-left: 0;
     }
 
-
     .tab-item select {
         margin-top: 1rem;
         margin-left: 2rem;
@@ -845,11 +852,6 @@ a.menu {
         align-items: center;
      }
 
-     .user-info {
-        margin-top: 10rem;
-        padding-top: 0;
-     }
-
      .user-info h1 {
          font-weight: bold;
      }
@@ -868,13 +870,12 @@ a.menu {
          color: white;
          /* For the active tab */
      }
-
+     
      .tab-content {
         flex-direction: column;
      }
 
      .tab-pane {
         flex: 0;
-        margin-bottom: 3rem;
      }
 }
