@@ -1,4 +1,4 @@
-import React from "react";
+import { useState, useEffect, React } from "react";
 
 import { Link, useOutletContext } from "react-router-dom";
 
@@ -35,6 +35,12 @@ export function UploadTab() {
 }
 
 export function BlackoutTab() {
+
+    const changeClickedWords = useOutletContext()[5];
+    function handleClick() { // Clear all blackouts by creating a new empty array which indicates no words are blacked out
+        changeClickedWords([]);
+    }
+
     return (
         <div className="creation-tab-splitter">
             <div className="tab-item">
@@ -44,7 +50,7 @@ export function BlackoutTab() {
             <div className="tab-item">
                 <p className="d-inline-block d-lg-none">Tap on words to undo blackouts</p>
                 <p className="d-none d-md-inline-block">Made a mistake? Click on words to undo!</p>
-                <button type="button" className="clear-button btn btn-primary">Clear All Blackouts</button>
+                <button type="button" className="clear-button btn btn-primary" onClick={handleClick}>Clear All Blackouts</button>
             </div>
             <div className="tab-item">
                 <p className="d-none d-lg-block">Not sure how to blackout poetry?</p>
@@ -71,6 +77,61 @@ export function BlackoutTab() {
 }
 
 export function FinalizingTab() {
+
+    // Note, I use sessionStorage which will save these states since technically leaving this subpage leaves the scope of the states 
+    // https://stackoverflow.com/questions/28314368/how-to-maintain-state-after-a-page-refresh-in-react-js
+    // https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage
+    const [selectedValue, setSelectedValue] = useState(sessionStorage.getItem("selectedValue") || "Culture");
+    const [title, setTitle] = useState(sessionStorage.getItem("title") || "");
+    const [sourceTitle, setSourceTitle] = useState(sessionStorage.getItem("sourceTitle") || "");
+    const [sourceAuthor, setSourceAuthor] = useState(sessionStorage.getItem("sourceAuthor") || "");
+    const [description, setDescription] = useState(sessionStorage.getItem("description") || "");
+
+    // Saves the current state into temporary memory after it re-renders 
+    useEffect(() => {
+        sessionStorage.setItem("selectedValue", selectedValue);
+        sessionStorage.setItem("title", title);
+        sessionStorage.setItem("sourceTitle", sourceTitle);
+        sessionStorage.setItem("sourceAuthor", sourceAuthor);
+        sessionStorage.setItem("description", description);
+    })
+
+    const handleSelectionChange = (event) => {
+        setSelectedValue(event.target.value);
+    }
+
+    const handleTitleChange = (event) => {
+        setTitle(event.target.value);
+    }
+
+    const handleSourceTitleChange = (event) => {
+        setSourceTitle(event.target.value);
+    }
+
+    const handleSourceAuthorChange = (event) => {
+        setSourceAuthor(event.target.value);
+    }
+
+    const handleDescriptionChange = (event) => {
+        setDescription(event.target.value);
+    }
+
+    const changePoemArray = useOutletContext()[4]; // props.handlePoems
+    const wordTag = useOutletContext()[3];
+
+    const handleClick = () => { // User hit submit button
+        const poemObj = {
+            "key": title,
+            "subject": selectedValue,
+            "title": title,
+            "sourceTitle": sourceTitle,
+            "sourceAuthor": sourceAuthor,
+            "description": description,
+            "textContent": wordTag
+        };
+        changePoemArray(poemObj);
+    }
+
     return (
         <div className="creation-tab-splitter">
             <div className="tab-item">
@@ -83,11 +144,11 @@ export function FinalizingTab() {
                             <p>Subject</p>
                         </div>
                         <div className="col">
-                            <select className="form-select" aria-label="Genre selection">
-                                <option selected>Culture</option>
-                                <option value="1">Ethnics</option>
-                                <option value="2">Politics</option>
-                                <option value="3">Drama</option>
+                            <select value={selectedValue} onChange={handleSelectionChange} className="form-select">
+                                <option value="Culture">Culture</option>
+                                <option value="Ethnics">Ethnics</option>
+                                <option value="Politics">Politics</option>
+                                <option value="Drama">Drama</option>
                             </select>
                         </div>
                     </div>
@@ -100,7 +161,7 @@ export function FinalizingTab() {
                             <p>Title</p>
                         </div>
                         <div className="col">
-                            <input className="form-control form-input-margin" type="text" placeholder="My poem" aria-label="Title of your poem"/>
+                            <input className="form-control form-input-margin" type="text" placeholder="My Poem" value={title} onChange={handleTitleChange}/>
                         </div>
                     </div>
                 </div>
@@ -113,7 +174,7 @@ export function FinalizingTab() {
                             <p>Piece Title</p>
                         </div>
                         <div className="col">
-                            <input className="form-control form-input-margin" type="text" placeholder="What A. Philip Randolph Knew About Jobs and Freedom" aria-label="Title of the source text you used"/>
+                            <input className="form-control form-input-margin" type="text" value={sourceTitle} onChange={handleSourceTitleChange}/>
                         </div>
                     </div>
                     <div className="row">
@@ -121,7 +182,7 @@ export function FinalizingTab() {
                             <p>Author</p>
                         </div>
                         <div className="col">
-                            <input className="form-control form-input-margin" type="text" placeholder="Jamelle Bouie" aria-label="Author of the source text you used"/>
+                            <input className="form-control form-input-margin" type="text" value={sourceAuthor} onChange={handleSourceAuthorChange}/>
                         </div>
                     </div>
                 </div>
@@ -133,7 +194,7 @@ export function FinalizingTab() {
                             <p>Description</p>
                         </div>
                     </div>
-                    <textarea className="form-control" id="description" placeholder="What is your poem about?"></textarea>
+                    <textarea className="form-control" placeholder="What is your poem about?" value={description} onChange={handleDescriptionChange}/>
                 </div>
             </div>
             <div className="tab-item d-none d-md-inline-block">
@@ -143,13 +204,13 @@ export function FinalizingTab() {
                             <Link to="/creating/blackout"><button type="button" className="navigation-buttons btn btn-primary">Back</button></Link>
                         </div>          
                         <div className="col">
-                            <a href="/index.html"><button type="button" className="navigation-buttons submit btn btn-primary">Submit</button></a>
+                            <Link to="/index.html"><button type="button" className="navigation-buttons submit btn btn-primary" onClick={handleClick}>Submit</button></Link>
                         </div>
                     </div>
                 </div>
                 <div className="flexbox-container d-block d-md-none">
                     <Link to="/creating/blackout"><button type="button" className="px-5 navigation-buttons btn btn-primary">Back</button></Link>
-                    <a href="/index.html"><button type="button" className="px-5 navigation-buttons submit btn btn-primary">Submit</button></a>
+                    <Link to="/index.html"><button type="button" onClick={handleClick} className="px-5 navigation-buttons submit btn btn-primary">Submit</button></Link>
                 </div>
             </div>
         </div>

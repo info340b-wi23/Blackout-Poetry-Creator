@@ -91,7 +91,7 @@ a.nav-link {
 /*                  */
 
 .blackout {
-    background-color: black;
+    background-color: rgba(0, 0, 0);
     /* From https: //stackoverflow.com/questions/6900124/how-to-make-certain-text-not-selectable-with-css */
     -webkit-user-select: none;
     /* Safari */
@@ -104,8 +104,9 @@ a.nav-link {
 }
 
 textarea.form-control, .form-floating>.form-control {
-    height: 250px;
-    max-height: 250px;
+    height: 213px;
+    max-height: 213px;
+    min-height: 213px;
 }
 
 textarea#description {
