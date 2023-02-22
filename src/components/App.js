@@ -44,7 +44,6 @@ function App({poemData}) {
           <Route path="finalizing" key="finalizing" element={[<FinalizingTab/>, <CreatingPreview/>]}/>        
         </Route>
 
-        <Route path="/index.html" element={[<Index poems={poemArray}/>]}/>
         <Route path="userprofile.html" element={<UserProfile/>}/>
       </Routes>
       <Footer/>
@@ -54,11 +53,11 @@ function App({poemData}) {
 
 export default App;
 
-
-function Index(props) {
-  const poemArray = props.poems;
-  return poemArray.map((poem) => {
-    const textContent = poem.textContent;
-    return <li>{textContent}</li>;
-  });
-}
+// Testing function
+// function Index(props) {
+//   const poemArray = props.poems;
+//   return poemArray.map((poem) => {
+//     const textContent = poem.textContent;
+//     return <li>{textContent}</li>;
+//   });
+// }
