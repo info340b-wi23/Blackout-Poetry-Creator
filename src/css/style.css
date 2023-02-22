@@ -90,6 +90,10 @@ a.nav-link {
 /* Creating Page(s) */
 /*                  */
 
+.blackout-preview {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
 .blackout {
     background-color: rgba(0, 0, 0);
     /* From https: //stackoverflow.com/questions/6900124/how-to-make-certain-text-not-selectable-with-css */

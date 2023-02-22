@@ -43,8 +43,9 @@ function App({poemData}) {
           <Route path="blackout" key="blackout" element={[<BlackoutTab/>, <CreatingPreview/>]}/>
           <Route path="finalizing" key="finalizing" element={[<FinalizingTab/>, <CreatingPreview/>]}/>        
         </Route>
-
-        <Route path="userprofile.html" element={<UserProfile/>}/>
+        {/* TESTING ROUTE FOR CREATING BELOW */}
+        {/* <Route path="/index.html" element={<Index poems={poemArray}/>}/> */}
+        <Route path="/userprofile.html" element={<UserProfile/>}/>
       </Routes>
       <Footer/>
     </>
@@ -53,7 +54,7 @@ function App({poemData}) {
 
 export default App;
 
-// Testing function
+// // Testing function
 // function Index(props) {
 //   const poemArray = props.poems;
 //   return poemArray.map((poem) => {
