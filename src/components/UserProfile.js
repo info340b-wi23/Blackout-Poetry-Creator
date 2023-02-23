@@ -33,7 +33,7 @@ export function UserProfile() {
         <main>
         <div className="user-profile flexbox-container">
             <div className="user-info">
-                <h1 className="username">{username}</h1>
+                <h1>{username}</h1>
                 <img src="/img/profile-icon.png" width="100" height="100" className="d-md-inline-block align-top"
                             alt="Your profile icon"/>
             </div>

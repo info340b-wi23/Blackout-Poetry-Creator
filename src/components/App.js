@@ -31,6 +31,9 @@ function App({poemData}) {
         </Routes>
       </header>
       <Routes>
+        {/* Replace the element in this later with index.html since it is the main (default) page */}
+        <Route index element={<NavBar />}/>
+        
         {/* Add a 'Route' to the name of your page and the element used to render it */}
         <Route path="creating" element={<Creating handlePoems = {handlePoemArrayChange}/>}>
           <Route index element={[<UploadTab/>, <CreatingPreview/>]}/>
