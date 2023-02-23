@@ -36,8 +36,8 @@ function App({poemData}) {
           <Route path="creating/finalizing" element={<NavBar currentPage="Creating"/>}/>
 
           <Route path="about" element={<NavBar currentPage="About" />} />
-          <Route path="instructions" element={<NavBar currentPage="About" />} />
-          <Route path="what-is-blackout-poetry" element={<NavBar currentPage="About" />} />
+          <Route path="about/instructions" element={<NavBar currentPage="About" />} />
+          <Route path="about/what-is-blackout-poetry" element={<NavBar currentPage="About" />} />
 
           <Route path="userprofile.html" element={<NavBar/>}/>
         </Routes>
@@ -58,6 +58,7 @@ function App({poemData}) {
         {/* TESTING ROUTE FOR CREATING BELOW */}
         {/* <Route path="/index.html" element={<Index poems={poemArray}/>}/> */}
         <Route path="/userprofile.html" element={<UserProfile/>}/>
+
       </Routes>
       <Footer/>
     </>
