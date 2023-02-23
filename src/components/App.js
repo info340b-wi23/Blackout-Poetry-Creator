@@ -30,10 +30,7 @@ function App({poemData}) {
           {/* Add a 'Route' for the correct NavBar on your page. currentPage will either be "About" or "Explore" */}
           <Route index element={<NavBar/>}/>
 
-          <Route path="creating" element={<NavBar currentPage="Creating"/>}/>
-          <Route path="creating/upload" element={<NavBar currentPage="Creating"/>}/>
-          <Route path="creating/blackout" element={<NavBar currentPage="Creating"/>}/>
-          <Route path="creating/finalizing" element={<NavBar currentPage="Creating"/>}/>
+          <Route path="creating/:creatingSubpage?" element={<NavBar currentPage="Creating"/>}/>
 
           <Route path="about" element={<NavBar currentPage="About" />} />
           <Route path="instructions" element={<NavBar currentPage="About" />} />
