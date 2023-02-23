@@ -202,6 +202,14 @@ article img {
     align-items: center;
 }
 
+article h1 {
+    text-align: center
+}
+
+figcaption {
+    text-align: center;
+}
+
 .about article {
     padding-left: auto;
     padding-right: auto;
