@@ -7,5 +7,42 @@
     "sourceAuthor": "JK Rowling", 
     "description": "#HarryPotter", 
     "textContent": "Hermione stopped dead; Harry had heard it too. Somebody had moved close behind them among the dark bookshelves. They waited, and a moment later the vulturelike countenance of Madam Pince appeared around the corner, her sunken cheeks, her skin like parchment, and her long hooked nose illuminated unflatteringly by the lamp she was carrying. The library is now closed, she said. Mind you return anything you have borrowed to the correct — what have you been doing to that book, you depraved boy?"
+},
+{
+    "key": "Shiny Moana", 
+    "subject": "", 
+    "title": "", 
+    "sourceTitle": "Moana, shiny lyrics", 
+    "sourceAuthor": "", 
+    "description": "#Moana #Disney", 
+    "textContent": "Well, Tatatoa hasn't always been this glam I was a drab little crab once Now I know I can be happy as a clam Because I'm beautiful, baby Did your granny say listen to your heart Be who you are on the inside I need three words to tear her argument apart Your granny lied I'd rather be Shiny Like a treasure from a sunken pirate wreck Scrub the deck and make it look Shiny I will sparkle like a wealthy woman's neck Just a sec Don't you know Fish are dumb, dumb, dumb They chase anything that glitters (beginners) Oh, and here they come, come, come To the brightest thing that glitters Mmm, fish dinners"
+},
+{
+    "key": "Name of Poem", 
+    "subject": "", 
+    "title": "", 
+    "sourceTitle": "Lit Example", 
+    "sourceAuthor": "No one", 
+    "description": "#Hasttags", 
+    "textContent": "This is an example of text. It will include part of the project description. For this deliverable, you will submit a draft of your Project. Your draft should be a 'static mockup'—the completed page design, but no interactivity (so the content is there, but 'static'). In short: all of the HTML/CSS work should be done, but it will not have any JavaScript/React (yet!). Yes, that means all of the 'pages' and views for your app. Think through every possible screen that the user might see, and implement all of those!"
+},
+{
+    "key": "The Cat In the Hat", 
+    "subject": "", 
+    "title": "", 
+    "sourceTitle": "The Cat In the Hat", 
+    "sourceAuthor": "Dr.Seuss", 
+    "description": "#Dr.Seuss", 
+    "textContent": "The sun did not shine. It was too wet to play. So we sat in the house all that cold, cold, Wet day. I sat there with sally. We sat there, we two. And I said, 'how I wish we had something to do!' Too wet to go out and too cold to play ball. So we sat in the house. We did nothing at all. So all we could do was to Sit! Sit! Sit! Sit! And we did not like it. Not one little bit. And then something went BUMP! How that bump made us jump! We looked! Then we saw him step on the mat! We looked! And we saw him! The cat in the hat!"
+},
+{
+    "key": "Textbook Poem", 
+    "subject": "", 
+    "title": "Textbook Poem", 
+    "sourceTitle": "Client-Side Web Development", 
+    "sourceAuthor": "Joel Ross", 
+    "description": "#Info #College #code #css", 
+    "textContent": "Web development is the process of implementing (programming) web sites and applications that users can access over the internet. However, the internet is a network involving many different computers all communicating with one another. These computers can be divided into two different groups servers store (“:host”) content and provide (“serve”) it to other computers, while clients request that content and then present it to the human users."
 }
+
 ]

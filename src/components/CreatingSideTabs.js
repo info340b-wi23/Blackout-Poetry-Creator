@@ -22,12 +22,12 @@ export function UploadTab() {
             </div>
             <div className="tab-item">
                 <p>b. Browse the community</p>
-                <a href="/index.html"><button type="button" className="btn d-inline mx-5 mx-md-0 d-md-inline-block btn-primary">Browse</button></a>
+                <a href="/index.html"><button type="button" className="btn d-inline mx-md-0 d-md-inline-block btn-primary">Browse</button></a>
             </div>
             <div className="tab-item d-none d-md-block">
                 <Link to="/creating/blackout"><button type="button" className="navigation-buttons submit btn btn-primary">Next</button></Link>
             </div>
-            <div className="d-md-none d-block mx-4.5">
+            <div className="tab-item d-md-none d-block mx-4.5">
                 <Link to="/creating/blackout"><button type="button" className="px-5 navigation-buttons submit btn btn-primary">Next</button></Link>
             </div>
         </div> 

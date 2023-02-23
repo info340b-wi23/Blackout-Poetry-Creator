@@ -27,22 +27,13 @@ function App({poemData}) {
     <>
       <header>
         <Routes>
-          {/* Add a 'Route' for the correct NavBar on your page. currentPage will either be "About" or "Explore" */}
-          <Route index element={<NavBar/>}/>
-
-          <Route path="creating" element={<NavBar currentPage="Creating"/>}/>
-          <Route path="creating/upload" element={<NavBar currentPage="Creating"/>}/>
-          <Route path="creating/blackout" element={<NavBar currentPage="Creating"/>}/>
-          <Route path="creating/finalizing" element={<NavBar currentPage="Creating"/>}/>
-
-          <Route path="about" element={<NavBar currentPage="About" />} />
-          <Route path="about/instructions" element={<NavBar currentPage="About" />} />
-          <Route path="about/what-is-blackout-poetry" element={<NavBar currentPage="About" />} />
-
-          <Route path="userprofile.html" element={<NavBar/>}/>
+          <Route path=":currPage/:subPage?" element={<NavBar />}/>
         </Routes>
       </header>
       <Routes>
+        {/* Replace the element in this later with index.html since it is the main (default) page */}
+        <Route index element={<NavBar />}/>
+        
         {/* Add a 'Route' to the name of your page and the element used to render it */}
         <Route path="creating" element={<Creating handlePoems = {handlePoemArrayChange}/>}>
           <Route index element={[<UploadTab/>, <CreatingPreview/>]}/>
@@ -51,14 +42,16 @@ function App({poemData}) {
           <Route path="finalizing" key="finalizing" element={[<FinalizingTab/>, <CreatingPreview/>]}/>        
         </Route>
 
+        {/*About page routes */}
         <Route path="about" element={<AboutLandingPage />} />
         <Route path="about/instructions" element={<AboutInstructionPage />} />
         <Route path="about/what-is-blackout-poetry" element={<AboutArticle />} />
 
+        <Route path="/userprofile/:username?" element={<UserProfile/>}/>
+
         {/* TESTING ROUTE FOR CREATING BELOW */}
         {/* <Route path="/index.html" element={<Index poems={poemArray}/>}/> */}
         <Route path="/userprofile.html" element={<UserProfile/>}/>
-
       </Routes>
       <Footer/>
     </>

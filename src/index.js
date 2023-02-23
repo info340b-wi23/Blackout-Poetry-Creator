@@ -9,11 +9,9 @@ import POEM_DATA from './data/poems.json';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
     <BrowserRouter>
       <App poemData={POEM_DATA} />
     </BrowserRouter>
-  </React.StrictMode>
 );
 
 // I used this type of event listener in a past web dev class which pretty much fires
