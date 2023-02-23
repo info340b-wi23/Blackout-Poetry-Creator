@@ -27,16 +27,7 @@ function App({poemData}) {
     <>
       <header>
         <Routes>
-          {/* Add a 'Route' for the correct NavBar on your page. currentPage will either be "About" or "Explore" */}
-          <Route index element={<NavBar/>}/>
-
-          <Route path="creating/:creatingSubpage?" element={<NavBar currentPage="Creating"/>}/>
-
-          <Route path="about" element={<NavBar currentPage="About" />} />
-          <Route path="instructions" element={<NavBar currentPage="About" />} />
-          <Route path="what-is-blackout-poetry" element={<NavBar currentPage="About" />} />
-
-          <Route path="userprofile.html" element={<NavBar/>}/>
+          <Route path=":currPage/:subPage?" element={<NavBar />}/>
         </Routes>
       </header>
       <Routes>
@@ -48,13 +39,15 @@ function App({poemData}) {
           <Route path="finalizing" key="finalizing" element={[<FinalizingTab/>, <CreatingPreview/>]}/>        
         </Route>
 
+        {/*About page routes */}
         <Route path="about" element={<AboutLandingPage />} />
         <Route path="about/instructions" element={<AboutInstructionPage />} />
         <Route path="about/what-is-blackout-poetry" element={<AboutArticle />} />
 
+        <Route path="/userprofile/:username?" element={<UserProfile/>}/>
+
         {/* TESTING ROUTE FOR CREATING BELOW */}
         {/* <Route path="/index.html" element={<Index poems={poemArray}/>}/> */}
-        <Route path="/userprofile.html" element={<UserProfile/>}/>
       </Routes>
       <Footer/>
     </>

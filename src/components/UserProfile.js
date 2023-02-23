@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 // Private function which will render the poem based on what is in the array
 // Use a map to make divs with each poem and then it will add it to the list
@@ -26,12 +26,15 @@ function Poem(props) {
 }
 
 export function UserProfile() {
+    const params = useParams();
+    const username = params.username !== undefined ? params.username : "Username"; // If username is in the URL then it will replace the placeholder
+
     return (
         <main>
         <div className="user-profile flexbox-container">
             <div className="user-info">
-                <h1>Username</h1>
-                <img src="img/profile-icon.png" width="100" height="100" className="d-md-inline-block align-top"
+                <h1 className="username">{username}</h1>
+                <img src="/img/profile-icon.png" width="100" height="100" className="d-md-inline-block align-top"
                             alt="Your profile icon"/>
             </div>
             <div className="tab-selection">

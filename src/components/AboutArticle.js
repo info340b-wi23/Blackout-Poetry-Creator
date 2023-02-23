@@ -1,11 +1,11 @@
 import React from "react";
 
 
-export function AboutArticle(props) {
+export function AboutArticle() {
     return(
         <article>
             <header>
-                <img src="img/glen-carrie-oHoBIbDj7lo-unsplash.jpg" alt="A bunch of words" width="300px" aria-label="A bunch of words"></img>
+                <img src="/img/glen-carrie-oHoBIbDj7lo-unsplash.jpg" alt="A bunch of words" width="300px" aria-label="A bunch of words"></img>
                 <figcaption>
                     Photo by <cite><a className="text-dark" href="https://unsplash.com/photos/oHoBIbDj7lo">Glen Carrie</a></cite>
                 </figcaption>

@@ -608,6 +608,10 @@ a.menu {
     align-items: center;
 }
 
+.username {
+    text-align: center;
+}
+
 .user-info {
     padding-top: 10px;
 }
@@ -617,7 +621,6 @@ a.menu {
 }
 
 .user-info img {
-    margin-left: 20px;
     margin-bottom: 50px;
 }
 
@@ -847,10 +850,18 @@ a.menu {
     }
 
     /* User Profile */
+
      .user-profile.flexbox-container {
         background-color: white;
         flex-direction: column;
         justify-content: center;
+        align-items: center;
+     }
+
+     .user-info {
+        display: flex;
+        flex-direction: column;
+        justify-content:center;
         align-items: center;
      }
 
@@ -859,7 +870,6 @@ a.menu {
      }
 
      .user-info img {
-         margin-left: 50px;
          margin-bottom: 50px;
      }
 
