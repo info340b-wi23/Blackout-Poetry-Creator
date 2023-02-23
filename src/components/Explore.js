@@ -1,15 +1,22 @@
 import React from 'react';
-import ExploreSearchBar from 'ExploreSearchBar';
+import {ExploreFilterButtons} from 'ExploreOther.js';
 
 export function Explore(){
     return(
-        <header>
-            <NavBar />
-            <div className ="flexbox-container">
-                {/* components */}
-                <ExploreSearchBar />
-            </div>
+        <div> 
+            <header>
+                <NavBar />
+            </header>
+            <main class="explore-main">
+                <div className ="flexbox-container">
+                    {/* components */}
+                    <ExploreFilterButtons />
+                </div>
+            </main>
+            
             <Footer />
-        </header>
+        </div>
+        
+        
     )
 }

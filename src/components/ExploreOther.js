@@ -1,6 +1,6 @@
 import React from 'react';
 
-export function ExploreSearchBar(){
+export function ExploreFilterButtons(){
     return (
         <section class="right-side">
         {/* //explore page side */}
@@ -36,16 +36,18 @@ export function ExploreSearchBar(){
                     </div>
                 </ul>
             </nav>
-            <div class="explore-container">
-                {/* //set of cards with lit and poems on them  */}
-                <exploreTextCards />
-            </div>
-
         </section>
     );
 }
 
-function exploreTextCards(){
+export function exploreCardList(){
+    <div class="explore-container">
+        {/* //set of cards with lit and poems on them  */}
+        <exploreTextCards />
+    </div>
+}
+
+function exploreTextCard(){
     <div class="explore-card"> 
         <a href="explore2.html" aria-label="card 1">
             {/* //card 1 */}
