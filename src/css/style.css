@@ -197,17 +197,19 @@ textarea#description {
 /*            */
 /* About Page */
 /*            */
-body.about {
+/* body.about {
     background-color: #DBCEB4;
-}
+} */
 
 main.about {
+    height: 100vh;
     margin-top: .5rem;
+    background-color: #DBCEB4;
 }
 
 .container.about {
     padding-top: 10rem;
-    height: 100vh;
+    height: 100%;
 }
 
 header.about img {

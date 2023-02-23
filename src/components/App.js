@@ -49,8 +49,8 @@ function App({poemData}) {
         </Route>
 
         <Route path="about" element={<AboutLandingPage />} />
-        <Route path="instructions" element={<AboutInstructionPage />} />
-        <Route path="what-is-blackout-poetry" element={<AboutArticle />} />
+        <Route path="about/instructions" element={<AboutInstructionPage />} />
+        <Route path="about/what-is-blackout-poetry" element={<AboutArticle />} />
 
         {/* TESTING ROUTE FOR CREATING BELOW */}
         {/* <Route path="/index.html" element={<Index poems={poemArray}/>}/> */}
