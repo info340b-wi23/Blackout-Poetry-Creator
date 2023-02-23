@@ -3,7 +3,7 @@ import { useState, useEffect, React } from "react";
 import { Link, useOutletContext } from "react-router-dom";
 
 export function UploadTab() {
-    const handleTextChange = useOutletContext()[0];
+    const handleTextChange = useOutletContext()[0]; // When textarea text changes, handle it in our parent function
     // Join the word array so that it can be maintained in the textarea tag
     const words = useOutletContext()[1].join(" "); // https://stackoverflow.com/questions/37957862/how-to-join-array-of-strings-in-javascript
 
@@ -36,7 +36,7 @@ export function UploadTab() {
 
 export function BlackoutTab() {
 
-    const changeClickedWords = useOutletContext()[5];
+    const changeClickedWords = useOutletContext()[3];
     function handleClick() { // Clear all blackouts by creating a new empty array which indicates no words are blacked out
         changeClickedWords([]);
     }
@@ -116,10 +116,30 @@ export function FinalizingTab() {
         setDescription(event.target.value);
     }
 
-    const changePoemArray = useOutletContext()[4]; // props.handlePoems
-    const wordTag = useOutletContext()[3];
+    const changePoemArray = useOutletContext()[2]; // props.handlePoems
+    const words = useOutletContext()[1].map((word) => { // Get our words from the parent and add a space (for printing properly)
+        return word + " "; 
+    });
+    const clickedWords = useOutletContext()[4];
 
     const handleClick = () => { // User hit submit button
+
+        // This just makes the blackout completely opaque while also removing its interactivity features since it is in its final state
+        const wordTagWithoutHandler = 
+        <p>
+            {words.map((word, index) => {
+                const isClicked = clickedWords[index] || false;
+                return(
+                    <span
+                        key={word + index}
+                        className={isClicked ? "blackout" : ""}>
+                    {word}
+                    </span>
+                );
+            })}
+        </p>; 
+
+        // Create a new poem object for our array
         const poemObj = {
             "key": title,
             "subject": selectedValue,
@@ -127,7 +147,7 @@ export function FinalizingTab() {
             "sourceTitle": sourceTitle,
             "sourceAuthor": sourceAuthor,
             "description": description,
-            "textContent": wordTag
+            "textContent": wordTagWithoutHandler
         };
         changePoemArray(poemObj);
     }
@@ -208,10 +228,10 @@ export function FinalizingTab() {
                         </div>
                     </div>
                 </div>
-                <div className="flexbox-container d-block d-md-none">
-                    <Link to="/creating/blackout"><button type="button" className="px-5 navigation-buttons btn btn-primary">Back</button></Link>
-                    <Link to="/index.html"><button type="button" onClick={handleClick} className="px-5 navigation-buttons submit btn btn-primary">Submit</button></Link>
-                </div>
+            </div>
+            <div className="flexbox-container d-block d-md-none">
+                <Link to="/creating/blackout"><button type="button" className="px-5 navigation-buttons btn btn-primary">Back</button></Link>
+                <Link to="/index.html"><button type="button" onClick={handleClick} className="px-5 navigation-buttons submit btn btn-primary">Submit</button></Link>
             </div>
         </div>
     );
