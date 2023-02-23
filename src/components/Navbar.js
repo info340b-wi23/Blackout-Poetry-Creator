@@ -11,8 +11,8 @@ export function NavItems(props) {
     : <a className="nav-link px-5" href="/index.html">Explore</a>
 
     const aboutNavItem = props.currentPage === "About" ?
-    <a className="nav-link active px-5" href="/about.html">About</a>
-    : <a className="nav-link px-5" href="/about.html">About</a>
+    <a className="nav-link active px-5" href="/about">About</a>
+    : <a className="nav-link px-5" href="/about">About</a>
 
     return(
     <>

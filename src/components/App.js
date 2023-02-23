@@ -9,6 +9,9 @@ import { CreatingPreview } from './CreatingPreview.js';
 
 import { Route, Routes } from 'react-router-dom';
 import { UserProfile } from './UserProfile.js';
+import { AboutLandingPage } from './AboutLandingPage.js';
+import { AboutInstructionPage } from './AboutInstructionPage.js';
+import { AboutArticle } from './AboutArticle.js';
 
 function App({poemData}) {
 
@@ -48,7 +51,10 @@ function App({poemData}) {
           <Route path="finalizing" key="finalizing" element={[<FinalizingTab/>, <CreatingPreview/>]}/>        
         </Route>
 
-        <Route path="about" element= />
+        <Route path="about" element={<AboutLandingPage />} />
+        <Route path="instructions" element={<AboutInstructionPage />} />
+        <Route path="what-is-blackout-poetry" element={<AboutArticle />} />
+
         {/* TESTING ROUTE FOR CREATING BELOW */}
         {/* <Route path="/index.html" element={<Index poems={poemArray}/>}/> */}
         <Route path="/userprofile.html" element={<UserProfile/>}/>
