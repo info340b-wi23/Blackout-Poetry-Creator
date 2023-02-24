@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 function LinkCard(props) {
 
     return(
-        <div className="col-md-4 col-lg-3 mx-auto">
+        <div className="col-md-4 col-lg-3 mx-auto d-flex">
             <div className="card about mb-4">
                 <img className="card-image" src={props.img} alt={props.alt} ></img>
                 <div className="card-body text">

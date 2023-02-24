@@ -51,7 +51,6 @@ function App({poemData}) {
 
         {/* TESTING ROUTE FOR CREATING BELOW */}
         {/* <Route path="/index.html" element={<Index poems={poemArray}/>}/> */}
-        <Route path="/userprofile.html" element={<UserProfile/>}/>
       </Routes>
       <Footer/>
     </>
