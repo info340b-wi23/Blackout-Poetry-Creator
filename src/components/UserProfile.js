@@ -66,9 +66,7 @@ export function UserProfile() {
                                                 interactivity (so the content is there, but static). In short: all of the HTML/CSS work should be done,
                                                 but it will not have any JavaScript/React (yet!). Yes, that means all of the pages and views for your app.
                                                 Think through every possible screen that the user might see, and implement all of those!" 
-                                                sourceInfo={["Name of Lit", "Author", "#hashtags"]}/>       
-                                                      
-
+                                                sourceInfo={["Name of Lit", "Author", "#hashtags"]}/>                                                          
                     </div>
                     <div className="tab-pane fade" id="liked-tab-pane" role="tabpanel" aria-labelledby="liked-tab" tabindex="0">
                         <Poem textContent={<div>the sun <em>did not shine.

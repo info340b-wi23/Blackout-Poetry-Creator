@@ -1,6 +1,6 @@
 import React from "react";
-import { AboutCard } from "./AboutInstructionPage.js";
-import { AboutArticle } from "./AboutArticle.js";
+// import { AboutCard } from "./AboutInstructionPage.js";
+// import { AboutArticle } from "./AboutArticle.js";
 import { Link } from "react-router-dom";
 
 function LinkCard(props) {
@@ -26,7 +26,7 @@ export function AboutLandingPage(props) {
             <div className="container about">
                 <div className="row">
                     <LinkCard img={'/img/Cartoon-Style.jpg'} title={'What is Blackout Poetry?'} alt={'A newspaper'} link={"what-is-blackout-poetry"} />
-                    <LinkCard img={'/img/christin-hume-mfB1B1s4sMc-unsplash.jpg" alt="blackout poetry visual'} title={'How to Make a Blackout Poem'} alt={'Person using a computer'} link={"instructions"} />
+                    <LinkCard img={'/img/christin-hume-mfB1B1s4sMc-unsplash.jpg'} title={'How to Make a Blackout Poem'} alt={'Person using a computer'} link={"instructions"} />
                     <LinkCard img={'/img/People-passing.jpg'} title={'Example Poems'} alt={'Blackout poetry visual'} link={"index.html"} />
                 </div>
             </div>
