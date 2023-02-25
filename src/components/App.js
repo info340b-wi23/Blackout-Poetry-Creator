@@ -36,10 +36,10 @@ function App({poemData}) {
 
         {/* Add a 'Route' to the name of your page and the element used to render it */}
         <Route path="creating" element={<Creating handlePoems = {handlePoemArrayChange}/>}>
-          <Route index element={[<UploadTab/>, <CreatingPreview/>]}/>
           <Route path="upload" key="upload" element={[<UploadTab/>, <CreatingPreview/>]}/>
           <Route path="blackout" key="blackout" element={[<BlackoutTab/>, <CreatingPreview/>]}/>
-          <Route path="finalizing" key="finalizing" element={[<FinalizingTab/>, <CreatingPreview/>]}/>        
+          <Route path="finalizing" key="finalizing" element={[<FinalizingTab/>, <CreatingPreview/>]}/>     
+          <Route index element={[<UploadTab/>, <CreatingPreview/>]}/>   
         </Route>
 
         {/*About page routes */}
@@ -47,7 +47,10 @@ function App({poemData}) {
         <Route path="about/instructions" element={<AboutInstructionPage />} />
         <Route path="about/what-is-blackout-poetry" element={<AboutArticle />} />
 
-        <Route path="/userprofile/:username?" element={<UserProfile/>}/>
+        <Route path="userprofile/:username?" element={<UserProfile/>}/>
+
+        {/* Catch-all route */}
+        <Route path="*" element={<Navigate to="index"/>}/>
 
         {/* TESTING ROUTE FOR CREATING BELOW */}
         {/* <Route path="/index.html" element={<Index poems={poemArray}/>}/> */}

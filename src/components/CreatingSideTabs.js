@@ -22,7 +22,7 @@ export function UploadTab() {
             </div>
             <div className="tab-item">
                 <p>b. Browse the community</p>
-                <a href="/index.html"><button type="button" className="btn d-inline mx-md-0 d-md-inline-block btn-primary">Browse</button></a>
+                <a href="/index"><button type="button" className="btn d-inline mx-md-0 d-md-inline-block btn-primary">Browse</button></a>
             </div>
             <div className="tab-item d-none d-md-block">
                 <Link to="/creating/blackout"><button type="button" className="navigation-buttons submit btn btn-primary">Next</button></Link>
@@ -54,7 +54,7 @@ export function BlackoutTab() {
             </div>
             <div className="tab-item">
                 <p className="d-none d-lg-block">Not sure how to blackout poetry?</p>
-                <a href="about.html">Check out our helpful guides!</a>
+                <a href="/about">Check out our helpful guides!</a>
             </div>
             <div className="tab-item d-none d-lg-inline-block">
                 <div className="container">
@@ -224,14 +224,14 @@ export function FinalizingTab() {
                             <Link to="/creating/blackout"><button type="button" className="navigation-buttons btn btn-primary">Back</button></Link>
                         </div>          
                         <div className="col">
-                            <Link to="/index.html"><button type="button" className="navigation-buttons submit btn btn-primary" onClick={handleClick}>Submit</button></Link>
+                            <Link to="/index"><button type="button" className="navigation-buttons submit btn btn-primary" onClick={handleClick}>Submit</button></Link>
                         </div>
                     </div>
                 </div>
             </div>
             <div className="flexbox-container d-block d-md-none">
                 <Link to="/creating/blackout"><button type="button" className="px-5 navigation-buttons btn btn-primary">Back</button></Link>
-                <Link to="/index.html"><button type="button" onClick={handleClick} className="px-5 navigation-buttons submit btn btn-primary">Submit</button></Link>
+                <Link to="/index"><button type="button" onClick={handleClick} className="px-5 navigation-buttons submit btn btn-primary">Submit</button></Link>
             </div>
         </div>
     );
