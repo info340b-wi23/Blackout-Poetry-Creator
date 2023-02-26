@@ -34,6 +34,9 @@ function App({poemData}) {
         {/* Replace the element in this later with index.html since it is the main (default) page */}
         <Route index element={<NavBar />}/>
 
+        {/* Catch-all route (Make the comment code later when all pages are in to avoid a bug) */}
+        {/* <Route path="*" element={<index />}/> */}
+
         {/* Add a 'Route' to the name of your page and the element used to render it */}
         <Route path="creating" element={<Creating handlePoems = {handlePoemArrayChange}/>}>
           <Route path="upload" key="upload" element={[<UploadTab/>, <CreatingPreview/>]}/>
@@ -49,8 +52,6 @@ function App({poemData}) {
 
         <Route path="userprofile/:username?" element={<UserProfile/>}/>
 
-        {/* Catch-all route */}
-        <Route path="*" element={<Navigate to="index"/>}/>
 
         {/* TESTING ROUTE FOR CREATING BELOW */}
         {/* <Route path="/index.html" element={<Index poems={poemArray}/>}/> */}
