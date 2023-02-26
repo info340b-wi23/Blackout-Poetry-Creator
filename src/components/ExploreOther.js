@@ -1,75 +1,111 @@
 import React from 'react';
 
-export function ExploreFilterButtons(){
+export function ExploreFilterList(props){
+    let cardList = props.cardData; 
+    let subjectList = [];
+
+    exploreCardList(cardList, "both"); 
+    
+    const handleClickLit = function(){
+        exploreCardList(cardList, "literature", subjectList); 
+    }
+    const handleClickPoems = function(){
+        exploreCardList(cardList, "poem", subjectList);
+    }
+    const handleClickBoth = function(){
+        exploreCardList(cardList, "both", subjectList); 
+    }
+    
     return (
-        <section class="right-side">
+        <div>
         {/* //explore page side */}
-            <nav class="filter-sort">
+            <nav className="filter-sort">
                 {/* //filter buttons at the top of the page */}
                 <ul>
-                    <a href="explore-newLit.html"><button type="button" class="filter-buttons btn btn-primary" aria-label="literature">
-                        Literature</button></a>
-                    <a href="explore-poems.html"><button type="button" class="filter-buttons btn btn-primary" aria-label="Poems">
-                        Poems</button></a>
-                    <a href="index.html"><button type="button" class="filter-buttons active btn btn-primary" aria-label="Both new literature and poems">
-                        Both</button></a>
-                    
-                    {/* //Sort By button and dropdown menu */}
-                    <select type="button" class="form-select filter-buttons btn btn-primary"  aria-label="Sort">
-                        <option disabled selected>Sort By</option>
-                        <option value="newest">Newest</option>
-                        <option value="oldest">Oldest</option>
-                        <option value="a-z">A - Z</option>
-                        <option value="z-a">Z - A</option>
-                        <option value="popular">Popular</option>
-                   </select>
+                    <button type="button" className="filter-buttons btn btn-primary" aria-label="literature" onClick={handleClickLit}>
+                        Literature</button>
+                    <button type="button" className="filter-buttons btn btn-primary" aria-label="Poems" onClick={handleClickPoems}>
+                        Poems</button>
+                    <button type="button" className="filter-buttons active btn btn-primary" aria-label="Both new literature and poems" onClick={handleClickBoth}>
+                        Both</button>
 
                 {/* //Filter button check box */}
-                    <div id="filter" class="filter-check filter-buttons btn btn-primary" tabindex="100">
-                        <span class="anchor">Filter</span>
-                        <ul class="items">
-                            <li><input type="checkbox" class="checkbox"/>Culture </li>
-                            <li><input type="checkbox" class="checkbox"/>Ethnic</li>
-                            <li><input type="checkbox" class="checkbox"/>Politics </li>
-                            <li><input type="checkbox" class="checkbox"/>Drama </li>
+                    <div id="filter" className="filter-check filter-buttons btn btn-primary" tabindex="100">
+                        <span className="anchor">Filter</span>
+                        <ul className="items">
+                            <li><input type="checkbox" className="checkbox" />Culture </li>
+                            <li><input type="checkbox" className="checkbox"/>Ethnic</li>
+                            <li><input type="checkbox" className="checkbox"/>Politics </li>
+                            <li><input type="checkbox" className="checkbox"/>Drama </li>
                         </ul>
                     </div>
                 </ul>
             </nav>
-        </section>
+            {/* check to see in you need additional div or <elements /> */}
+            {viewCardList}
+        </div>
     );
 }
 
-export function exploreCardList(){
-    <div class="explore-container">
-        {/* //set of cards with lit and poems on them  */}
-        <exploreTextCards />
-    </div>
+function exploreFilter(subjectList){
+    // if something is clicked filter the deck for cards w/ that subject
 }
 
-function exploreTextCard(){
-    <div class="explore-card"> 
-        <a href="explore2.html" aria-label="card 1">
-            {/* //card 1 */}
-            <p class="lit">
-                Hermione stopped dead; Harry had heard it too.
-                Somebody had moved close behind them among the
-                dark bookshelves. They waited, and a moment later
-                the vulturelike countenance of Madam Pince
-                appeared around the corner, her sunken cheeks, her
-                skin like parchment, and her long hooked nose
-                illuminated unflatteringly by the lamp she was
-                carrying.
-                “The library is now closed,” she said. “Mind you
-                return anything you have borrowed to the correct —
-                what have you been doing to that book, you depraved
-                boy?”
-            </p>
-            <ul class="description-card">
-                <li>Harry Potter, Page 345</li>
-                <li>JK Rowling</li>
-                <li>#HarryPotter</li>
-            </ul>
-        </a>
+function exploreCardList(props, typeOfText, subject){
+    let cards = props.cards;
+    
+    if(subject.length === 0){
+        // when the fliter checkboxes are NOT checked
+        if(typeOfText === "both"){
+            const cardList = cards.map((textObj) => {
+                return <exploreTextCards textObj={textObj} key={textObj.key}/>
+            })
+        } else if (typeOfText === "literature"){
+            const cardList = cards.map((textObj) => {
+                if(textObj.textType === "literature"){
+                    return <exploreTextCards textObj={textObj} key={textObj.key}/>
+                } 
+            })
+        } else if (typeOfText === "poem"){
+            const cardList = cards.map((textObj) => {
+                if(textObj.textType === "poem"){
+                    return <exploreTextCards textObj={textObj} key={textObj.key}/>
+                } 
+            })
+        }
+    } else{
+        // when the fliter checkboxes are checked
+        exploreFilter(subject); 
+    }
+    
+    return(
+        <div className="explore-container">
+            {/* set of cards */}
+            {cardList}
+        </div>
+    )
+}
+
+function exploreTextCard(props){
+    const textObj = props.textObj;
+     // textObj is an object from the array in poems.jason 
+
+    return(
+        <div className="explore-card" > 
+            {/* sends you to explore 2 if you click on the card */}
+            <a href="explore2.js" aria-label={"card" + textObj.title}>
+            {/* //card */}
+                <p className="lit">
+                    {textObj.textContent}
+                </p>
+                <ul className="description-card">
+                    <li>{textObj.title}</li>
+                    <li>{textObj.sourceTitle}</li>
+                    <li>{textObj.sourceAuthor}</li>
+                    <li>{textObj.description}</li>
+                    <li>{textObj.subject}</li>
+                </ul>
+            </a>
     </div>
+    ) 
 }

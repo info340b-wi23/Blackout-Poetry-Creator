@@ -1,5 +1,9 @@
 import React from 'react';
-import {ExploreFilterButtons} from 'ExploreOther.js';
+import {NavBar} from 'Navbar.js';
+import {Footer} from 'Footer';
+import {ExploreFilterList} from 'ExploreOther.js';
+
+import SAMPLE_TEXT from './data/poems.json';
 
 export function Explore(){
     return(
@@ -7,13 +11,23 @@ export function Explore(){
             <header>
                 <NavBar />
             </header>
-            <main class="explore-main">
-                <div className ="flexbox-container">
-                    {/* components */}
-                    <ExploreFilterButtons />
-                </div>
+            <main className="explore-main">
+                <section className="left-side">
+                    {/* <!-- Search bar/ side --> */}
+                    {/* EploreSearchBar */}
+                    
+                </section>
+
+                <section className="right-side">
+                {/* <!-- explore page side --> */}
+                    {/* ExploreFilterButtons */}
+                    <div className="explore-container">
+                        {/* <!-- set of cards with lit and poems on them --> */}
+                        <ExploreFilterList cardData={SAMPLE_TEXT}/>
+                    </div>
+
+                </section>
             </main>
-            
             <Footer />
         </div>
         
