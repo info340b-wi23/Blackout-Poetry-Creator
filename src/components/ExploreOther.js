@@ -1,19 +1,19 @@
 import React from 'react';
 
 export function ExploreFilterList(props){
-    let cardList = props.cardData; 
+    let cardList = props.cardData; // passed in the origional array from poems.jsan
     let subjectList = [];
 
-    exploreCardList(cardList, "both"); 
+    filterCardList(cardList, "both"); 
     
     const handleClickLit = function(){
-        exploreCardList(cardList, "literature", subjectList); 
+        filterCardList(cardList, "literature", subjectList); 
     }
     const handleClickPoems = function(){
-        exploreCardList(cardList, "poem", subjectList);
+        filterCardList(cardList, "poem", subjectList);
     }
     const handleClickBoth = function(){
-        exploreCardList(cardList, "both", subjectList); 
+        filterCardList(cardList, "both", subjectList); 
     }
     
     return (
@@ -42,41 +42,22 @@ export function ExploreFilterList(props){
                 </ul>
             </nav>
             {/* check to see in you need additional div or <elements /> */}
-            {viewCardList}
+            <exploreCardList />
         </div>
     );
 }
 
-function exploreFilter(subjectList){
-    // if something is clicked filter the deck for cards w/ that subject
+function filterCardList(inputList, typeOfText, subjectList){
+    //let newInputList = [];
+    //this function will filter the texts based on the type of text (poem or lit) and based on the fliter checkbox (drama, culture, ect) 
+    return exploreCardList(inputList);
 }
 
-function exploreCardList(props, typeOfText, subject){
+function exploreCardList(props){
     let cards = props.cards;
-    
-    if(subject.length === 0){
-        // when the fliter checkboxes are NOT checked
-        if(typeOfText === "both"){
-            const cardList = cards.map((textObj) => {
-                return <exploreTextCards textObj={textObj} key={textObj.key}/>
-            })
-        } else if (typeOfText === "literature"){
-            const cardList = cards.map((textObj) => {
-                if(textObj.textType === "literature"){
-                    return <exploreTextCards textObj={textObj} key={textObj.key}/>
-                } 
-            })
-        } else if (typeOfText === "poem"){
-            const cardList = cards.map((textObj) => {
-                if(textObj.textType === "poem"){
-                    return <exploreTextCards textObj={textObj} key={textObj.key}/>
-                } 
-            })
-        }
-    } else{
-        // when the fliter checkboxes are checked
-        exploreFilter(subject); 
-    }
+    const cardList = cards.map((textObj) => {
+        return <exploreTextCard textObj={textObj} key={textObj.key}/>
+    })
     
     return(
         <div className="explore-container">
@@ -90,10 +71,14 @@ function exploreTextCard(props){
     const textObj = props.textObj;
      // textObj is an object from the array in poems.jason 
 
+     const handleClick = function(){
+        textForExplorePreview(textObj);
+    }
+
     return(
         <div className="explore-card" > 
             {/* sends you to explore 2 if you click on the card */}
-            <a href="explore2.js" aria-label={"card" + textObj.title}>
+            <a href="ExplorePreview.js" aria-label={"card" + textObj.title} onClick = {handleClick}>
             {/* //card */}
                 <p className="lit">
                     {textObj.textContent}
@@ -108,4 +93,9 @@ function exploreTextCard(props){
             </a>
     </div>
     ) 
+}
+
+export function textForExplorePreview(textObj){
+        const exportText = textObj;
+        return exportText;
 }
