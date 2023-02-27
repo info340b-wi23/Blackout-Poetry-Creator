@@ -78,7 +78,7 @@ function exploreTextCard(props){
     return(
         <div className="explore-card" > 
             {/* sends you to explore 2 if you click on the card */}
-            <a href="ExplorePreview.js" aria-label={"card" + textObj.title} onClick = {handleClick}>
+            <a href="/ExplorePreview" aria-label={"card" + textObj.title} onClick = {handleClick}>
             {/* //card */}
                 <p className="lit">
                     {textObj.textContent}

@@ -4,6 +4,7 @@ import { NavBar } from './Navbar.js';
 import { Footer } from './Footer.js';
 
 import { MenuBar } from './Menu.js';
+import { Explore } from './Explore.js';
 import { Creating } from './Creating.js'; 
 import { UploadTab, BlackoutTab, FinalizingTab } from './CreatingSideTabs.js';
 import { CreatingPreview } from './CreatingPreview.js';
@@ -13,6 +14,8 @@ import { UserProfile } from './UserProfile.js';
 import { AboutLandingPage } from './AboutLandingPage.js';
 import { AboutInstructionPage } from './AboutInstructionPage.js';
 import { AboutArticle } from './AboutArticle.js';
+
+
 
 function App({poemData}) {
 
@@ -47,6 +50,8 @@ function App({poemData}) {
         </Route>
 
         <Route path="menu" element={<MenuBar/>}/>
+
+        <Route path="index" element={<Explore />}/>
 
         {/*About page routes */}
         <Route path="about" element={<AboutLandingPage />} />

@@ -1,20 +1,15 @@
 import React from 'react';
-import {NavBar} from 'Navbar.js';
-import {Footer} from 'Footer';
-import {ExploreFilterList} from 'ExploreOther.js';
+import { ExploreFilterList } from './ExploreOther.js';
+import { ExploreSearchBar } from './ExploreSearchBar.js';
 
-import SAMPLE_TEXT from './data/poems.json';
+import SAMPLE_TEXT from '../data/poems.json';
 
-export function Explore(){
+export function Explore() {
     return(
         <div> 
-            <header>
-                <NavBar />
-            </header>
             <main className="explore-main">
                 <section className="left-side">
                     {/* <!-- Search bar/ side --> */}
-                    {/* EploreSearchBar */}
                     
                 </section>
 
@@ -25,12 +20,8 @@ export function Explore(){
                         {/* <!-- set of cards with lit and poems on them --> */}
                         <ExploreFilterList cardData={SAMPLE_TEXT}/>
                     </div>
-
                 </section>
             </main>
-            <Footer />
         </div>
-        
-        
-    )
+    );
 }

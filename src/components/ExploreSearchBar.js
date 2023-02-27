@@ -1,19 +1,19 @@
 import React from 'react';
 
-{/* Search bar/ side */}
+{/* Search bar / side */}
 export function ExploreSearchBar(){
     return(
         <section className="left-side">
-            <exploreSearchInput />
-            <exploreTrending />
-            <exploreNewTexts />
-            <exploreSearchHistory />
-            <clearSearchHistory />
+            <ExploreSearchInput />
+            <ExploreTrending />
+            <ExploreNewTexts />
+            <ExploreSearchHistory />
+            <ClearSearchHistory />
         </section>
     )
 }
 
-function exploreSearchInput(){
+function ExploreSearchInput(){
     return (
         <form> 
             <div>
@@ -25,44 +25,44 @@ function exploreSearchInput(){
     
 }
 
-function exploreTrending(){
+function ExploreTrending(){
     return (
         // link to trending texts
         <div className="trending">
-            <a href="index.html" className="sidebar"><b>Trending</b></a>
+            <a href="/index" className="sidebar"><b>Trending</b></a>
         </div>
     );
 }
 
-function exploreNewTexts(){
+function ExploreNewTexts(){
     {/* link to new texts */}
     return (
         <div className="history">
-        <   a href="index.html" className="sidebar"><b>New</b></a>
+        <   a href="/index" className="sidebar"><b>New</b></a>
         </div>
     );
 }
 
-function exploreSearchHistory(){
+function ExploreSearchHistory(){
     {/* things that the user has searched for in the past, list of a history of search items */}
     return (
         <div>
             <div className="history">
-                <a href="index.html" className="sidebar">#something</a>
-                <a href="index.html" className="delete"> x</a>
+                <a href="/index" className="sidebar">#something</a>
+                <a href="/index" className="delete"> x</a>
             </div>
             <div className="history">
-                <a href="index.html" className="sidebar">recent1</a>
-                <a href="index.html" className="delete"> x</a>
+                <a href="/index" className="sidebar">recent1</a>
+                <a href="/index" className="delete"> x</a>
             </div>
         </div>
     );  
 }
 
-function clearSearchHistory(){
+function ClearSearchHistory(){
    return (
     <div className="history">
-        <a href="index.html" className="sidebar search-history">Clear Search History</a>
+        <a href="/index" className="sidebar search-history">Clear Search History</a>
     </div>
    );
 }
