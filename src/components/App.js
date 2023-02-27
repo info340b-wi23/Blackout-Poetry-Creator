@@ -5,6 +5,8 @@ import { Footer } from './Footer.js';
 
 import { MenuBar } from './Menu.js';
 import { Creating } from './Creating.js'; 
+import { Explore } from './Explore.js';
+import { ExplorePreview } from './ExplorePreview.js';
 import { UploadTab, BlackoutTab, FinalizingTab } from './CreatingSideTabs.js';
 import { CreatingPreview } from './CreatingPreview.js';
 
@@ -28,15 +30,15 @@ function App({poemData}) {
     <>
       <header>
         <Routes>
-          <Route path=":currPage/:subPage?" element={<NavBar />}/>
+          <Route path=":currPage?/:subPage?" element={<NavBar />}/>
         </Routes>
       </header>
       <Routes>
         {/* Replace the element in this later with index.html since it is the main (default) page */}
-        <Route index element={<NavBar />}/>
+        <Route index element={<Explore cardData={poemArray} />}/>
 
-        {/* Catch-all route (Make the comment code later when all pages are in to avoid a bug) */}
-        {/* <Route path="*" element={<index />}/> */}
+        {/* Catch-all route */}
+        <Route path="*" element={<Explore cardData={poemArray}/>}/>
 
         {/* Add a 'Route' to the name of your page and the element used to render it */}
         <Route path="creating" element={<Creating handlePoems = {handlePoemArrayChange}/>}>
@@ -45,6 +47,9 @@ function App({poemData}) {
           <Route path="finalizing" key="finalizing" element={[<FinalizingTab/>, <CreatingPreview/>]}/>     
           <Route index element={[<UploadTab/>, <CreatingPreview/>]}/>   
         </Route>
+
+        <Route path="index" element={<Explore cardData={poemArray}/>}/>
+        <Route path="ExplorePreview" element={<ExplorePreview/>}/>
 
         <Route path="menu" element={<MenuBar/>}/>
 

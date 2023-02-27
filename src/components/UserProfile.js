@@ -69,29 +69,29 @@ export function UserProfile() {
                                                 sourceInfo={["Name of Lit", "Author", "#hashtags"]}/>                                                          
                     </div>
                     <div className="tab-pane fade" id="liked-tab-pane" role="tabpanel" aria-labelledby="liked-tab" tabindex="0">
-                        <Poem textContent={<div>the sun <em>did not shine.
+                        <Poem textContent={<div>the sun did not shine.
                                         it was too wet to play.
-                                        so we</em> sat in the house
-                                    <em>all that cold,</em> cold <em>, wet day.
+                                        so we sat in the house
+                                    all that cold, cold , wet day.
                                         i sat there with sally.
                                         we sat there, we two.
                                         and i said, 'how i wish
                                         we had something to do!'
-                                        too </em> wet <em>to go out
-                                        and </em> too cold <em>to play ball.
+                                        too  wet to go out
+                                        and  too cold to play ball.
                                         so we sat in the house.
-                                        we </em> did nothing at all. <em>
+                                        we  did nothing at all. 
                                         so all we could do was to
                                         sit! sit! sit!sit!
                                         and we did not like it.
-                                    </em> not one little bit. <em>
+                                     not one little bit. 
                                         and then something went BUMP!
                                         how that bump made us jump!
                                         we looked!
                                         then we saw him step in on the mat!
                                         we looked!
                                         and we saw him!
-                                        the cat in the hat!</em>
+                                        the cat in the hat!
                             </div>} sourceInfo={["In my feels + The Cat in The Hat", "@User12367 + Dr.Seuse", "description: exploration of love and...", "#Dr.Seuse #emo"]}/>
                     </div>
                 </div>

@@ -315,6 +315,15 @@ label {
     padding: .75rem;
     border-radius: 10px;
     margin-bottom: 1rem;
+    margin-left: 2rem;
+}
+
+button.search-history {
+    text-decoration: none;
+    background-color: #DBCEB4;
+    border-radius: 10px;
+    padding: 1rem;
+    font-weight: bold;
     margin-left: 1rem;
 }
 
@@ -325,7 +334,7 @@ label {
     /* fixed to the top-right corner */
     top: 4rem;
     right: 0;
-    background-color: white;
+    background-color: none;
 }
 
 .items {
@@ -438,13 +447,6 @@ label {
 .explore-card a:hover {
     text-decoration: none;
     color: inherit;
-}
-
-/* blacks out text on the poem cards */
-em {
-    background-color: black;
-    padding-right: .25rem;
-    padding-left: .25rem;
 }
 
 /* Explore 2 CSS */
@@ -806,10 +808,6 @@ a.menu {
 
     .history a:hover {
         color: #8b8371;
-    }
-
-    .history .search-history {
-        text-decoration: underline;
     }
 
     .delete {

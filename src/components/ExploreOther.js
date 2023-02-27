@@ -1,20 +1,50 @@
-import React from 'react';
+import{React, useState} from 'react';
+import { ExplorePreview } from './ExplorePreview.js'
 
 export function ExploreFilterList(props){
-    let cardList = props.cardData; // passed in the origional array from poems.jsan
-    let subjectList = [];
+    let cards = props.cardData; // passed in the origional array from poems.json
 
-    filterCardList(cardList, "both"); 
+    const [filteredCardList, setFilteredCardList] = useState(cards); 
+    
+    // Handles whether the button is currently "active" highlighted. Very hard-coded approach
+    const [isLitActive, setIsLitActive] = useState(false);
+    const [isPoemActive, setIsPoemActive] = useState(false);
+    const [isResetActive, setIsResetActive] = useState(true); // default all blackout poems are showed
+
+   // filterCardList(cardList, "both"); 
     
     const handleClickLit = function(){
-        filterCardList(cardList, "literature", subjectList); 
+        let newFilteredCardList = cards.filter((card) => {
+            if (card.textType === "literature") {
+                return card;
+            }
+        });
+        setIsLitActive(!isLitActive);
+        setIsPoemActive(false);
+        setIsResetActive(false);
+        setFilteredCardList(newFilteredCardList);
     }
     const handleClickPoems = function(){
-        filterCardList(cardList, "poem", subjectList);
+        let newFilteredCardList = cards.filter((card) => {
+            if (card.textType === "poem") {
+                return card;
+            }
+        });
+        setIsPoemActive(!isPoemActive);
+        setIsLitActive(false);
+        setIsResetActive(false);
+        setFilteredCardList(newFilteredCardList);
     }
-    const handleClickBoth = function(){
-        filterCardList(cardList, "both", subjectList); 
+    const handleClickReset = function(){
+        setIsResetActive(!isResetActive);
+        setIsPoemActive(false);
+        setIsLitActive(false);
+        setFilteredCardList(cards);
     }
+
+    const cardList = filteredCardList.map((textObj) => {
+        return <ExploreTextCard textObj={textObj} key={textObj.key} />
+    })
     
     return (
         <div>
@@ -22,18 +52,18 @@ export function ExploreFilterList(props){
             <nav className="filter-sort">
                 {/* //filter buttons at the top of the page */}
                 <ul>
-                    <button type="button" className="filter-buttons btn btn-primary" aria-label="literature" onClick={handleClickLit}>
+                    <button type="button" className={isLitActive ? "active filter-buttons btn btn-primary" : "filter-buttons btn btn-primary"} aria-label="literature" onClick={handleClickLit}>
                         Literature</button>
-                    <button type="button" className="filter-buttons btn btn-primary" aria-label="Poems" onClick={handleClickPoems}>
+                    <button type="button" className={isPoemActive ? "active filter-buttons btn btn-primary" : "filter-buttons btn btn-primary"} aria-label="Poems" onClick={handleClickPoems}>
                         Poems</button>
-                    <button type="button" className="filter-buttons active btn btn-primary" aria-label="Both new literature and poems" onClick={handleClickBoth}>
-                        Both</button>
+                    <button type="button" className={isResetActive ? "active filter-buttons btn btn-primary" : "filter-buttons btn btn-primary"} aria-label="Both new literature and poems" onClick={handleClickReset}>
+                        Reset</button>
 
                 {/* //Filter button check box */}
-                    <div id="filter" className="filter-check filter-buttons btn btn-primary" tabindex="100">
+                    <div id="filter" className="filter-check filter-buttons btn btn-primary" tabIndex="100">
                         <span className="anchor">Filter</span>
                         <ul className="items">
-                            <li><input type="checkbox" className="checkbox" />Culture </li>
+                            <li><input type="checkbox" className="checkbox"/>Culture </li>
                             <li><input type="checkbox" className="checkbox"/>Ethnic</li>
                             <li><input type="checkbox" className="checkbox"/>Politics </li>
                             <li><input type="checkbox" className="checkbox"/>Drama </li>
@@ -41,33 +71,16 @@ export function ExploreFilterList(props){
                     </div>
                 </ul>
             </nav>
-            {/* check to see in you need additional div or <elements /> */}
-            <exploreCardList />
+            <div className="explore-container">
+                {/* set of cards */}
+                {cardList}
+            </div>
         </div>
     );
 }
 
-function filterCardList(inputList, typeOfText, subjectList){
-    //let newInputList = [];
-    //this function will filter the texts based on the type of text (poem or lit) and based on the fliter checkbox (drama, culture, ect) 
-    return exploreCardList(inputList);
-}
 
-function exploreCardList(props){
-    let cards = props.cards;
-    const cardList = cards.map((textObj) => {
-        return <exploreTextCard textObj={textObj} key={textObj.key}/>
-    })
-    
-    return(
-        <div className="explore-container">
-            {/* set of cards */}
-            {cardList}
-        </div>
-    )
-}
-
-function exploreTextCard(props){
+function ExploreTextCard(props){
     const textObj = props.textObj;
      // textObj is an object from the array in poems.jason 
 
@@ -78,7 +91,7 @@ function exploreTextCard(props){
     return(
         <div className="explore-card" > 
             {/* sends you to explore 2 if you click on the card */}
-            <a href="ExplorePreview.js" aria-label={"card" + textObj.title} onClick = {handleClick}>
+            <a href="./ExplorePreview" aria-label={"card" + textObj.title} onClick = {handleClick}>
             {/* //card */}
                 <p className="lit">
                     {textObj.textContent}
@@ -91,7 +104,7 @@ function exploreTextCard(props){
                     <li>{textObj.subject}</li>
                 </ul>
             </a>
-    </div>
+        </div>
     ) 
 }
 
@@ -99,3 +112,4 @@ export function textForExplorePreview(textObj){
         const exportText = textObj;
         return exportText;
 }
+
