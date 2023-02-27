@@ -2,6 +2,7 @@ import React from 'react';
 import {NavBar} from 'Navbar.js';
 import {Footer} from 'Footer';
 import {ExploreFilterList} from 'ExploreOther.js';
+import {ExploreSearchBar, ExploreSearchHistory} from 'ExploreSearch.js';
 
 import SAMPLE_TEXT from './data/poems.json';
 
@@ -14,7 +15,8 @@ export function Explore(){
             <main className="explore-main">
                 <section className="left-side">
                     {/* <!-- Search bar/ side --> */}
-                    {/* EploreSearchBar */}
+                    {ExploreSearchBar}
+                    {ExploreSearchHistory}
                     
                 </section>
 

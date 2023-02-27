@@ -13,13 +13,13 @@ export function ExplorePreview(){
                 <NavBar />
             </header>
 
-            <main class="explore2-main">
-                <div class="preview-container">
-                    <section class="preview-tab">
-                        <div class="preview-tab-splitter">
-                            <div class="tab-item">
+            <main className="explore2-main">
+                <div className="preview-container">
+                    <section className="preview-tab">
+                        <div className="preview-tab-splitter">
+                            <div className="tab-item">
                                 <p>Description</p>
-                                <ul class="description">
+                                <ul className="description">
                                     <li>{previewText.title}</li>
                                     <li>{previewText.sourceTitle}</li>
                                     <li>{previewText.sourceAuthor}</li>
@@ -28,28 +28,28 @@ export function ExplorePreview(){
                                 </ul>
                             </div>
                             
-                            <div class="tab-item">
-                                <div class="create-button">
+                            <div className="tab-item">
+                                <div className="create-button">
                                     {/* is this the right creat page? */}
-                                    <a href="Creating.js"><button type="button" class="navigation-buttons btn btn-primary">Create</button></a>
+                                    <a href="./Creating.js"><button type="button" className="navigation-buttons btn btn-primary">Create</button></a>
                                 </div>
                             </div>
 
-                            <div class="tab-item">
-                                <div class="back-button">
-                                    <a href="Explore.js"><button type="button" class="navigation-buttons btn btn-primary">Back to Explore Page</button></a>
+                            <div className="tab-item">
+                                <div className="back-button">
+                                    <a href="./Explore.js"><button type="button" className="navigation-buttons btn btn-primary">Back to Explore Page</button></a>
                                 </div>
                             </div>
                         </div>
                     </section>
-                    <section class="explore-preview">
-                        <div class="preview-text-container">
-                            <div class="preview-header">
+                    <section className="explore-preview">
+                        <div className="preview-text-container">
+                            <div className="preview-header">
                                 <h1>Preview</h1>
                             </div>
-                            <div class="view-content">
-                                <div class="preview-text">
-                                    <div class="preview-text-words">
+                            <div className="view-content">
+                                <div className="preview-text">
+                                    <div className="preview-text-words">
                                         {previewText.textContent}
                                     </div>
                                 </div>
