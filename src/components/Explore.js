@@ -1,17 +1,14 @@
 import React from 'react';
-import {ExploreFilterList} from 'ExploreOther.js';
-import {ExploreSearchBar, ExploreSearchHistory} from 'ExploreSearch.js';
+import {ExploreFilterList} from './ExploreOther.js';
+import {ExploreSearchBar} from './ExploreSearch.js';
 
-import SAMPLE_TEXT from '../data/poems.json';
-
-export function Explore() {
+export function Explore(props){
     return(
         <div> 
             <main className="explore-main">
                 <section className="left-side">
                     {/* <!-- Search bar/ side --> */}
-                    {ExploreSearchBar}
-                    {ExploreSearchHistory}
+                    <ExploreSearchBar/>
                     
                 </section>
 
@@ -20,10 +17,10 @@ export function Explore() {
                     {/* ExploreFilterButtons */}
                     <div className="explore-container">
                         {/* <!-- set of cards with lit and poems on them --> */}
-                        <ExploreFilterList cardData={SAMPLE_TEXT}/>
+                        <ExploreFilterList cardData={props.cardData}/>
                     </div>
                 </section>
             </main>
         </div>
-    );
+    )
 }

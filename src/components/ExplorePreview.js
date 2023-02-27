@@ -1,16 +1,15 @@
 import React from 'react';
-import {textForExplorePreview} from 'ExploreOther.js';
+import {textForExplorePreview} from './ExploreOther.js';
+
+import { Link } from 'react-router-dom';
 
 // import the text item that you want to display
 const previewText = textForExplorePreview;
 
+// Blank for now, but for final draft will have the poem's text in it when you click on a poem
 export function ExplorePreview(){
     return(
         <div className="explore-body">
-            <header>
-                <NavBar />
-            </header>
-
             <main className="explore2-main">
                 <div className="preview-container">
                     <section className="preview-tab">
@@ -29,13 +28,13 @@ export function ExplorePreview(){
                             <div className="tab-item">
                                 <div className="create-button">
                                     {/* is this the right creat page? */}
-                                    <a href="/creating"><button type="button" class="navigation-buttons btn btn-primary">Create</button></a>
+                                    <Link to="/creating"><button type="button" className="navigation-buttons btn btn-primary">Create</button></Link>
                                 </div>
                             </div>
 
                             <div className="tab-item">
                                 <div className="back-button">
-                                    <a href="/index"><button type="button" className="navigation-buttons btn btn-primary">Back to Explore Page</button></a>
+                                    <Link to="/index"><button type="button" className="navigation-buttons btn btn-primary">Back to Explore Page</button></Link>
                                 </div>
                             </div>
                         </div>
