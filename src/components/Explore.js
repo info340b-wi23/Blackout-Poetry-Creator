@@ -1,6 +1,4 @@
 import React from 'react';
-import {NavBar} from 'Navbar.js';
-import {Footer} from 'Footer';
 import {ExploreFilterList} from 'ExploreOther.js';
 import {ExploreSearchBar, ExploreSearchHistory} from 'ExploreSearch.js';
 

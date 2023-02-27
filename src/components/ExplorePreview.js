@@ -35,7 +35,7 @@ export function ExplorePreview(){
 
                             <div className="tab-item">
                                 <div className="back-button">
-                                    <a href="./index"><button type="button" className="navigation-buttons btn btn-primary">Back to Explore Page</button></a>
+                                    <a href="/index"><button type="button" className="navigation-buttons btn btn-primary">Back to Explore Page</button></a>
                                 </div>
                             </div>
                         </div>
