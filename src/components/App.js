@@ -3,6 +3,7 @@ import { React, useState } from 'react';
 import { NavBar } from './Navbar.js';
 import { Footer } from './Footer.js';
 
+import { MenuBar } from './Menu.js';
 import { Creating } from './Creating.js'; 
 import { UploadTab, BlackoutTab, FinalizingTab } from './CreatingSideTabs.js';
 import { CreatingPreview } from './CreatingPreview.js';
@@ -45,13 +46,14 @@ function App({poemData}) {
           <Route index element={[<UploadTab/>, <CreatingPreview/>]}/>   
         </Route>
 
+        <Route path="menu" element={<MenuBar/>}/>
+
         {/*About page routes */}
         <Route path="about" element={<AboutLandingPage />} />
         <Route path="about/instructions" element={<AboutInstructionPage />} />
         <Route path="about/what-is-blackout-poetry" element={<AboutArticle />} />
 
         <Route path="userprofile/:username?" element={<UserProfile/>}/>
-
 
         {/* TESTING ROUTE FOR CREATING BELOW */}
         {/* <Route path="/index.html" element={<Index poems={poemArray}/>}/> */}

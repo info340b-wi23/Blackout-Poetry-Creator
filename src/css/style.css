@@ -563,6 +563,10 @@ footer.explore2-footer{
 
 /* Menu CSS */
 
+div.menu {
+    height: 95vh;
+}
+
 main.menu {
     padding: 0;
 }

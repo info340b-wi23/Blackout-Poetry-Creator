@@ -4,7 +4,6 @@ import { useParams } from "react-router-dom";
 
 // Renders the navbar with the correct item highlighted based on what the current page is
 export function NavItems(currPageID) {
-    console.log(currPageID);
     const creatingNavItem = currPageID.currPageID === "creating" ? 
     <a className="nav-link active px-5" href="/creating/upload">Create</a>
     : <a className="nav-link px-5" href="/creating/upload">Create</a>

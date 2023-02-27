@@ -35,7 +35,6 @@ export function UploadTab() {
 }
 
 export function BlackoutTab() {
-
     const changeClickedWords = useOutletContext()[3];
     function handleClick() { // Clear all blackouts by creating a new empty array which indicates no words are blacked out
         changeClickedWords([]);
