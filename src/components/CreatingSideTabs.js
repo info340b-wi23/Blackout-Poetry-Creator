@@ -146,7 +146,7 @@ export function FinalizingTab() {
         // Use the uuid library which will assign unique keys
         // https://stackoverflow.com/questions/39549424/how-to-create-unique-keys-for-react-elements
         const poemObj = {
-            "key": v4(),
+            "key": v4(), // Need to fix key having non-alphanumeric characters so that I can push it to database
             "subject": selectedValue,
             "title": title,
             "sourceTitle": sourceTitle,

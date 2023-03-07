@@ -11,7 +11,7 @@ function Poem(props) {
 
     return (
     <div className="col-md-6">
-       <div className="explore-card"> 
+       <div className="explore-card-user-profile"> 
        <Link to="/ExplorePreview">
                <p className="lit">
                    {props.textContent}

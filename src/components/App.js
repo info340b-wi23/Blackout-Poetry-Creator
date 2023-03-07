@@ -49,7 +49,9 @@ function App() {
 
     const db = getDatabase();
     const poemsRef = ref(db, "0/poems");
-    firebasePush(poemsRef, PoemObj);
+    firebasePush(poemsRef, PoemObj)
+      .then(() => console.log("Data saved successfully!"))
+      .catch(err => console.log(err));
   }
 
   return (

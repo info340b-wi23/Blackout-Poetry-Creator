@@ -425,6 +425,7 @@ button.search-history {
     color: black;
 }
 
+
 .description-card li {
     list-style-type: none;
 }
@@ -462,7 +463,18 @@ section.explore-preview {
 .explore-card {
     display: flex;
     flex-wrap: wrap;
-    flex-basis: 300px;
+    max-width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.16), 0 1px 3px rgba(0, 0, 0, 0.23);
+    margin: 1rem;
+    background-color: #F5F2EB;
+    border: 1px solid #726D6D;
+    height: 75%;
+}
+
+.explore-card-user-profile {
+    display: flex;
+    flex-wrap: wrap;
     border-radius: 10px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.16), 0 1px 3px rgba(0, 0, 0, 0.23);
     margin: 1rem;

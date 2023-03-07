@@ -12,17 +12,17 @@
         },
         {
             "key": "Shiny Moana", 
-            "subject": "", 
-            "title": "", 
+            "subject": "Drama", 
+            "title": "Shiny Moana", 
             "sourceTitle": "Moana, shiny lyrics", 
-            "sourceAuthor": "", 
+            "sourceAuthor": "Disney", 
             "description": "#Moana #Disney", 
             "textContent": "Well, Tatatoa hasn't always been this glam I was a drab little crab once Now I know I can be happy as a clam Because I'm beautiful, baby Did your granny say listen to your heart Be who you are on the inside I need three words to tear her argument apart Your granny lied I'd rather be Shiny Like a treasure from a sunken pirate wreck Scrub the deck and make it look Shiny I will sparkle like a wealthy woman's neck Just a sec Don't you know Fish are dumb, dumb, dumb They chase anything that glitters (beginners) Oh, and here they come, come, come To the brightest thing that glitters Mmm, fish dinners"
         },
         {
             "key": "Name of Poem", 
-            "subject": "", 
-            "title": "", 
+            "subject": "Politics", 
+            "title": "Example Text", 
             "sourceTitle": "Lit Example", 
             "sourceAuthor": "No one", 
             "description": "#Hasttags", 
@@ -31,8 +31,8 @@
         },
         {
             "key": "The Cat In the Hat", 
-            "subject": "", 
-            "title": "", 
+            "subject": "Culture", 
+            "title": "Cat In The Hat", 
             "sourceTitle": "The Cat In the Hat", 
             "sourceAuthor": "Dr.Seuss", 
             "description": "#Dr.Seuss", 
@@ -41,7 +41,7 @@
         },
         {
             "key": "Textbook Poem", 
-            "subject": "", 
+            "subject": "Ethnic", 
             "title": "Textbook Poem", 
             "sourceTitle": "Client-Side Web Development", 
             "sourceAuthor": "Joel Ross", 
