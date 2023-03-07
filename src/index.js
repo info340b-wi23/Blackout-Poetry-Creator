@@ -5,12 +5,25 @@ import App from './components/App.js';
 
 import { BrowserRouter } from 'react-router-dom';
 
-import POEM_DATA from './data/poems.json';
+import { initializeApp } from "firebase/app";
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyCMayG2OIVLMLSV5varPpsTCQkwwvfmbyw",
+  authDomain: "blackout-poetry-b1dcf.firebaseapp.com",
+  projectId: "blackout-poetry-b1dcf",
+  storageBucket: "blackout-poetry-b1dcf.appspot.com",
+  messagingSenderId: "614581028735",
+  appId: "1:614581028735:web:4b13a6fb4aeb46ac48bc4a"
+};
+
+// Initialize Firebase
+initializeApp(firebaseConfig);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <BrowserRouter>
-      <App poemData={POEM_DATA} />
+      <App />
     </BrowserRouter>
 );
 
@@ -23,3 +36,6 @@ window.addEventListener("beforeunload", function() {
   // https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage
   sessionStorage.clear(); // clear the session storage when we leave any of the creating pages
 });
+
+
+

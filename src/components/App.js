@@ -1,4 +1,4 @@
-import { React, useState } from 'react';
+import { React, useState, useEffect } from 'react';
 
 import { NavBar } from './Navbar.js';
 import { Footer } from './Footer.js';
@@ -16,14 +16,40 @@ import { AboutLandingPage } from './AboutLandingPage.js';
 import { AboutInstructionPage } from './AboutInstructionPage.js';
 import { AboutArticle } from './AboutArticle.js';
 
-function App({poemData}) {
+import { getDatabase, ref, push as firebasePush, onValue } from 'firebase/database'
 
-  const [poemArray, setPoemArray] = useState(poemData); // An array of poem objects that can have pre-existing poems in it
+import TEMPLATES from "../data/poems.json"
 
-  // Note: this data does not persist yet, so poems will be deleted on refresh
-  // In the future might figure out how to write to the json file
+function App() {
+
+  const [poemArray, setPoemArray] = useState(TEMPLATES.poems); // An array of poem objects that can have pre-existing poems in it
+
+  // effect to run when component first loads
+  useEffect(() => {
+    //hook up a listener to Firebase
+    const db = getDatabase();
+    const poemsRef = ref(db, "0/poems"); // Get the poems
+
+    //fetch poems data from firebase
+    onValue(poemsRef, function(snapshot) {
+      const poemsObj = snapshot.val();  // Get the value of the poems key
+      const objKeys = Object.keys(poemsObj); // Get the keys of each poem
+      const objArray = objKeys.map((keyString) => { // Map each poem 
+        poemsObj[keyString].key = keyString;
+        return poemsObj[keyString];    
+      })
+      setPoemArray(objArray); //update state & rerender
+    });
+
+  }, []) 
+  
+  // Change and push to Firebase new poem templates if user submits it
   const handlePoemArrayChange = (PoemObj) => {
     setPoemArray([...poemArray, PoemObj]);
+
+    const db = getDatabase();
+    const poemsRef = ref(db, "0/poems");
+    firebasePush(poemsRef, PoemObj);
   }
 
   return (
@@ -35,7 +61,7 @@ function App({poemData}) {
       </header>
       <Routes>
         {/* Replace the element in this later with index.html since it is the main (default) page */}
-        <Route index element={<Explore cardData={poemArray} />}/>
+        <Route index element={<Explore cardData={poemArray}/>}/>
 
         {/* Catch-all route */}
         <Route path="*" element={<Explore cardData={poemArray}/>}/>
@@ -48,12 +74,10 @@ function App({poemData}) {
           <Route index element={[<UploadTab/>, <CreatingPreview/>]}/>   
         </Route>
 
-        <Route path="index" element={<Explore cardData={poemArray}/>}/>
+        <Route path="/index" element={<Explore cardData={poemArray}/>}/>
         <Route path="ExplorePreview" element={<ExplorePreview/>}/>
 
         <Route path="menu" element={<MenuBar/>}/>
-
-        <Route path="index" element={<Explore />}/>
 
         {/*About page routes */}
         <Route path="about" element={<AboutLandingPage />} />

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export function MenuBar() {
     return (
@@ -8,9 +9,9 @@ export function MenuBar() {
         </header>
         <main className="menu">
             <ul className="options">
-                <li className="container menu"><a className="menu" href="/index">EXPLORE</a></li>
-                <li className="container menu"><a className="menu" href="/creating">CREATE</a></li>
-                <li className="container menu"><a className="menu" href="/about">ABOUT</a></li>
+                <li className="container menu"><Link className="menu" to="/index">EXPLORE</Link></li>
+                <li className="container menu"><Link className="menu" to="/creating">CREATE</Link></li>
+                <li className="container menu"><Link className="menu" to="/about">ABOUT</Link></li>
             </ul>
         </main>
     </div>

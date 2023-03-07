@@ -1,5 +1,7 @@
 import React from "react";
 
+import { Link } from "react-router-dom";
+
 
 export function AboutArticle() {
     return(
@@ -15,7 +17,7 @@ export function AboutArticle() {
             <div className="container about">
                 <p className="fs-5">Dating back to the 18th century, blackout poetry, also known as redacted poetry, is a unique form of poetry where one takes any piece of text from any source, such as a newspaper article or old book, and "blacks out" some words while leaving untouched only the ones they desire to keep in their poem. The result is often a visually pleasing piece of contrastive art while simultaneously rendering an interesting poem using words already in the given text, both limiting the poet to what they can write but also allowing them to combine words in a way that has never been done before.</p>
                 <h2>Why Make a Blackout Poetry Website?</h2>
-                <p className="fs-5">Traditional blackout poetry requires pen and paper. A digitalized version of blackout poetry means that you don't have to destroy books or waste ink to get creative. By using this platform, you will not only be able to create blackout poems just like you would with physical materials, but you also have the ability to create poems from almost any piece of text, meaning you can create a poem using your favorite book without sacrificing the physical copy. To learn more about how to use our platform, click <a className="text-primary" href="about2.html">here</a>.</p>
+                <p className="fs-5">Traditional blackout poetry requires pen and paper. A digitalized version of blackout poetry means that you don't have to destroy books or waste ink to get creative. By using this platform, you will not only be able to create blackout poems just like you would with physical materials, but you also have the ability to create poems from almost any piece of text, meaning you can create a poem using your favorite book without sacrificing the physical copy. To learn more about how to use our platform, click <Link className="text-primary" to="/about/instructions">here</Link>.</p>
             </div>
             </article>
         </main>

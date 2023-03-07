@@ -3,7 +3,7 @@ import{React, useState} from 'react';
 import { Link } from 'react-router-dom';
 
 export function ExploreFilterList(props){
-    let cards = props.cardData; // passed in the origional array from poems.json
+    let cards = props.cardData;
 
     const [filteredCardList, setFilteredCardList] = useState(cards); 
     
@@ -11,8 +11,6 @@ export function ExploreFilterList(props){
     const [isLitActive, setIsLitActive] = useState(false);
     const [isPoemActive, setIsPoemActive] = useState(false);
     const [isDefaultActive, setIsDefaultActive] = useState(true); // default all blackout poems are showed
-
-   // filterCardList(cardList, "both"); 
     
     const handleClickLit = function(){
         let newFilteredCardList = cards.filter((card) => {

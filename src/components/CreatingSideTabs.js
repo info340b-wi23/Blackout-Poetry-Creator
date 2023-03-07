@@ -2,6 +2,10 @@ import { useState, useEffect, React } from "react";
 
 import { Link, useOutletContext } from "react-router-dom";
 
+// Use the uuid library which will assign unique keys
+// https://stackoverflow.com/questions/39549424/how-to-create-unique-keys-for-react-elements
+import { v4 } from "uuid";
+
 export function UploadTab() {
     const handleTextChange = useOutletContext()[0]; // When textarea text changes, handle it in our parent function
     // Join the word array so that it can be maintained in the textarea tag
@@ -22,7 +26,7 @@ export function UploadTab() {
             </div>
             <div className="tab-item">
                 <p>b. Browse the community</p>
-                <a href="/index"><button type="button" className="btn d-inline mx-md-0 d-md-inline-block btn-primary">Browse</button></a>
+                <Link to="/index"><button type="button" className="btn d-inline mx-md-0 d-md-inline-block btn-primary">Browse</button></Link>
             </div>
             <div className="tab-item d-none d-md-block">
                 <Link to="/creating/blackout"><button type="button" className="navigation-buttons submit btn btn-primary">Next</button></Link>
@@ -53,7 +57,7 @@ export function BlackoutTab() {
             </div>
             <div className="tab-item">
                 <p className="d-none d-lg-block">Not sure how to blackout poetry?</p>
-                <a href="/about">Check out our helpful guides!</a>
+                <Link to="/about">Check out our helpful guides!</Link>
             </div>
             <div className="tab-item d-none d-lg-inline-block">
                 <div className="container">
@@ -139,8 +143,10 @@ export function FinalizingTab() {
         </p>; 
 
         // Create a new poem object for our array
+        // Use the uuid library which will assign unique keys
+        // https://stackoverflow.com/questions/39549424/how-to-create-unique-keys-for-react-elements
         const poemObj = {
-            "key": title,
+            "key": v4(),
             "subject": selectedValue,
             "title": title,
             "sourceTitle": sourceTitle,
