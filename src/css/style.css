@@ -343,11 +343,11 @@ button.search-history {
 }
 
 
-.filter-check ul {
+/* .filter-check ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-}
+} */
 
 
 .filter-buttons {
@@ -377,11 +377,20 @@ button.search-history {
     background-color: #DBCEB4;
 }
 
+span.filter-title{
+    font-size: 20px;
+    font-weight: bold;
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    padding: 5px 50px 5px 10px;
+}
+
 /* filter dropdown checklist */
-.filter-check li {
+/* .filter-check li {
     text-align: left;
     list-style: none;
-}
+} */
 
 .filter-check input {
     margin: 0.5rem;
@@ -391,14 +400,7 @@ button.search-history {
     display: inline-block;
 }
 
-.filter-check .anchor {
-    position: relative;
-    cursor: pointer;
-    display: inline-block;
-    padding: 5px 50px 5px 10px;
-}
-
-.filter-check .anchor:active:after {
+.filter-check .filter-title:active:after {
     right: 8px;
     top: 21%;
 }

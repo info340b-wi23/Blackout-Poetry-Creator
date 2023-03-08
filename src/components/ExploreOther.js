@@ -1,6 +1,7 @@
 import{React, useState} from 'react';
 
 import { Link } from 'react-router-dom';
+import Form from 'react-bootstrap/Form';
 
 export function ExploreFilterList(props){
     let cards = props.cardData;
@@ -55,14 +56,42 @@ export function ExploreFilterList(props){
                         Default</button>
 
                 {/* //Filter button check box */}
-                    <div id="filter" className="filter-check filter-buttons btn btn-primary" tabIndex="100">
-                        <span className="anchor">Filter</span>
-                        <ul className="items">
-                            <li><input type="checkbox" className="checkbox"/>Culture </li>
-                            <li><input type="checkbox" className="checkbox"/>Ethnic</li>
-                            <li><input type="checkbox" className="checkbox"/>Politics </li>
-                            <li><input type="checkbox" className="checkbox"/>Drama </li>
-                        </ul>
+                    <div id="filter" className="filter-check filter-buttons" tabIndex="100">
+                        <span className="filter-title">Filter</span>
+                        <Form>
+                        {['checkbox'].map((type) => (
+                            <div key={`inline-${type}`} className="mb-3">
+                                <Form.Check
+                                    inline
+                                    label="Culture"
+                                    name="Culture"
+                                    type={type}
+                                    id={`inline-${type}-1`}
+                                />
+                                <Form.Check
+                                    inline
+                                    label="Ethnic"
+                                    name="Ethnic"
+                                    type={type}
+                                    id={`inline-${type}-2`}
+                                />
+                                <Form.Check
+                                    inline
+                                    label="Politics"
+                                    name="Politics"
+                                    type={type}
+                                    id={`inline-${type}-3`}
+                                />
+                                <Form.Check
+                                    inline
+                                    label="Drama"
+                                    name="Drama"
+                                    type={type}
+                                    id={`inline-${type}-4`}
+                                />
+                            </div>
+                        ))}
+                        </Form>
                     </div>
                 </ul>
             </nav>
