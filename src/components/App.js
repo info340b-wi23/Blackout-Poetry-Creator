@@ -3,7 +3,7 @@ import { React, useState, useEffect } from 'react';
 import { NavBar } from './Navbar.js';
 import { Footer } from './Footer.js';
 
-import { MenuBar } from './Menu.js';
+import { MenuBar } from './menu.js';
 import { Explore } from './Explore.js';
 import { Creating } from './Creating.js'; 
 import { ExplorePreview } from './ExplorePreview.js';
