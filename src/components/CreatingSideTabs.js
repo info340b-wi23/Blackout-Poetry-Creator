@@ -128,7 +128,7 @@ export function FinalizingTab() {
     const handleClick = () => { // User hit submit button
 
         // This just makes the blackout completely opaque while also removing its interactivity features since it is in its final state
-        const wordTagWithoutHandler = 
+        let wordTagWithoutHandler = 
         <p>
             {words.map((word, index) => {
                 const isClicked = clickedWords[index] || false;
@@ -142,17 +142,21 @@ export function FinalizingTab() {
             })}
         </p>; 
 
+        // Since there is HTML in it, we can convert it to a JSON string with this method
+        wordTagWithoutHandler = JSON.stringify(wordTagWithoutHandler);
+
         // Create a new poem object for our array
         // Use the uuid library which will assign unique keys
         // https://stackoverflow.com/questions/39549424/how-to-create-unique-keys-for-react-elements
         const poemObj = {
-            "key": v4(), // Need to fix key having non-alphanumeric characters so that I can push it to database
+            "key": v4(),
             "subject": selectedValue,
             "title": title,
             "sourceTitle": sourceTitle,
             "sourceAuthor": sourceAuthor,
             "description": description,
-            "textContent": wordTagWithoutHandler
+            "textContent": wordTagWithoutHandler,
+            "textType": "poem"
         };
         changePoemArray(poemObj);
     }

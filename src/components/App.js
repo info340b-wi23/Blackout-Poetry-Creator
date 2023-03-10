@@ -16,37 +16,33 @@ import { AboutLandingPage } from './AboutLandingPage.js';
 import { AboutInstructionPage } from './AboutInstructionPage.js';
 import { AboutArticle } from './AboutArticle.js';
 
-import { getDatabase, ref, push as firebasePush, onValue } from 'firebase/database'
+import { getDatabase, ref, push as firebasePush, get } from 'firebase/database'
 
 import TEMPLATES from "../data/poems.json"
 
 function App() {
+  const templateArray = TEMPLATES.poems; // For template page
+  const [poemArray, setPoemArray] = useState(templateArray); // Will hold blackout poems
 
-  const [poemArray, setPoemArray] = useState(TEMPLATES.poems); // An array of poem objects that can have pre-existing poems in it
-
-  // effect to run when component first loads
   useEffect(() => {
-    //hook up a listener to Firebase
     const db = getDatabase();
-    const poemsRef = ref(db, "0/poems"); // Get the poems
+    const poemsRef = ref(db, "0/poems");
 
-    //fetch poems data from firebase
-    onValue(poemsRef, function(snapshot) {
-      const poemsObj = snapshot.val();  // Get the value of the poems key
-      const objKeys = Object.keys(poemsObj); // Get the keys of each poem
-      const objArray = objKeys.map((keyString) => { // Map each poem 
+    get(poemsRef).then((snapshot) => {
+      const poemsObj = snapshot.val(); 
+      const objKeys = Object.keys(poemsObj);
+      const objArray = objKeys.map((keyString) => {
         poemsObj[keyString].key = keyString;
-        return poemsObj[keyString];    
-      })
-      setPoemArray(objArray); //update state & rerender
+        return poemsObj[keyString];
+      });
+      setPoemArray(objArray);
     });
-
-  }, []) 
+  }, []);
   
   // Change and push to Firebase new poem templates if user submits it
   const handlePoemArrayChange = (PoemObj) => {
     setPoemArray([...poemArray, PoemObj]);
-
+    
     const db = getDatabase();
     const poemsRef = ref(db, "0/poems");
     firebasePush(poemsRef, PoemObj)
@@ -100,8 +96,8 @@ export default App;
 
 // // Testing function
 // function Index(props) {
-//   const poemArray = props.poems;
-//   return poemArray.map((poem) => {
+//   const templateArray = props.poems;
+//   return templateArray.map((poem) => {
 //     const textContent = poem.textContent;
 //     return <li>{textContent}</li>;
 //   });

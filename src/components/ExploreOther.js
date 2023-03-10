@@ -4,37 +4,28 @@ import { Link } from 'react-router-dom';
 
 export function ExploreFilterList(props){
     let cards = props.cardData;
-
+    console.log(cards);
     const [filteredCardList, setFilteredCardList] = useState(cards); 
     
     // Handles whether the button is currently "active" highlighted. Very hard-coded approach
-    const [isLitActive, setIsLitActive] = useState(false);
     const [isPoemActive, setIsPoemActive] = useState(false);
     const [isDefaultActive, setIsDefaultActive] = useState(true); // default all blackout poems are showed
     
-    const handleClickLit = function(){
-        let newFilteredCardList = cards.filter((card) => {
-            return card.textType === "literature";
-        });
-        setIsLitActive(!isLitActive);
-        setIsPoemActive(false);
-        setIsDefaultActive(false);
-        setFilteredCardList(newFilteredCardList);
-    }
     const handleClickPoems = function(){
         let newFilteredCardList = cards.filter((card) => {
             return card.textType === "poem";
         });
         setIsPoemActive(!isPoemActive);
-        setIsLitActive(false);
         setIsDefaultActive(false);
         setFilteredCardList(newFilteredCardList);
     }
     const handleClickDefault = function(){
+        let newFilteredCardList = cards.filter((card) => {
+            return card.textType === "template";
+        });
         setIsDefaultActive(!isDefaultActive);
         setIsPoemActive(false);
-        setIsLitActive(false);
-        setFilteredCardList(cards);
+        setFilteredCardList(newFilteredCardList);
     }
 
     const cardList = filteredCardList.map((textObj) => {
@@ -47,12 +38,10 @@ export function ExploreFilterList(props){
             <nav className="filter-sort">
                 {/* //filter buttons at the top of the page */}
                 <ul>
-                    <button type="button" className={isLitActive ? "active filter-buttons btn btn-primary" : "filter-buttons btn btn-primary"} aria-label="literature" onClick={handleClickLit}>
-                        Literature</button>
                     <button type="button" className={isPoemActive ? "active filter-buttons btn btn-primary" : "filter-buttons btn btn-primary"} aria-label="Poems" onClick={handleClickPoems}>
                         Poems</button>
                     <button type="button" className={isDefaultActive ? "active filter-buttons btn btn-primary" : "filter-buttons btn btn-primary"} aria-label="Both new literature and poems" onClick={handleClickDefault}>
-                        Default</button>
+                        Templates</button>
 
                 {/* //Filter button check box */}
                     <div id="filter" className="filter-check filter-buttons btn btn-primary" tabIndex="100">
@@ -76,10 +65,10 @@ export function ExploreFilterList(props){
 
 
 function ExploreTextCard(props){
-    const textObj = props.textObj;
+    let textObj = props.textObj;
      // textObj is an object from the array in poems.jason 
 
-     const handleClick = function(){
+    const handleClick = function(){
         textForExplorePreview(textObj);
     }
 
