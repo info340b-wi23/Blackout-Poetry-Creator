@@ -60,39 +60,9 @@ export function UserProfile() {
                                                 carrying.“The library is now closed,” she said. “Mind you
                                                 return anything you have borrowed to the correct —
                                                 what have you been doing to that book, you depraved
-                                                boy?”" sourceInfo={["Harry Potter, Page 345", "JK Rowling", "#HarryPotter"]}/>
-                                <Poem textContent="This is an example of text. It will include part of the project description. For this deliverable, you will
-                                                submit a draft of your Project. Your draft should be a static mockup—the completed page design, but no
-                                                interactivity (so the content is there, but static). In short: all of the HTML/CSS work should be done,
-                                                but it will not have any JavaScript/React (yet!). Yes, that means all of the pages and views for your app.
-                                                Think through every possible screen that the user might see, and implement all of those!" 
-                                                sourceInfo={["Name of Lit", "Author", "#hashtags"]}/>                                                          
+                                                boy?”" sourceInfo={["Harry Potter, Page 345", "JK Rowling", "#HarryPotter"]}/>                                                       
                     </div>
                     <div className="tab-pane fade" id="liked-tab-pane" role="tabpanel" aria-labelledby="liked-tab" tabIndex="0">
-                        <Poem textContent={<div>the sun did not shine.
-                                        it was too wet to play.
-                                        so we sat in the house
-                                    all that cold, cold , wet day.
-                                        i sat there with sally.
-                                        we sat there, we two.
-                                        and i said, 'how i wish
-                                        we had something to do!'
-                                        too  wet to go out
-                                        and  too cold to play ball.
-                                        so we sat in the house.
-                                        we  did nothing at all. 
-                                        so all we could do was to
-                                        sit! sit! sit!sit!
-                                        and we did not like it.
-                                     not one little bit. 
-                                        and then something went BUMP!
-                                        how that bump made us jump!
-                                        we looked!
-                                        then we saw him step in on the mat!
-                                        we looked!
-                                        and we saw him!
-                                        the cat in the hat!
-                            </div>} sourceInfo={["In my feels + The Cat in The Hat", "@User12367 + Dr.Seuse", "description: exploration of love and...", "#Dr.Seuse #emo"]}/>
                     </div>
                 </div>
             </div>

@@ -3,7 +3,7 @@ import { React, useState, useEffect } from 'react';
 import { NavBar } from './Navbar.js';
 import { Footer } from './Footer.js';
 
-import { MenuBar } from './menu.js';
+import { MenuBar } from './Menu.js';
 import { Explore } from './Explore.js';
 import { Creating } from './Creating.js'; 
 import { ExplorePreview } from './ExplorePreview.js';
@@ -84,8 +84,6 @@ function App() {
 
         <Route path="userprofile/:username?" element={<UserProfile/>}/>
 
-        {/* TESTING ROUTE FOR CREATING BELOW */}
-        {/* <Route path="/index.html" element={<Index poems={poemArray}/>}/> */}
       </Routes>
       <Footer/>
     </>
@@ -93,12 +91,3 @@ function App() {
 }
 
 export default App;
-
-// // Testing function
-// function Index(props) {
-//   const templateArray = props.poems;
-//   return templateArray.map((poem) => {
-//     const textContent = poem.textContent;
-//     return <li>{textContent}</li>;
-//   });
-// }

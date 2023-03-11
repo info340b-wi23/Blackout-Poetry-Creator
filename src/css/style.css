@@ -427,9 +427,9 @@ span.filter-title{
     color: black;
 }
 
-
 .description-card li {
     list-style-type: none;
+    border-bottom: 1px black solid;
 }
 
 .explore-card a {
@@ -483,6 +483,10 @@ section.explore-preview {
     background-color: #F5F2EB;
     border: 1px solid #726D6D;
     height: 75%;
+}
+
+.explore-card-user-profile a {
+    text-decoration: none;
 }
 
 /* left side of the screen, section with the description */

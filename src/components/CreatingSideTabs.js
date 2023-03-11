@@ -233,14 +233,14 @@ export function FinalizingTab() {
                             <Link to="/creating/blackout"><button type="button" className="navigation-buttons btn btn-primary">Back</button></Link>
                         </div>          
                         <div className="col">
-                            <Link to="/index"><button type="button" className="navigation-buttons submit btn btn-primary" onClick={handleClick}>Submit</button></Link>
+                            <a href="/index"><button type="button" className="navigation-buttons submit btn btn-primary" onClick={handleClick}>Submit</button></a>
                         </div>
                     </div>
                 </div>
             </div>
             <div className="flexbox-container d-block d-md-none">
                 <Link to="/creating/blackout"><button type="button" className="px-5 navigation-buttons btn btn-primary">Back</button></Link>
-                <Link to="/index"><button type="button" onClick={handleClick} className="px-5 navigation-buttons submit btn btn-primary">Submit</button></Link>
+                <a href="/index"><button type="button" onClick={handleClick} className="px-5 navigation-buttons submit btn btn-primary">Submit</button></a>
             </div>
         </div>
     );

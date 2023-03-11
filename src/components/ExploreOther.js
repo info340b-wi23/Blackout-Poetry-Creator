@@ -5,7 +5,6 @@ import Form from 'react-bootstrap/Form';
 
 export function ExploreFilterList(props){
     let cards = props.cardData;
-    console.log(cards);
     const [filteredCardList, setFilteredCardList] = useState(cards); 
     
     // Handles whether the button is currently "active" highlighted. Very hard-coded approach
@@ -93,12 +92,24 @@ export function ExploreFilterList(props){
 }
 
 
-function ExploreTextCard(props){
+function ExploreTextCard(props) {
+    // textObj is an object from the array in poems.jason 
     let textObj = props.textObj;
-     // textObj is an object from the array in poems.jason 
+    let text = props.textObj.textContent;
 
     const handleClick = function(){
         textForExplorePreview(textObj);
+    }
+
+    // If the textContent resembles a JSON Object (meaning it was submitted as a poem)
+    // https://stackoverflow.com/questions/43327766/render-html-from-a-json-string-in-react
+    if (textObj.textContent.includes("{")) {
+        const jsonHTMLElement = JSON.parse(textObj.textContent); // Parse the JSON to be an HTML string
+        text = ( // Then extract the necessary values to "reconstruct" the HTML it used to represent
+            jsonHTMLElement.props.children.map((word, i) => { // jsonHTMLElement.props.children = array of span elements
+                return(<span className={word.props.className} key={i}>{word.props.children}</span>)
+            })
+        )
     }
 
     return(
@@ -107,14 +118,15 @@ function ExploreTextCard(props){
             <Link to="/ExplorePreview" aria-label={"card" + textObj.title} onClick = {handleClick}>
             {/* //card */}
                 <p className="lit">
-                    {textObj.textContent}
+                    {text}
                 </p>
                 <ul className="description-card">
-                    <li>{textObj.title}</li>
-                    <li>{textObj.sourceTitle}</li>
-                    <li>{textObj.sourceAuthor}</li>
-                    <li>{textObj.description}</li>
-                    <li>{textObj.subject}</li>
+                    <li><b>Title: </b>{textObj.title}</li>
+                    <li><b>Author: </b></li>
+                    <li><b>Source: </b>{textObj.sourceTitle}</li>
+                    <li><b>Source Author: </b>{textObj.sourceAuthor}</li>
+                    <li><b>Description: </b>{textObj.description}</li>
+                    <li><b>Subject: </b>{textObj.subject}</li>
                 </ul>
             </Link>
         </div>
