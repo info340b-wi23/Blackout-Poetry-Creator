@@ -9,12 +9,23 @@ function Poem(props) {
         return <li>{attribute}</li>
     });
 
+    let text = props.textContent;
+
+    if (text.includes("{")) {
+        const jsonHTMLElement = JSON.parse(text); // Parse the JSON to be an HTML string
+        text = ( // Then extract the necessary values to "reconstruct" the HTML it used to represent
+            jsonHTMLElement.props.children.map((word, i) => { // jsonHTMLElement.props.children = array of span elements
+                return(<span className={word.props.className} key={i}>{word.props.children}</span>)
+            })
+        )
+    }
+
     return (
     <div className="col-md-6">
        <div className="explore-card-user-profile"> 
        <Link to="/ExplorePreview">
                <p className="lit">
-                   {props.textContent}
+                   {text}
                </p>
                <ul className="description-card">
                    {source}

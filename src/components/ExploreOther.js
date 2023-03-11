@@ -4,15 +4,18 @@ import { Link } from 'react-router-dom';
 import Form from 'react-bootstrap/Form';
 
 export function ExploreFilterList(props){
-    let cards = props.cardData;
+    let cards = props.cardData.filter((card) => {
+            return card.textType === "template";
+    });
+
     const [filteredCardList, setFilteredCardList] = useState(cards); 
     
     // Handles whether the button is currently "active" highlighted. Very hard-coded approach
     const [isPoemActive, setIsPoemActive] = useState(false);
     const [isDefaultActive, setIsDefaultActive] = useState(true); // default all blackout poems are showed
-    
+
     const handleClickPoems = function(){
-        let newFilteredCardList = cards.filter((card) => {
+        let newFilteredCardList = props.cardData.filter((card) => {
             return card.textType === "poem";
         });
         setIsPoemActive(!isPoemActive);
@@ -20,7 +23,7 @@ export function ExploreFilterList(props){
         setFilteredCardList(newFilteredCardList);
     }
     const handleClickDefault = function(){
-        let newFilteredCardList = cards.filter((card) => {
+        let newFilteredCardList = props.cardData.filter((card) => {
             return card.textType === "template";
         });
         setIsDefaultActive(!isDefaultActive);
@@ -29,7 +32,7 @@ export function ExploreFilterList(props){
     }
 
     const cardList = filteredCardList.map((textObj) => {
-        return <ExploreTextCard textObj={textObj} key={textObj.key} />
+        return <ExploreTextCard textObj={textObj} handlePreviewPoem={props.handlePreviewPoem} key={textObj.key} />
     })
     
     return (
@@ -97,8 +100,8 @@ function ExploreTextCard(props) {
     let textObj = props.textObj;
     let text = props.textObj.textContent;
 
-    const handleClick = function(){
-        textForExplorePreview(textObj);
+    const handleClick = function() {
+        props.handlePreviewPoem(props.textObj);
     }
 
     // If the textContent resembles a JSON Object (meaning it was submitted as a poem)
@@ -131,10 +134,5 @@ function ExploreTextCard(props) {
             </Link>
         </div>
     ) 
-}
-
-export function textForExplorePreview(textObj){
-        const exportText = textObj;
-        return exportText;
 }
 

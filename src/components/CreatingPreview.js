@@ -2,9 +2,22 @@ import { React } from "react";
 import { useOutletContext } from "react-router-dom";
 
 export function CreatingPreview() {
-    const words = useOutletContext()[1].map((word) => { // Get our words from the parent and add a space (for printing properly)
+    let words = useOutletContext()[1].map((word) => { // Get our words from the parent and add a space (for printing properly)
         return word + " "; 
     });
+
+    let focusedPoem = useOutletContext()[5];
+    if (Object.keys(focusedPoem).length !== 0) { // If we don't have an empty focusedPoem object
+        if (Array.isArray(focusedPoem.textContent)) {
+            words = focusedPoem.rawText.map((word) => { // Get the text content, make it an array, and then add a space for printing
+                return word + " "; 
+            });   
+        } else {
+            words = focusedPoem.textContent.split(/\s+/).map((word) => { // Get the text content, make it an array, and then add a space for printing
+                return word + " "; 
+            });   
+        }
+    } 
 
     // The way this works is that I map each word in words, if the word is in clickedWords (such that it should be blacked out),
     // Then the className will have the "blackout" class in it. Notice that I use onClick() which will go into the method

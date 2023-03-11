@@ -1,13 +1,25 @@
 import React from 'react';
-import {textForExplorePreview} from './ExploreOther.js';
 
 import { Link } from 'react-router-dom';
 
-// import the text item that you want to display
-const previewText = textForExplorePreview;
-
 // Blank for now, but for final draft will have the poem's text in it when you click on a poem
-export function ExplorePreview(){
+export function ExplorePreview(props){
+    let previewText = props.previewPoem;
+
+    if (previewText.textContent.includes("{")) {
+        const jsonHTMLElement = JSON.parse(previewText.textContent); // Parse the JSON to be an HTML string
+        previewText.textContent = ( // Then extract the necessary values to "reconstruct" the HTML it used to represent
+            jsonHTMLElement.props.children.map((word, i) => { // jsonHTMLElement.props.children = array of span elements
+                return(<span className={word.props.className} key={i}>{word.props.children}</span>)
+            })
+        )
+    }
+
+    // We want to use the preview poem, so set it as our focused poem in the create page 
+    function handleFocusedPoem() {
+        props.handleFocusedPoem(previewText);
+    }
+
     return(
         <div className="explore-body">
             <main className="explore2-main">
@@ -17,18 +29,17 @@ export function ExplorePreview(){
                             <div className="tab-item">
                                 <p>Description</p>
                                 <ul className="description">
-                                    <li>{previewText.title}</li>
-                                    <li>{previewText.sourceTitle}</li>
-                                    <li>{previewText.sourceAuthor}</li>
-                                    <li>{previewText.description}</li>
-                                    <li>{previewText.subject}</li>
+                                    <li><b>Title: </b>{previewText.title}</li>
+                                    <li><b>Source Title: </b>{previewText.sourceTitle}</li>
+                                    <li><b>Source Author: </b>{previewText.sourceAuthor}</li>
+                                    <li><b>Description: </b>{previewText.description}</li>
+                                    <li><b>Subject: </b>{previewText.subject}</li>
                                 </ul>
                             </div>
                             
                             <div className="tab-item">
                                 <div className="create-button">
-                                    {/* is this the right creat page? */}
-                                    <Link to="/creating"><button type="button" className="navigation-buttons btn btn-primary">Create</button></Link>
+                                    <Link to="/creating"><button type="button" className="navigation-buttons btn btn-primary" onClick={handleFocusedPoem}>Create</button></Link>
                                 </div>
                             </div>
 

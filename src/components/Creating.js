@@ -1,14 +1,16 @@
-import { useState, React } from "react";
+import { useState, React} from "react";
 
 import { Outlet } from "react-router-dom";
 
 export function Creating(props) {
 
-    const [words, setWords] = useState([]);
-    const [clickedWords, setClickedWords] = useState([]);
+    // I use sessionStorage here to help data not get erased when switching between nav tabs on the website
+    const [words, setWords] = useState(JSON.parse(sessionStorage.getItem("words")) || []);
+    const [clickedWords, setClickedWords] = useState(JSON.parse(sessionStorage.getItem("clickedWords")) || []);
 
     function changeClickedWords(wordSet) {
       setClickedWords(wordSet);
+      sessionStorage.setItem("clickedWords", JSON.stringify(wordSet));
     }
 
     // For text input on the upload page
@@ -19,8 +21,19 @@ export function Creating(props) {
         // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions
         const newWords = textValue.split(/\s+/); // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split
         setWords(newWords);
+        sessionStorage.setItem("words", JSON.stringify(newWords));
         // This below code acts as a "cleanup" as when the user changes the text, it will reset the clickedWords array and all blackouts will be removed
-        setClickedWords(new Array(newWords.length).fill(false)); // Create an array that is the length of newWords and then set every value to be false
+        const clickedWordsArray = new Array(newWords.length).fill(false);
+        setClickedWords(clickedWordsArray); // Create an array that is the length of newWords and then set every value to be false
+        sessionStorage.setItem("clickedWords", JSON.stringify(clickedWordsArray));
+
+        sessionStorage.setItem("selectedValue", "culture");
+        sessionStorage.setItem("title", "");
+        sessionStorage.setItem("sourceTitle", "");
+        sessionStorage.setItem("sourceAuthor", "");
+        sessionStorage.setItem("description", "");
+
+        props.handleFocusedPoem({});
     }
 
     // Outlet used to indicate that the children of the creating route will be displayed if their url is loaded
@@ -29,7 +42,7 @@ export function Creating(props) {
     return (
     <main>
         <div className="flexbox-container">
-          <Outlet context={[handleTextChange, words, props.handlePoems, changeClickedWords, clickedWords]}/>
+          <Outlet context={[handleTextChange, words, props.handlePoems, changeClickedWords, clickedWords, props.focusedPoem]}/>
         </div>
     </main>
   );

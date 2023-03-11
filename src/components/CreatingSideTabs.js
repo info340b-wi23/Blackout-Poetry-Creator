@@ -156,6 +156,7 @@ export function FinalizingTab() {
             "sourceAuthor": sourceAuthor,
             "description": description,
             "textContent": wordTagWithoutHandler,
+            "rawText": words,
             "textType": "poem"
         };
         changePoemArray(poemObj);
