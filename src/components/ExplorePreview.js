@@ -47,6 +47,12 @@ export function ExplorePreview(props){
                                     <Link to="/index"><button type="button" className="navigation-buttons btn btn-primary">Back to Explore Page</button></Link>
                                 </div>
                             </div>
+
+                            <div className="tab-item">
+                                <div className="like-button">
+                                    <Link to="/like"><button type="button" className="navigation-buttons btn btn-primary">Like</button></Link>
+                                </div>
+                            </div>
                         </div>
                     </section>
                     <section className="explore-preview">
