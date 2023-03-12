@@ -2,6 +2,10 @@ import { React, useState } from 'react';
 
 import { Link } from 'react-router-dom';
 
+import TEMPLATES from "../data/poems.json";
+
+//import 'whatwg-fetch';
+
 export function ExploreSearchBar(){
     const [searchHistoryArray, setSearchHistoryArray] = useState([]);
     const [searchQuery, setSearchQuery] = useState(""); // Current search value
@@ -9,21 +13,19 @@ export function ExploreSearchBar(){
     let recentlySearched = searchHistoryArray.map((element, i) => {
         let item =(<div key={i} className="history">
             <Link to="/index" className="sidebar" >{element}</Link>
-            <Link to="/index" className="delete" onClick={handleExploreSearchList}> x</Link>
+            <Link to="/index" className="delete" onClick={deleteSearchListItem}> x</Link>
         </div>);
         return item;
     });
 
-
-    function handleExploreSearchList(event) {
+    //still trying to get this function to work
+    function deleteSearchListItem(event) {
+        event.preventDefault();
         let searchArr = searchHistoryArray;
-        let item = event.target.value; // Later make it so the value is the item we want to delete
-        for (var i = 0; i < searchArr.length; i++) {
-            if (searchArr[i] === item) {
-                searchArr.splice(i, 1);
-            }
-        }
-        setSearchHistoryArray(searchArr);
+        // let index = searchArr.indexOf(element); 
+        // let newSearchArr = searchArr.splice(index, 1);
+        let newSearchArr = searchArr.pop();
+        setSearchHistoryArray(newSearchArr);
     }
 
     function clearHistory(event) { // should help clear search history 
@@ -41,7 +43,27 @@ export function ExploreSearchBar(){
             }
             setSearchHistoryArray([event.target.value, ...searchHistoryArray]); // Either way, put the searched value on top 
             event.target.value = ""; // Remove the search value from the search bar
+            searchingCards(TEMPLATES);
         }
+    }
+
+    //traversing through the card list to find titles that match the input typed into the search bar
+    // this is not working I will try later to send a fetch request
+    function searchingCards(cardsArray){
+        // let input = document.getElementById('mySearch');
+        // input = input.toLowerCase();
+        // let elements = cardsArray;
+        // let newTemplateArr = [];
+        // for(let i = 0; i < elements.length; i++){
+        //     let cardTitle = elements[i].title;
+        //     if(!cardTitle.toLowerCase().includes(input)){
+        //         elements[i].style.display="none";
+        //     } else{
+        //         elements[i].style.display="";
+        //         newTemplateArr.push(elements[i]);
+        //     }
+        // }
+        // return newTemplateArr;
     }
 
     // On search submit, don't cause the button to clear history and also update the search history array
@@ -53,7 +75,7 @@ export function ExploreSearchBar(){
     };
 
     return(
-        <form>
+        <form role="form" method="GET" action="">
             <div>
                 <label htmlFor="search bar">Search Bar</label>
                 <input type="search" id="mySearch" className="search-bar" placeholder="Search New Poems" defaultValue={searchQuery} onKeyDown={handleKeyDown} />

@@ -3,13 +3,14 @@ import { React, useState, useEffect } from 'react';
 import { NavBar } from './Navbar.js';
 import { Footer } from './Footer.js';
 
-import { MenuBar } from './Menu.js';
+import { MenuBar } from './menu.js';
 import { Explore } from './Explore.js';
 import { Creating } from './Creating.js'; 
 import { ExplorePreview } from './ExplorePreview.js';
 import { UploadTab, BlackoutTab, FinalizingTab } from './CreatingSideTabs.js';
 import { CreatingPreview } from './CreatingPreview.js';
 
+import { SignInPage } from './SignInPage';
 import { Route, Routes } from 'react-router-dom';
 import { UserProfile } from './UserProfile.js';
 import { AboutLandingPage } from './AboutLandingPage.js';
@@ -87,6 +88,9 @@ function App() {
 
         {/* Catch-all route */}
         <Route path="*" element={<Explore cardData={poemArray} handlePreviewPoem={handlePreviewPoem}/>}/>
+
+        {/* Sign-in page */}
+        <Route path="signIn" element={<SignInPage />} />
 
         {/* Add a 'Route' to the name of your page and the element used to render it */}
         <Route path="creating" element={<Creating handlePoems = {handlePoemArrayChange} focusedPoem = {focusedPoem} handleFocusedPoem={handleFocusedPoem}/>}>
