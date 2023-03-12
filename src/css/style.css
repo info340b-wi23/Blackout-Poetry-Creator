@@ -272,11 +272,11 @@ a:hover.about {
 
 /* Explore Main Page(s) */
 
-body.explore-body {
+/* body.explore-body {
     margin: 0;
     display: flex;
     flex-direction: column;
-}
+} */
 
 main.explore-main {
     display: inline-block;
@@ -430,6 +430,7 @@ span.filter-title{
 .description-card li {
     list-style-type: none;
     border-bottom: 1px black solid;
+    margin-right: 2rem;
 }
 
 .explore-card a {
@@ -442,11 +443,6 @@ span.filter-title{
 }
 
 /* Explore 2 CSS */
-body.explore-body {
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-}
 
 main.explore-main {
     flex: 1;
@@ -563,12 +559,6 @@ section.preview-tab{
 }
 section.preview-tab, section.explore-preview {
     flex-basis: 28%;
-}
-footer.explore2-footer{
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
 }
 
 /* Menu CSS */
@@ -864,13 +854,6 @@ a.menu {
 
     .preview-header{
         flex-direction: row;
-    }
-
-    .preview-text {
-        width: 900px;
-        height: 600px;
-        margin-left: auto;
-        margin-right: auto;
     }
 
     /* User Profile */

@@ -50,38 +50,38 @@ export function ExploreFilterList(props){
                     <div id="filter" className="filter-check filter-buttons" tabIndex="100">
                         <span className="filter-title">Filter</span>
                         <Form>
-                        {['checkbox'].map((type) => (
-                            <div key={`inline-${type}`} className="mb-3">
-                                <Form.Check
-                                    inline
-                                    label="Culture"
-                                    name="Culture"
-                                    type={type}
-                                    id={`inline-${type}-1`}
-                                />
-                                <Form.Check
-                                    inline
-                                    label="Ethnic"
-                                    name="Ethnic"
-                                    type={type}
-                                    id={`inline-${type}-2`}
-                                />
-                                <Form.Check
-                                    inline
-                                    label="Politics"
-                                    name="Politics"
-                                    type={type}
-                                    id={`inline-${type}-3`}
-                                />
-                                <Form.Check
-                                    inline
-                                    label="Drama"
-                                    name="Drama"
-                                    type={type}
-                                    id={`inline-${type}-4`}
-                                />
-                            </div>
-                        ))}
+                            {['checkbox'].map((type) => (
+                                <div key={`inline-${type}`} className="mb-3">
+                                    <Form.Check
+                                        inline
+                                        label="Culture"
+                                        name="Culture"
+                                        type={type}
+                                        id={`inline-${type}-Culture`}
+                                    />
+                                    <Form.Check
+                                        inline
+                                        label="Ethnic"
+                                        name="Ethnic"
+                                        type={type}
+                                        id={`inline-${type}-Ethnic`}
+                                    />
+                                    <Form.Check
+                                        inline
+                                        label="Politics"
+                                        name="Politics"
+                                        type={type}
+                                        id={`inline-${type}-Politics`}
+                                    />
+                                    <Form.Check
+                                        inline
+                                        label="Drama"
+                                        name="Drama"
+                                        type={type}
+                                        id={`inline-${type}-Drama`}
+                                    />
+                                </div>
+                            ))}
                         </Form>
                     </div>
                 </ul>
@@ -124,7 +124,7 @@ function ExploreTextCard(props) {
                     {text}
                 </p>
                 <ul className="description-card">
-                    <li><b>Title: </b>{textObj.title}</li>
+                    <li className='card-title'><b>Title: </b>{textObj.title}</li>
                     <li><b>Author: </b></li>
                     <li><b>Source: </b>{textObj.sourceTitle}</li>
                     <li><b>Source Author: </b>{textObj.sourceAuthor}</li>

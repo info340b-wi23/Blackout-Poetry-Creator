@@ -7,6 +7,8 @@ import { BrowserRouter } from 'react-router-dom';
 
 import { initializeApp } from "firebase/app";
 
+import 'whatwg-fetch';
+
 // Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyCMayG2OIVLMLSV5varPpsTCQkwwvfmbyw",

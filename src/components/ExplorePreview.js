@@ -21,7 +21,6 @@ export function ExplorePreview(props){
     }
 
     return(
-        <div className="explore-body">
             <main className="explore2-main">
                 <div className="preview-container">
                     <section className="preview-tab">
@@ -66,6 +65,5 @@ export function ExplorePreview(props){
                     </section>
                 </div>
             </main>
-        </div>
     )
 }
