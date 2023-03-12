@@ -663,6 +663,24 @@ a.menu {
     flex: 1;
 }
 
+/* Sign in page */
+
+.sign-in-flexbox {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    min-height: 70vh;
+    background-color: #DBCEB4;
+}
+
+.sign-in-box {
+    padding: 2rem;
+    background-color: #F5F2EB;
+    border-radius: 1rem;
+    box-shadow: 0px 0px 5px #000000;
+}
+
 @media (min-width: 768px) {
     main {
         /* So the body content isn't hidden in the fixed nav bar*/

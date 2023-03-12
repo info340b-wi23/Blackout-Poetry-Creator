@@ -5,31 +5,35 @@ import Form from 'react-bootstrap/Form';
 
 export function ExploreFilterList(props){
     let cards = props.cardData.filter((card) => {
-            return card.textType === "template";
+        return card.textType === "template";
     });
 
     const [filteredCardList, setFilteredCardList] = useState(cards); 
+
     
     // Handles whether the button is currently "active" highlighted. Very hard-coded approach
     const [isPoemActive, setIsPoemActive] = useState(false);
-    const [isDefaultActive, setIsDefaultActive] = useState(true); // default all blackout poems are showed
+    const [isTemplateActive, setIsTemplateActive] = useState(true); // default all blackout poems are showed
 
     const handleClickPoems = function(){
         let newFilteredCardList = props.cardData.filter((card) => {
             return card.textType === "poem";
         });
-        setIsPoemActive(!isPoemActive);
-        setIsDefaultActive(false);
+        setIsPoemActive(true);
+        setIsTemplateActive(false);
         setFilteredCardList(newFilteredCardList);
     }
-    const handleClickDefault = function(){
+    const handleClickTemplate = function(){
         let newFilteredCardList = props.cardData.filter((card) => {
             return card.textType === "template";
         });
-        setIsDefaultActive(!isDefaultActive);
+        setIsTemplateActive(true);
         setIsPoemActive(false);
         setFilteredCardList(newFilteredCardList);
     }
+
+    // CREATE A RESET BUTTON SO THAT WE CAN GET ALL THE POEMS / TEMPLATES BACK (use props.freshCards and set filtered cards to be that)
+    // props.handleSearchQuery("") to reset 
 
     const cardList = filteredCardList.map((textObj) => {
         return <ExploreTextCard textObj={textObj} handlePreviewPoem={props.handlePreviewPoem} key={textObj.key} />
@@ -43,7 +47,7 @@ export function ExploreFilterList(props){
                 <ul>
                     <button type="button" className={isPoemActive ? "active filter-buttons btn btn-primary" : "filter-buttons btn btn-primary"} aria-label="Poems" onClick={handleClickPoems}>
                         Poems</button>
-                    <button type="button" className={isDefaultActive ? "active filter-buttons btn btn-primary" : "filter-buttons btn btn-primary"} aria-label="Both new literature and poems" onClick={handleClickDefault}>
+                    <button type="button" className={isTemplateActive ? "active filter-buttons btn btn-primary" : "filter-buttons btn btn-primary"} aria-label="Both new literature and poems" onClick={handleClickTemplate}>
                         Templates</button>
 
                 {/* //Filter button check box */}

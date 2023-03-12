@@ -22,10 +22,14 @@ export function SignInPage(props) {
     const auth = getAuth();
  
     return (
-        <div>
-            <h1>Blackout Poetry</h1>
-            <p>Welcome to Blackout Poetry! Sign in to get started</p>
-            <StyledFirebaseAuth uiConfig={firebaseUIConfig} firebaseAuth={auth} />
-        </div>
+        <main>
+            <div className="sign-in-flexbox">
+                <div className="sign-in-box">
+                    <h1>Blackout Poetry</h1>
+                    <p>Welcome to Blackout Poetry! Sign in to get started</p>
+                    <StyledFirebaseAuth uiConfig={firebaseUIConfig} firebaseAuth={auth} />
+                </div>
+            </div>
+        </main>
     )
 }

@@ -4,27 +4,20 @@ import { Link } from 'react-router-dom';
 
 import TEMPLATES from "../data/poems.json";
 
-//import 'whatwg-fetch';
-
-export function ExploreSearchBar(){
+export function ExploreSearchBar(props){
     const [searchHistoryArray, setSearchHistoryArray] = useState([]);
-    const [searchQuery, setSearchQuery] = useState(""); // Current search value
 
-    let recentlySearched = searchHistoryArray.map((element, i) => {
-        let item =(<div key={i} className="history">
-            <Link to="/index" className="sidebar" >{element}</Link>
-            <Link to="/index" className="delete" onClick={deleteSearchListItem}> x</Link>
+    let recentlySearched = searchHistoryArray.map((element, i) => { // Clicking on element will search for those; clicking on x deletes that element from search history
+        let item =(<div key={i} className="history"> 
+            <Link to="/index" className="sidebar" onClick={(element) => props.handleSearchQuery(element.target.innerText)}>{element}</Link>
+            <Link to="/index" className="delete" onClick={(event) => deleteSearchListItem(event, element)}>x</Link>
         </div>);
         return item;
     });
 
-    //still trying to get this function to work
-    function deleteSearchListItem(event) {
+    function deleteSearchListItem(event, element) {
         event.preventDefault();
-        let searchArr = searchHistoryArray;
-        // let index = searchArr.indexOf(element); 
-        // let newSearchArr = searchArr.splice(index, 1);
-        let newSearchArr = searchArr.pop();
+        let newSearchArr = searchHistoryArray.filter((item) => item !== element);
         setSearchHistoryArray(newSearchArr);
     }
 
@@ -37,7 +30,7 @@ export function ExploreSearchBar(){
     // When the ENTER key is pressed in the search bar...
     function submitSearchBar(event) {
         if (/^\s*$/.test(event.target.value) === false) { // Checks that the search is not just white space using regex (since it has no significance)
-            setSearchQuery(event.target.value);
+            props.handleSearchQuery(event.target.value);
             if (searchHistoryArray.includes(event.target.value)) { // If the search history has the searched value
                 searchHistoryArray.splice(searchHistoryArray.indexOf(event.target.value), 1); // Get rid of the value
             }
@@ -75,10 +68,10 @@ export function ExploreSearchBar(){
     };
 
     return(
-        <form role="form" method="GET" action="">
+        <form method="GET" action="">
             <div>
                 <label htmlFor="search bar">Search Bar</label>
-                <input type="search" id="mySearch" className="search-bar" placeholder="Search New Poems" defaultValue={searchQuery} onKeyDown={handleKeyDown} />
+                <input type="search" id="mySearch" className="search-bar" placeholder="Search New Poems" defaultValue={props.searchQuery} onKeyDown={handleKeyDown} />
                 {recentlySearched}
                 <div className="history">
                     <button onClick={clearHistory} className="search-history">Clear Search History</button>
