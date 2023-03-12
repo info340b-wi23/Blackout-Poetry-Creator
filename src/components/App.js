@@ -46,7 +46,7 @@ function App() {
   const handleFocusedPoem = (poemObj) => {
     setFocusedPoem(poemObj);
     if (Array.isArray(poemObj.textContent)) { // if the text content is actually a json object
-        sessionStorage.setItem("words", JSON.stringify(poemObj.rawText)); // use the raw text without any HTML as the text
+      sessionStorage.setItem("words", JSON.stringify(poemObj.rawText)); // use the raw text without any HTML as the text
     } else {
       sessionStorage.setItem("words", JSON.stringify(poemObj.textContent.split(/\s+/)));
     }

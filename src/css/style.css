@@ -545,7 +545,9 @@ section.preview-tab{
 .preview-text-words {
     font-size: 24px;
     padding: 1rem;
+    color: rgb(0, 0, 0);
 }
+
 
 .description{
     box-sizing: border-box;
