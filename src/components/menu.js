@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+// This function proves the main gateway of the home page that is an consolidated menu of the navigation links.
 export function MenuBar() {
     return (
     <div className="menu">

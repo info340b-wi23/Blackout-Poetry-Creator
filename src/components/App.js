@@ -21,6 +21,7 @@ import { getDatabase, ref, push as firebasePush, onValue } from 'firebase/databa
 
 import TEMPLATES from "../data/poems.json"
 
+// This is the main implementation of the application over java script.
 function App() {
   const templateArray = TEMPLATES.poems; // For template page
   const [poemArray, setPoemArray] = useState(templateArray); // Will hold blackout poems
