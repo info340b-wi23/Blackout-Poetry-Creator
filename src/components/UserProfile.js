@@ -36,6 +36,7 @@ function Poem(props) {
     );
 }
 
+// This function uses the username and links the user account to the webapp by identifing it.
 export function UserProfile() {
     const params = useParams();
     const username = params.username !== undefined ? params.username : "Username"; // If username is in the URL then it will replace the placeholder

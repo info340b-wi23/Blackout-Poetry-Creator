@@ -2,7 +2,7 @@ import React from "react";
 
 import { Link } from "react-router-dom";
 
-//This function provides a discription about the web application and block out poyetry in the ABOUT page.
+//This function provides a discription about the web application and block out poyetry in the ABOUT page on the webapp.
 export function AboutArticle() {
     return(
         <main className="about">
