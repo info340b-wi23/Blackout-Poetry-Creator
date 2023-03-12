@@ -90,6 +90,32 @@ a.nav-link {
 /* Creating Page(s) */
 /*                  */
 
+.creation-tab-splitter{
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+}
+
+.creation-container{
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+}
+.preview-paper{
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    max-height:400px;
+    min-height:400px;
+    height:400px;
+    background-color: #DBCEB4;
+    overflow-wrap: break-word;
+}
+.preview-paper-words{
+    padding: 1rem;
+}
+
+.preview-paper-words p {
+    background-color: #DBCEB4;
+}
+
 .blackout-preview {
     background-color: rgba(0, 0, 0, 0.5);
 }
@@ -183,18 +209,6 @@ textarea#description {
     color: white;
 }
 
-.preview-paper-words p {
-    background-color: #DBCEB4;
-}
-
-.preview-paper {
-    max-height:400px;
-    min-height:400px;
-    height:400px;
-    background-color: #DBCEB4;
-    overflow-wrap: break-word;
-}
-
 /*            */
 /* About Page */
 /*            */
@@ -272,12 +286,6 @@ a:hover.about {
 
 /* Explore Main Page(s) */
 
-/* body.explore-body {
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-} */
-
 main.explore-main {
     display: inline-block;
     flex: 1;
@@ -341,14 +349,6 @@ button.search-history {
 .items {
     padding: 0;
 }
-
-
-/* .filter-check ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-} */
-
 
 .filter-buttons {
     display: inline-block;
@@ -479,9 +479,6 @@ section.explore-preview {
     background-color: #F5F2EB;
     border: 1px solid #726D6D;
     height: 75%;
-}
-
-.explore-card-user-profile a {
     text-decoration: none;
 }
 
@@ -519,7 +516,6 @@ section.preview-tab{
 .preview-container {
     display: flex;
     flex-direction: column;
-    height: 100vh;
 }
 
 .preview-header h1 {
@@ -577,9 +573,9 @@ html.menu {
     width: 100%;
 }
 
-img.menu {
-    height: 300px;
-    width: 1300px;
+img.menu{
+    height: auto;
+    max-width: 100%;
 }
 
 .center {
@@ -770,7 +766,6 @@ a.menu {
         height: 600px;
         max-height: 600px;
         min-height: 600px;
-        border-radius: 10px;
         margin-left: auto;
         margin-right: auto;
         box-shadow: inset 0px 0px 5px #000000;
@@ -791,11 +786,6 @@ a.menu {
 
     main.explore-main {
         display: flex;
-    }
-
-    .navigation-buttons {
-        margin-top: 1rem;
-        width: 100%;
     }
 
     /* left side of the screen, section with the search bar */
@@ -866,10 +856,6 @@ a.menu {
     .tab-item select {
         margin-top: 1rem;
         margin-left: 2rem;
-    }
-
-    .preview-container {
-        flex-direction: row;
     }
 
     .preview-header{
