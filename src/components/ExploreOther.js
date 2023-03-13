@@ -4,16 +4,13 @@ import { Link } from 'react-router-dom';
 import Form from 'react-bootstrap/Form';
 
 export function ExploreFilterList(props){
-    let cards = props.cardData.filter((card) => {
-        return card.textType === "template";
-    });
 
-    const [filteredCardList, setFilteredCardList] = useState(cards); 
+    const [filteredCardList, setFilteredCardList] = useState(props.freshCards); 
 
-    
     // Handles whether the button is currently "active" highlighted. Very hard-coded approach
     const [isPoemActive, setIsPoemActive] = useState(false);
     const [isTemplateActive, setIsTemplateActive] = useState(true); // default all blackout poems are showed
+    const [isAllActive, setIsAllActive] = useState(false);
 
     const handleClickPoems = function(){
         let newFilteredCardList = props.cardData.filter((card) => {
@@ -21,19 +18,36 @@ export function ExploreFilterList(props){
         });
         setIsPoemActive(true);
         setIsTemplateActive(false);
+        setIsAllActive(false);
         setFilteredCardList(newFilteredCardList);
     }
+
     const handleClickTemplate = function(){
         let newFilteredCardList = props.cardData.filter((card) => {
             return card.textType === "template";
         });
         setIsTemplateActive(true);
         setIsPoemActive(false);
+        setIsAllActive(false);
+        setFilteredCardList(newFilteredCardList);
+    }
+    const handleClickAll = function(){
+        let newFilteredCardList = props.cardData;
+        setIsTemplateActive(false);
+        setIsPoemActive(false);
+        setIsAllActive(true);
         setFilteredCardList(newFilteredCardList);
     }
 
     // CREATE A RESET BUTTON SO THAT WE CAN GET ALL THE POEMS / TEMPLATES BACK (use props.freshCards and set filtered cards to be that)
     // props.handleSearchQuery("") to reset 
+    const handleResetButton = function() {
+        props.handleSearchQuery("");
+        setIsTemplateActive(false);
+        setIsPoemActive(false);
+        setIsAllActive(true);
+        setFilteredCardList(props.freshCards);
+    }
 
     const cardList = filteredCardList.map((textObj) => {
         return <ExploreTextCard textObj={textObj} handlePreviewPoem={props.handlePreviewPoem} key={textObj.key} />
@@ -45,10 +59,14 @@ export function ExploreFilterList(props){
             <nav className="filter-sort">
                 {/* //filter buttons at the top of the page */}
                 <ul>
+                    <button type="button" className={"filter-buttons btn btn-primary reset-button"} aria-label="Reset search query" onClick={handleResetButton}>
+                        RESET</button>
                     <button type="button" className={isPoemActive ? "active filter-buttons btn btn-primary" : "filter-buttons btn btn-primary"} aria-label="Poems" onClick={handleClickPoems}>
                         Poems</button>
-                    <button type="button" className={isTemplateActive ? "active filter-buttons btn btn-primary" : "filter-buttons btn btn-primary"} aria-label="Both new literature and poems" onClick={handleClickTemplate}>
+                    <button type="button" className={isTemplateActive ? "active filter-buttons btn btn-primary" : "filter-buttons btn btn-primary"} aria-label="Templates" onClick={handleClickTemplate}>
                         Templates</button>
+                    <button type="button" className={isAllActive ? "active filter-buttons btn btn-primary" : "filter-buttons btn btn-primary"} aria-label="Poems and Templates" onClick={handleClickAll}>
+                        All</button>
 
                 {/* //Filter button check box */}
                     <div id="filter" className="filter-check filter-buttons" tabIndex="100">

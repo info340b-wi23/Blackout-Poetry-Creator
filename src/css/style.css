@@ -384,6 +384,7 @@ span.filter-title{
     cursor: pointer;
     display: inline-block;
     padding: 5px 50px 5px 10px;
+    text-decoration: underline;
 }
 
 /* filter dropdown checklist */
@@ -435,11 +436,11 @@ span.filter-title{
 
 .explore-card a {
     text-decoration: none;
+    color: none;
 }
 
-.explore-card a:hover {
-    text-decoration: none;
-    color: inherit;
+.reset-button {
+    background-color: #ffbd03;
 }
 
 /* Explore 2 CSS */
@@ -479,7 +480,11 @@ section.explore-preview {
     background-color: #F5F2EB;
     border: 1px solid #726D6D;
     height: 75%;
+}
+
+.explore-card-user-profile a {
     text-decoration: none;
+    color: none;
 }
 
 /* left side of the screen, section with the description */
@@ -557,6 +562,15 @@ section.preview-tab{
 }
 section.preview-tab, section.explore-preview {
     flex-basis: 28%;
+}
+
+.like-button .btn-primary {
+    background-color: #ffbd03;
+    width: 50%;
+}
+
+.back-button .btn-primary {
+    background-color: #DBCEB4;
 }
 
 /* Menu CSS */
@@ -695,7 +709,8 @@ a.menu {
     /*                  */
     .flexbox-container {
         flex-direction: row;
-        height: 100vh;
+        min-height: 100vh;
+        height: 113vh;
     }
 
     section {
@@ -786,6 +801,10 @@ a.menu {
 
     main.explore-main {
         display: flex;
+    }
+
+    .btn.active {
+        color: black;
     }
 
     /* left side of the screen, section with the search bar */

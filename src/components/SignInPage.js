@@ -12,8 +12,8 @@ const firebaseUIConfig = {
     signInFlow: 'popup', //don't redirect to authenticate
     credentialHelper: 'none', //don't show the email account chooser
     callbacks: { //"lifecycle" callbacks
-      signInSuccessWithAuthResult: () => {
-        return false; //don't redirect after authentication
+        signInSuccessWithAuthResult: () => {
+            return false; //don't redirect after authentication
         }
     }
 }
