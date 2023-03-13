@@ -450,6 +450,10 @@ span.filter-title{
     color: none;
 }
 
+.like-count {
+    color: red;
+}
+
 .reset-button {
     background-color: #ffbd03;
 }
@@ -584,6 +588,10 @@ section.preview-tab, section.explore-preview {
 .like-button .btn-primary {
     background-color: #ffbd03;
     width: 50%;
+}
+
+.like-button .liked {
+    background-color: #dd7973;
 }
 
 .back-button .btn-primary {

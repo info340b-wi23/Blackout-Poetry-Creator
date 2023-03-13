@@ -68,14 +68,26 @@ function App() {
     if (Array.isArray(poemObj.textContent)) { // if the text content is actually a json object
       sessionStorage.setItem("words", JSON.stringify(poemObj.rawText)); // use the raw text without any HTML as the text
     } else {
-      sessionStorage.setItem("words", JSON.stringify(poemObj.textContent.split(/\s+/)));
+      if (poemObj.textContent) {
+        sessionStorage.setItem("words", JSON.stringify(poemObj.textContent.split(/\s+/)));
+      }
     }
     sessionStorage.setItem("clickedWords", JSON.stringify([]));
-    sessionStorage.setItem("selectedValue", "culture");
-    sessionStorage.setItem("title", "");
-    sessionStorage.setItem("sourceTitle", poemObj.sourceTitle);
-    sessionStorage.setItem("sourceAuthor", poemObj.sourceAuthor);
-    sessionStorage.setItem("description", "");
+    if (poemObj.subject) {
+      sessionStorage.setItem("selectedValue", poemObj.subject);
+    }
+    if (poemObj.title) {
+      sessionStorage.setItem("title", "");
+    }
+    if (poemObj.sourceTitle) {
+      sessionStorage.setItem("sourceTitle", poemObj.sourceTitle);
+    }
+    if (poemObj.sourceAuthor) {
+      sessionStorage.setItem("sourceAuthor", poemObj.sourceAuthor);
+    }
+    if (poemObj.description) {
+      sessionStorage.setItem("description", "");
+    }
   }
 
   // For the explore preview page

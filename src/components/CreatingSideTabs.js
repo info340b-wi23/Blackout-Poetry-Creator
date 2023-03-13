@@ -149,17 +149,26 @@ export function FinalizingTab(props) {
         // Use the uuid library which will assign unique keys
         // https://stackoverflow.com/questions/39549424/how-to-create-unique-keys-for-react-elements
         const username = props.currentUser !== null ? props.currentUser.displayName : "A user";
+
+        let adjustedTitle = title;
+        if (adjustedTitle === "") { // in case the title is empty, use the placeholder value which is "My Poem"
+            adjustedTitle = "My Poem";
+        }
+
+        const key = v4();
+
         const poemObj = {
-            "key": v4(),
+            "key": key,
             "subject": selectedValue,
-            "title": title,
+            "title": adjustedTitle,
             "sourceTitle": sourceTitle,
             "sourceAuthor": sourceAuthor,
             "description": description,
             "textContent": wordTagWithoutHandler,
             "rawText": words,
             "textType": "poem",
-            "author": username
+            "author": username,
+            "likedBy": ""
         };
         changePoemArray(poemObj);
     }
@@ -194,7 +203,7 @@ export function FinalizingTab(props) {
                             <p>Title</p>
                         </div>
                         <div className="col">
-                            <input className="form-control form-input-margin" type="text" placeholder="My Poem" value={title} onChange={handleTitleChange}/>
+                            <input className="form-control form-input-margin" type="text" value={title} onChange={handleTitleChange}/>
                         </div>
                     </div>
                 </div>
@@ -237,7 +246,7 @@ export function FinalizingTab(props) {
                             <Link to="/creating/blackout"><button type="button" className="navigation-buttons btn btn-primary">Back</button></Link>
                         </div>          
                         <div className="col">
-                            <a href="/explore"><button type="button" className="navigation-buttons submit btn btn-primary" onClick={handleClick}>Submit</button></a>
+                            <Link to="/explore"><button type="button" className="navigation-buttons submit btn btn-primary" onClick={handleClick}>Submit</button></Link>
                         </div>
                     </div>
                 </div>

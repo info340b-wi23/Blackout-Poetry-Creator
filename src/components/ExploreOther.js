@@ -230,6 +230,7 @@ function ExploreTextCard(props) {
                     <li><b>Source Author: </b>{textObj.sourceAuthor}</li>
                     <li><b>Description: </b>{textObj.description}</li>
                     <li><b>Subject: </b>{textObj.subject}</li>
+                    <li className="like-count"><b>&#10084;: </b>{Object.values(textObj.likedBy).length}</li>
                 </ul>
             </Link>
         </div>

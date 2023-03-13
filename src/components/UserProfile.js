@@ -6,8 +6,6 @@ import { Link } from "react-router-dom";
 // Private function which will render the poem based on what is in the array
 // Use a map to make divs with each poem and then it will add it to the list
 function Poem({poem}) {
-    console.log(poem);
-
     let text = poem.textContent;
 
     if (text.includes("{")) {
@@ -24,7 +22,10 @@ function Poem({poem}) {
     const sourceTitle = poem.sourceTitle;
     const subject = poem.subject;
 
-
+    let author = ""
+    if (poem.textType === "poem") {
+        author = <li key="author"><b>Author: </b>{poem.author}</li>
+    }
 
     return (
     <div className="col-md-6">
@@ -34,10 +35,11 @@ function Poem({poem}) {
                    {text}
                </p>
                <ul className="description-card">
-                   <li><b>Title: </b>{title}</li>
-                   <li><b>Source Title: </b>{sourceTitle}</li>
-                   <li><b>Source Author: </b>{sourceAuthor}</li>
-                   <li><b>Subject: </b>{subject}</li>
+                   <li key="title"><b>Title: </b>{title}</li>
+                   {author}
+                   <li key="source-title"><b>Source Title: </b>{sourceTitle}</li>
+                   <li key="source-author"><b>Source Author: </b>{sourceAuthor}</li>
+                   <li key="subject"><b>Subject: </b>{subject}</li>
                </ul>
         </Link>
        </div>
@@ -45,21 +47,23 @@ function Poem({poem}) {
     );
 }
 
-// This function uses the username and links the user account to the webapp by identifing it.
+// This function uses the username and links the user account to the webapp by identifying it.
 export function UserProfile(props) {
     const username = props.currentUser !== null ? props.currentUser.displayName : "Guest"; // If username is in the URL then it will replace the placeholder
 
     const handleSignOut = () => {
-        console.log("signing out");
         signOut(getAuth())
             .catch(err => console.log(err));
     }
 
-    // Handles users created poems
-    let createdPoems = [];
+    let createdPoems = []; // Users created poems
+    let likedPoems = []; // Users liked poems
     for (let poem of props.poemArray) {
-        if (poem.author === username) {
-            createdPoems.push(<Poem poem={poem}/>)
+        if (poem.author === username) { // Finds the poems the user wrote
+            createdPoems.push(<Poem key={poem.key} poem={poem}/>);
+        }
+        if (props.currentUser && Object.values(poem.likedBy).includes(props.currentUser.uid)) { // Finds the user's liked poems
+            likedPoems.push(<Poem key={poem.key} poem={poem}/>);
         }
     }
 
@@ -88,6 +92,7 @@ export function UserProfile(props) {
                         {createdPoems}                                    
                     </div>
                     <div className="tab-pane fade" id="liked-tab-pane" role="tabpanel" aria-labelledby="liked-tab" tabIndex="0">
+                        {likedPoems}
                     </div>
                 </div>
             </div>
