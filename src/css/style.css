@@ -90,6 +90,32 @@ a.nav-link {
 /* Creating Page(s) */
 /*                  */
 
+.creation-tab-splitter{
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+}
+
+.creation-container{
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+}
+.preview-paper{
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    max-height:400px;
+    min-height:400px;
+    height:400px;
+    background-color: #DBCEB4;
+    overflow-wrap: break-word;
+}
+.preview-paper-words{
+    padding: 1rem;
+}
+
+.preview-paper-words p {
+    background-color: #DBCEB4;
+}
+
 .blackout-preview {
     background-color: rgba(0, 0, 0, 0.5);
 }
@@ -183,18 +209,6 @@ textarea#description {
     color: white;
 }
 
-.preview-paper-words p {
-    background-color: #DBCEB4;
-}
-
-.preview-paper {
-    max-height:400px;
-    min-height:400px;
-    height:400px;
-    background-color: #DBCEB4;
-    overflow-wrap: break-word;
-}
-
 /*            */
 /* About Page */
 /*            */
@@ -272,12 +286,6 @@ a:hover.about {
 
 /* Explore Main Page(s) */
 
-body.explore-body {
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-}
-
 main.explore-main {
     display: inline-block;
     flex: 1;
@@ -342,14 +350,6 @@ button.search-history {
     padding: 0;
 }
 
-
-/* .filter-check ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-} */
-
-
 .filter-buttons {
     display: inline-block;
     padding: 1rem;
@@ -384,6 +384,7 @@ span.filter-title{
     cursor: pointer;
     display: inline-block;
     padding: 5px 50px 5px 10px;
+    text-decoration: underline;
 }
 
 /* filter dropdown checklist */
@@ -430,23 +431,25 @@ span.filter-title{
 .description-card li {
     list-style-type: none;
     border-bottom: 1px black solid;
+    margin-right: 2rem;
 }
 
 .explore-card a {
     text-decoration: none;
+    color: none;
 }
 
-.explore-card a:hover {
-    text-decoration: none;
-    color: inherit;
+.reset-button {
+    background-color: #ffbd03;
+}
+
+.nothing-text {
+    margin-top: 5rem;
+    font-family: 'Helvetica', 'sans-serif';
+    font-size: 22px;
 }
 
 /* Explore 2 CSS */
-body.explore-body {
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-}
 
 main.explore-main {
     flex: 1;
@@ -487,6 +490,7 @@ section.explore-preview {
 
 .explore-card-user-profile a {
     text-decoration: none;
+    color: none;
 }
 
 /* left side of the screen, section with the description */
@@ -523,7 +527,6 @@ section.preview-tab{
 .preview-container {
     display: flex;
     flex-direction: column;
-    height: 100vh;
 }
 
 .preview-header h1 {
@@ -545,7 +548,9 @@ section.preview-tab{
 .preview-text-words {
     font-size: 24px;
     padding: 1rem;
+    color: rgb(0, 0, 0);
 }
+
 
 .description{
     box-sizing: border-box;
@@ -564,11 +569,14 @@ section.preview-tab{
 section.preview-tab, section.explore-preview {
     flex-basis: 28%;
 }
-footer.explore2-footer{
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
+
+.like-button .btn-primary {
+    background-color: #ffbd03;
+    width: 50%;
+}
+
+.back-button .btn-primary {
+    background-color: #DBCEB4;
 }
 
 /* Menu CSS */
@@ -585,9 +593,9 @@ html.menu {
     width: 100%;
 }
 
-img.menu {
-    height: 300px;
-    width: 1300px;
+img.menu{
+    height: auto;
+    max-width: 100%;
 }
 
 .center {
@@ -671,6 +679,24 @@ a.menu {
     flex: 1;
 }
 
+/* Sign in page */
+
+.sign-in-flexbox {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    min-height: 70vh;
+    background-color: #DBCEB4;
+}
+
+.sign-in-box {
+    padding: 2rem;
+    background-color: #F5F2EB;
+    border-radius: 1rem;
+    box-shadow: 0px 0px 5px #000000;
+}
+
 @media (min-width: 768px) {
     main {
         /* So the body content isn't hidden in the fixed nav bar*/
@@ -689,7 +715,8 @@ a.menu {
     /*                  */
     .flexbox-container {
         flex-direction: row;
-        height: 100vh;
+        min-height: 100vh;
+        height: 113vh;
     }
 
     section {
@@ -760,7 +787,6 @@ a.menu {
         height: 600px;
         max-height: 600px;
         min-height: 600px;
-        border-radius: 10px;
         margin-left: auto;
         margin-right: auto;
         box-shadow: inset 0px 0px 5px #000000;
@@ -783,9 +809,8 @@ a.menu {
         display: flex;
     }
 
-    .navigation-buttons {
-        margin-top: 1rem;
-        width: 100%;
+    .btn.active {
+        color: black;
     }
 
     /* left side of the screen, section with the search bar */
@@ -858,19 +883,8 @@ a.menu {
         margin-left: 2rem;
     }
 
-    .preview-container {
-        flex-direction: row;
-    }
-
     .preview-header{
         flex-direction: row;
-    }
-
-    .preview-text {
-        width: 900px;
-        height: 600px;
-        margin-left: auto;
-        margin-right: auto;
     }
 
     /* User Profile */

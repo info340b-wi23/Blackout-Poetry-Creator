@@ -23,6 +23,7 @@ import { getDatabase, ref, push as firebasePush, onValue } from 'firebase/databa
 
 import TEMPLATES from "../data/poems.json"
 
+// This is the main implementation of the application over java script
 function App() {
   const templateArray = TEMPLATES.poems; // For template page
   const [poemArray, setPoemArray] = useState(templateArray); // Will hold blackout poems
@@ -58,7 +59,7 @@ function App() {
   const handleFocusedPoem = (poemObj) => {
     setFocusedPoem(poemObj);
     if (Array.isArray(poemObj.textContent)) { // if the text content is actually a json object
-        sessionStorage.setItem("words", JSON.stringify(poemObj.rawText)); // use the raw text without any HTML as the text
+      sessionStorage.setItem("words", JSON.stringify(poemObj.rawText)); // use the raw text without any HTML as the text
     } else {
       sessionStorage.setItem("words", JSON.stringify(poemObj.textContent.split(/\s+/)));
     }

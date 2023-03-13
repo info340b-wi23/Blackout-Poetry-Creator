@@ -21,7 +21,6 @@ export function ExplorePreview(props){
     }
 
     return(
-        <div className="explore-body">
             <main className="explore2-main">
                 <div className="preview-container">
                     <section className="preview-tab">
@@ -38,7 +37,10 @@ export function ExplorePreview(props){
                             </div>
                             
                             <div className="tab-item">
-                                <div className="create-button">
+                                <div className="like-button">
+                                    <Link to="/userprofile"><button type="button" className="navigation-buttons btn btn-primary">Like &#10084;</button></Link>
+                                </div>
+                                <div>
                                     <Link to="/creating"><button type="button" className="navigation-buttons btn btn-primary" onClick={handleFocusedPoem}>Create</button></Link>
                                 </div>
                             </div>
@@ -66,6 +68,5 @@ export function ExplorePreview(props){
                     </section>
                 </div>
             </main>
-        </div>
     )
 }
