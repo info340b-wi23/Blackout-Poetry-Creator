@@ -20,6 +20,14 @@ export function ExplorePreview(props){
         props.handleFocusedPoem(previewText);
     }
 
+    function isLoggedIn(destination) {
+	    if(props.currentUser === null) {
+            return "/signin";
+        } else {
+            return destination;
+        }
+    }
+
     return(
             <main className="explore2-main">
                 <div className="preview-container">
@@ -38,10 +46,10 @@ export function ExplorePreview(props){
                             
                             <div className="tab-item">
                                 <div className="like-button">
-                                    <Link to="/userprofile"><button type="button" className="navigation-buttons btn btn-primary">Like &#10084;</button></Link>
+                                    <Link to={isLoggedIn("/userprofile")}><button type="button" className="navigation-buttons btn btn-primary">Like &#10084;</button></Link>
                                 </div>
                                 <div>
-                                    <Link to="/creating"><button type="button" className="navigation-buttons btn btn-primary" onClick={handleFocusedPoem}>Create</button></Link>
+                                    <Link to={isLoggedIn("/creating")}><button type="button" className="navigation-buttons btn btn-primary" onClick={handleFocusedPoem}>Create</button></Link>
                                 </div>
                             </div>
 

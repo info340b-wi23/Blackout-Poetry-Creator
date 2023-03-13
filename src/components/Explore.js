@@ -43,7 +43,7 @@ export function Explore(props){
                 {/* <!-- explore page side --> */}
                 <div className="explore-container">
                     {/* <!-- set of cards with lit and poems on them --> */}
-                    <ExploreFilterList freshCards={props.cardData} searchQuery={searchQuery} handleSearchQuery={handleSearchQuery} cardData={cards} handlePreviewPoem={props.handlePreviewPoem}/>
+                    <ExploreFilterList currentUser={props.currentUser} freshCards={props.cardData} searchQuery={searchQuery} handleSearchQuery={handleSearchQuery} cardData={cards} handlePreviewPoem={props.handlePreviewPoem}/>
                 </div>
             </section>
         </main>

@@ -38,12 +38,12 @@ function App() {
     const unregisterFunction = onAuthStateChanged(getAuth(), function(firebaseUser) {    
       if(firebaseUser){ //firebaseUser defined: is logged in
         console.log('logged in', firebaseUser.displayName);
-        setCurrentUser(firebaseUser);
       } else { //firebaseUser is undefined: is not logged in
         console.log('logged out');
       }
+      setCurrentUser(firebaseUser);
     })
-
+  
     onValue(poemsRef, (snapshot) => {
       const poemsObj = snapshot.val(); 
       const objKeys = Object.keys(poemsObj);
@@ -98,7 +98,7 @@ function App() {
     <>
       <header>
         <Routes>
-          <Route path=":currPage?/:subPage?" element={<NavBar />}/>
+          <Route path=":currPage?/:subPage?" element={<NavBar currentUser={currentUser} />}/>
         </Routes>
       </header>
       <Routes>
@@ -111,24 +111,24 @@ function App() {
         <Route path="signin" element={<SignInPage />} />
 
         {/* Add a 'Route' to the name of your page and the element used to render it */}
-        <Route path="creating" element={<Creating currentUser={currentUser} handlePoems = {handlePoemArrayChange} focusedPoem = {focusedPoem} handleFocusedPoem={handleFocusedPoem}/>}>
+        <Route path="creating" element={<Creating currentUser = {currentUser} handlePoems = {handlePoemArrayChange} focusedPoem = {focusedPoem} handleFocusedPoem={handleFocusedPoem}/>}>
           <Route path="upload" key="upload" element={[<UploadTab/>, <CreatingPreview/>]}/>
           <Route path="blackout" key="blackout" element={[<BlackoutTab/>, <CreatingPreview/>]}/>
           <Route path="finalizing" key="finalizing" element={[<FinalizingTab/>, <CreatingPreview/>]}/>     
           <Route index element={[<UploadTab/>, <CreatingPreview/>]}/>   
         </Route>
 
-        <Route path="/explore" element={<Explore cardData={poemArray} handlePreviewPoem={handlePreviewPoem}/>}/>
-        <Route path="ExplorePreview" element={<ExplorePreview previewPoem={previewPoem} handleFocusedPoem={handleFocusedPoem}/>}/>
+        <Route path="/explore" element={<Explore currentUser={currentUser} cardData={poemArray} handlePreviewPoem={handlePreviewPoem}/>}/>
+        <Route path="ExplorePreview" element={<ExplorePreview currentUser={currentUser} previewPoem={previewPoem} handleFocusedPoem={handleFocusedPoem}/>}/>
 
-        <Route path="menu" element={<MenuBar/>}/>
+        <Route path="menu" element={<MenuBar currentUser={currentUser}/>}/>
 
         {/*About page routes */}
         <Route path="about" element={<AboutLandingPage />} />
         <Route path="about/instructions" element={<AboutInstructionPage />} />
         <Route path="about/what-is-blackout-poetry" element={<AboutArticle />} />
 
-        <Route path={`userprofile/${currentUser.displayName}`} element={<UserProfile userName={currentUser.displayName}/>}/>
+        <Route path={`userprofile`} element={<UserProfile userName={currentUser !== null ? currentUser.displayName : "Username"}/>}/>
 
       </Routes>
       <Footer/>

@@ -12,14 +12,14 @@ export function ExploreFilterList(props){
         setIsTemplateActive(false);
         setIsPoemActive(false);
         setIsAllActive(true);
-    }, [props.cardData]);
+    }, [props.cardData, props.currentUser]);
 
     const [filteredCardList, setFilteredCardList] = useState(props.cardData); 
 
     // Handles whether the button is currently "active" highlighted. Very hard-coded approach
-    const [isPoemActive, setIsPoemActive] = useState(true);
+    const [isPoemActive, setIsPoemActive] = useState(false);
     const [isTemplateActive, setIsTemplateActive] = useState(false); // default all blackout poems are showed
-    const [isAllActive, setIsAllActive] = useState(false);
+    const [isAllActive, setIsAllActive] = useState(true);
 
     // keeps track of the filter checkboxes that were clicked
     const [filterSubject, setFilterSubject] = useState("All");
@@ -115,7 +115,7 @@ export function ExploreFilterList(props){
                             {(formik) => (
                             <Form onSubmit={formik.handleSubmit}>
                                 <div role="group" aria-labelledby="checkbox-group">
-                                    <label for="All">
+                                    <label htmlFor="All">
                                     <Field type="radio" name="checked" value="All" 
                                     checked={formik.values.filterBy.includes("All")}
                                     onChange={(event) => {
@@ -126,7 +126,7 @@ export function ExploreFilterList(props){
                                     }}/>
                                         All
                                     </label>
-                                    <label for="Culture">
+                                    <label htmlFor="Culture">
                                     <Field type="radio" name="checked" value="Culture" 
                                     checked={formik.values.filterBy.includes("Culture")}
                                     onChange={(event) => {
@@ -137,7 +137,7 @@ export function ExploreFilterList(props){
                                     }}/>
                                         Culture
                                     </label>
-                                    <label for="Ethnic">
+                                    <label htmlFor="Ethnic">
                                     <Field type="radio" name="checked" value="Ethnic"
                                     checked={formik.values.filterBy.includes("Ethnic")}
                                     onChange={(event) => {
@@ -148,7 +148,7 @@ export function ExploreFilterList(props){
                                     }}/>
                                         Ethnic
                                     </label>
-                                    <label for="Politics">
+                                    <label htmlFor="Politics">
                                     <Field type="radio" name="checked" value="Politics"
                                     checked={formik.values.filterBy.includes("Politics")}
                                     onChange={(event) => {
@@ -159,7 +159,7 @@ export function ExploreFilterList(props){
                                     }}/>
                                         Politics
                                     </label>
-                                    <label for="Drama">
+                                    <label htmlFor="Drama">
                                     <Field type="radio" name="checked" value="Drama"   
                                     checked={formik.values.filterBy.includes("Drama")}                                  
                                     onChange={(event) => {

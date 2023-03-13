@@ -1,6 +1,5 @@
 import React from "react";
 
-
 import { getAuth, signOut } from "firebase/auth";
 import { Link, useParams } from "react-router-dom";
 
@@ -43,10 +42,12 @@ export function UserProfile() {
     const params = useParams();
     const username = params.username !== undefined ? params.username : "Username"; // If username is in the URL then it will replace the placeholder
 
-    const handleSignOut = (event) => {
+    const handleSignOut = () => {
         console.log("signing out");
-        signOut(getAuth());
-      }
+        signOut(getAuth())
+            .catch(err => console.log(err));
+    }
+
     return (
         <main>
         <div className="user-profile flexbox-container">

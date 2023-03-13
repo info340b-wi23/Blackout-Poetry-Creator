@@ -4,17 +4,18 @@ import { useParams } from "react-router-dom";
 
 import { Link } from "react-router-dom";
 
-// Renders the navbar with the correct item highlighted based on what the current page is
-export function NavItems(currPageID) {
-    const creatingNavItem = currPageID.currPageID === "creating" ? 
-    <Link className="nav-link active px-5" to="/creating/upload">Create</Link>
-    : <Link className="nav-link px-5" to="/creating/upload">Create</Link>
 
-    const exploreNavItem = currPageID.currPageID === "index" ?
-    <Link className="nav-link active px-5" to="/explore">Explore</Link>
+// Renders the navbar with the correct item highlighted based on what the current page is
+export function NavItems(props) {
+    const creatingNavItem = props.currPageID.currPageID === "creating" ? 
+    <Link className="nav-link active px-5" to={props.isLoggedIn("/creating/upload")}>Create</Link>
+    : <Link className="nav-link px-5" to={props.isLoggedIn("/creating/upload")}>Create</Link>
+
+    const exploreNavItem = props.currPageID.currPageID === "index" ?
+    <Link className={"nav-link active px-5"} to="/explore">Explore</Link>
     : <Link className="nav-link px-5" to="/explore">Explore</Link>
 
-    const aboutNavItem = currPageID.currPageID === "about" ?
+    const aboutNavItem = props.currPageID.currPageID === "about" ?
     <Link className="nav-link active px-5" to="/about">About</Link>
     : <Link className="nav-link px-5" to="/about">About</Link>
 
@@ -33,7 +34,16 @@ export function NavItems(currPageID) {
     );
 }
 
-export function NavBar() {
+export function NavBar(props) {
+
+    function isLoggedIn(destination) {
+	    if(props.currentUser === null) {
+            return "/signin";
+        } else {
+            return destination;
+        }
+    }
+
     const currPageID = useParams().currPage;
     // Menu page does not have a navbar
     if (currPageID === "menu") {
@@ -52,10 +62,10 @@ export function NavBar() {
                 </button>
                 <div className="navbar-collapse collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav me-auto">
-                        <NavItems currPageID = {currPageID}/>
+                        <NavItems currPageID={currPageID} isLoggedIn={isLoggedIn}/>
                     </ul>
                     <span className="px-lg-5 d-none d-md-block">
-                        <Link to="/userprofile" aria-label="profile icon that links to user's profile"><img src="/img/profile-icon.png" width="50" height="50" className="d-md-inline-block align-top"
+                        <Link to={isLoggedIn("/userprofile")} aria-label="profile icon that links to user's profile"><img src="/img/profile-icon.png" width="50" height="50" className="d-md-inline-block align-top"
                         alt="Logo which links to homepage"/></Link>
                     </span>
                 </div>

@@ -79,7 +79,7 @@ export function BlackoutTab() {
     );
 }
 
-export function FinalizingTab() {
+export function FinalizingTab(props) {
 
     // Note, I use sessionStorage which will save these states since technically leaving this subpage leaves the scope of the states 
     // https://stackoverflow.com/questions/28314368/how-to-maintain-state-after-a-page-refresh-in-react-js
@@ -157,7 +157,8 @@ export function FinalizingTab() {
             "description": description,
             "textContent": wordTagWithoutHandler,
             "rawText": words,
-            "textType": "poem"
+            "textType": "poem",
+            "author": props.currentUser.displayName
         };
         changePoemArray(poemObj);
     }
