@@ -1,5 +1,7 @@
 import React from "react";
 
+
+import { getAuth, signOut } from "firebase/auth";
 import { Link, useParams } from "react-router-dom";
 
 // Private function which will render the poem based on what is in the array
@@ -41,6 +43,10 @@ export function UserProfile() {
     const params = useParams();
     const username = params.username !== undefined ? params.username : "Username"; // If username is in the URL then it will replace the placeholder
 
+    const handleSignOut = (event) => {
+        console.log("signing out");
+        signOut(getAuth());
+      }
     return (
         <main>
         <div className="user-profile flexbox-container">
@@ -48,6 +54,7 @@ export function UserProfile() {
                 <h1>{username}</h1>
                 <img src="/img/profile-icon.png" width="100" height="100" className="d-md-inline-block align-top"
                             alt="Your profile icon"/>
+                <button className="btn btn-secondary ms-2" onClick={handleSignOut}><Link to="/explore">Sign Out</Link></button>
             </div>
             <div className="tab-selection">
                 <ul className="nav nav-tabs" id="myTab" role="tablist">
