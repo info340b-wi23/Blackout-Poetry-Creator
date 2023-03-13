@@ -79,7 +79,7 @@ export function ExploreFilterList(props){
             return (filtered);
         });
         setFilteredCardList(newFilteredCardList);
-    }
+    } 
 
     const handleEthnicChecked = function(){
         setIsEthnicActive(true);
