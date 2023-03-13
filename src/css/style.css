@@ -443,6 +443,12 @@ span.filter-title{
     background-color: #ffbd03;
 }
 
+.nothing-text {
+    margin-top: 5rem;
+    font-family: 'Helvetica', 'sans-serif';
+    font-size: 22px;
+}
+
 /* Explore 2 CSS */
 
 main.explore-main {

@@ -1,15 +1,24 @@
-import{React, useState} from 'react';
+import{React, useState, useEffect} from 'react';
 
 import { Link } from 'react-router-dom';
 import Form from 'react-bootstrap/Form';
 
 export function ExploreFilterList(props){
 
+    // needed because once the database loads, the poems load in so we have to change it after render
+    // https://stackoverflow.com/questions/41446560/react-setstate-not-updating-state
+    useEffect(() => {
+        setFilteredCardList(props.cardData);
+        setIsTemplateActive(false);
+        setIsPoemActive(false);
+        setIsAllActive(true);
+    }, [props.cardData]);
+
     const [filteredCardList, setFilteredCardList] = useState(props.freshCards); 
 
     // Handles whether the button is currently "active" highlighted. Very hard-coded approach
-    const [isPoemActive, setIsPoemActive] = useState(false);
-    const [isTemplateActive, setIsTemplateActive] = useState(true); // default all blackout poems are showed
+    const [isPoemActive, setIsPoemActive] = useState(true);
+    const [isTemplateActive, setIsTemplateActive] = useState(false); // default all blackout poems are showed
     const [isAllActive, setIsAllActive] = useState(false);
 
     const handleClickPoems = function(){
@@ -49,9 +58,13 @@ export function ExploreFilterList(props){
         setFilteredCardList(props.freshCards);
     }
 
-    const cardList = filteredCardList.map((textObj) => {
+    let cardList = filteredCardList.map((textObj) => {
         return <ExploreTextCard textObj={textObj} handlePreviewPoem={props.handlePreviewPoem} key={textObj.key} />
     })
+
+    if (cardList.length === 0) { // If the search query had nothing in it
+        cardList = <p className="nothing-text">We've found nothing!</p>
+    }
     
     return (
         <div>
@@ -137,6 +150,12 @@ function ExploreTextCard(props) {
         )
     }
 
+    let author = "";
+    if (textObj.textType === "template") {
+        author = <em>Blackout Poetry Developers</em>
+    } 
+    // else if it is a poem, get the user id of who wrote it, but this will be added when creating a poem to a new field
+
     return(
         <div className="explore-card" > 
             {/* sends you to explore 2 if you click on the card */}
@@ -147,7 +166,7 @@ function ExploreTextCard(props) {
                 </p>
                 <ul className="description-card">
                     <li className='card-title'><b>Title: </b>{textObj.title}</li>
-                    <li><b>Author: </b></li>
+                    <li><b>Author: </b>{author}</li>
                     <li><b>Source: </b>{textObj.sourceTitle}</li>
                     <li><b>Source Author: </b>{textObj.sourceAuthor}</li>
                     <li><b>Description: </b>{textObj.description}</li>

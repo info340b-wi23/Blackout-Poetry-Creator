@@ -10,7 +10,7 @@ export function Explore(props){
     useEffect(() => {
         setCards(props.cardData); // needed because once the database loads, the poems load in so we have to change it after render
     }, [props.cardData]);
-    
+
     function handleSearchQuery(searchQuery) {
         let modifiedSearchQuery = searchQuery.toLowerCase();
         setSearchQuery(modifiedSearchQuery);
@@ -43,7 +43,7 @@ export function Explore(props){
                 {/* <!-- explore page side --> */}
                 <div className="explore-container">
                     {/* <!-- set of cards with lit and poems on them --> */}
-                    <ExploreFilterList key={cards.length} freshCards={props.cardData} handleSearchQuery={handleSearchQuery} cardData={cards} handlePreviewPoem={props.handlePreviewPoem}/>
+                    <ExploreFilterList freshCards={props.cardData} searchQuery={searchQuery} handleSearchQuery={handleSearchQuery} cardData={cards} handlePreviewPoem={props.handlePreviewPoem}/>
                 </div>
             </section>
         </main>
