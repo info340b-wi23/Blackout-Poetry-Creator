@@ -21,7 +21,7 @@ export function AboutLandingPage(props) {
 
     return(
         <main className="about">
-            <div className="container about">
+            <div className="container about px-5">
                 <div className="row">
                     <LinkCard img={'/img/Cartoon-Style.jpg'} title={'What is Blackout Poetry?'} alt={'A newspaper'} link={"what-is-blackout-poetry"} />
                     <LinkCard img={'/img/christin-hume-mfB1B1s4sMc-unsplash.jpg'} title={'How to Make a Blackout Poem'} alt={'Person using a computer'} link={"instructions"} />
