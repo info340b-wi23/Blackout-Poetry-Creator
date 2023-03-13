@@ -47,8 +47,16 @@ export function NavBar() {
                     <img src="/img/logo.svg" className="d-inline-block align-top" alt="Logo which links to homepage"/>
                 </Link>
                 <span className="d-inline-block d-md-none mr-10">
-                    <Link to="/userprofile" aria-label="profile icon that links to user's profile"><img src="/img/profile-icon.png" width="50" height="50" className="d-md-inline-block align-top"
-                    alt="Logo which links to homepage"/></Link>
+                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <img src="/img/profile-icon.png" width="50" height="50" className="d-md-inline-block align-top" alt="Logo which links to homepage"/>
+                    </button>
+                    <div className="navbar-collapse collapse" id="navbarSupportedContent">
+                        <ul>
+                            <li><Link to="/userprofile" >Your Profile</Link></li>
+                            <li><Link to="/menu">Log out</Link></li>
+                        </ul>
+                    </div>
                 </span>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
