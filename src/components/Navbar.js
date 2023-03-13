@@ -70,10 +70,13 @@ export function NavBar(props) {
                     <ul className="navbar-nav me-auto">
                         <NavItems currPageID={currPageID} isLoggedIn={isLoggedIn}/>
                     </ul>
-                    {username}
                     <span className="px-lg-5 d-none d-md-block">
-                        <Link to={isLoggedIn("/userprofile")} aria-label="profile icon that links to user's profile"><img src="/img/profile-icon.png" width="50" height="50" className="d-md-inline-block align-top"
-                        alt="Logo which links to homepage"/></Link>
+                        <Link to={isLoggedIn("/userprofile") } aria-label="profile icon that links to user's profile">
+                            <div>
+                                <img src="/img/profile-icon.png" width="50" height="50" className="d-md-inline-block align-top" alt="Logo which links to homepage"/>
+                                {username}
+                            </div>
+                        </Link>
                     </span>
                 </div>
             </div>
