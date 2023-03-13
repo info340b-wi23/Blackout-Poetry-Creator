@@ -935,3 +935,10 @@ a.menu {
         padding-right: 6rem;
      }
 }
+
+@media (min-width: 1200px) {
+    article .container {
+        padding-left: 5em;
+        padding-right: 5em;
+    }
+}
