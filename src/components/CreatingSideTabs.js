@@ -246,7 +246,7 @@ export function FinalizingTab(props) {
                             <Link to="/creating/blackout"><button type="button" className="navigation-buttons btn btn-primary">Back</button></Link>
                         </div>          
                         <div className="col">
-                            <Link to="/explore"><button type="button" className="navigation-buttons submit btn btn-primary" onClick={handleClick}>Submit</button></Link>
+                            <a href="/explore"><button type="button" className="navigation-buttons submit btn btn-primary" onClick={handleClick}>Submit</button></a>
                         </div>
                     </div>
                 </div>

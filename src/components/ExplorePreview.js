@@ -38,7 +38,7 @@ export function ExplorePreview(props){
         const db = getDatabase();
         if (props.currentUser !== null) {
             let userId = props.currentUser.uid;
-            if (Object.values(previewText.likedBy).includes(userId)) { // Unliking a post since the user is in the likedBy array
+            if (previewText.likedBy && Object.values(previewText.likedBy).includes(userId)) { // Unliking a post since the user is in the likedBy array
                 for (let key in previewText.likedBy) { // For each person (who is uniquely identified by key) in te likedBy array
                     if (previewText.likedBy[key] === userId) { // If their userId matches the person who is liking it 
                         const likedByRef = ref(db, `poems/${previewText.key}/likedBy/${key}`);
@@ -77,7 +77,7 @@ export function ExplorePreview(props){
                                 <div className="like-button">
                                     {/* Note that if the user is in the likedBy array, the button will look different */}
                                     <Link to={isLoggedIn("/explore")}>
-                                        {props.currentUser !== null && Object.values(previewText.likedBy).includes(props.currentUser.uid) ? (
+                                        {props.currentUser && previewText.likedBy &&  Object.values(previewText.likedBy).includes(props.currentUser.uid) ? (
                                                 <button type="button" className="navigation-buttons btn btn-primary liked" onClick={adjustLiked}>Liked &#10084;</button>
                                             ) : (
                                                 <button type="button" className="navigation-buttons btn btn-primary" onClick={adjustLiked}>Like &#10084;</button>
