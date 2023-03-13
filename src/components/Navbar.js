@@ -7,15 +7,15 @@ import { Link } from "react-router-dom";
 
 // Renders the navbar with the correct item highlighted based on what the current page is
 export function NavItems(props) {
-    const creatingNavItem = props.currPageID.currPageID === "creating" ? 
+    const creatingNavItem = props.currPageID === "creating" ? 
     <Link className="nav-link active px-5" to={props.isLoggedIn("/creating/upload")}>Create</Link>
     : <Link className="nav-link px-5" to={props.isLoggedIn("/creating/upload")}>Create</Link>
 
-    const exploreNavItem = props.currPageID.currPageID === "index" ?
+    const exploreNavItem = props.currPageID === "explore" ?
     <Link className={"nav-link active px-5"} to="/explore">Explore</Link>
     : <Link className="nav-link px-5" to="/explore">Explore</Link>
 
-    const aboutNavItem = props.currPageID.currPageID === "about" ?
+    const aboutNavItem = props.currPageID === "about" ?
     <Link className="nav-link active px-5" to="/about">About</Link>
     : <Link className="nav-link px-5" to="/about">About</Link>
 
