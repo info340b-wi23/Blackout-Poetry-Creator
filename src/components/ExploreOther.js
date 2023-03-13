@@ -20,6 +20,13 @@ export function ExploreFilterList(props){
     const [isPoemActive, setIsPoemActive] = useState(true);
     const [isTemplateActive, setIsTemplateActive] = useState(false); // default all blackout poems are showed
     const [isAllActive, setIsAllActive] = useState(false);
+    
+    //keeps track of the fliter checkboxes that were clicked
+    const [fliterSubjects, setFliterSubjects] = useState([]);
+    const [isCultureActive, setIsCultureActive] = useState(false);
+    const [isEthnicsActive, setIsEthnicActive] = useState(false);
+    const [isPoliticsActive, setIsPoliticsActive] = useState(false);
+    const [isDramaActive, setIsDramaActive] = useState(false);
 
     const handleClickPoems = function(){
         let newFilteredCardList = props.cardData.filter((card) => {
@@ -56,6 +63,70 @@ export function ExploreFilterList(props){
         setIsPoemActive(false);
         setIsAllActive(true);
         setFilteredCardList(props.freshCards);
+    } 
+
+    const handleCultureChecked = function(){
+        setIsCultureActive(true);
+        let newFilteredCardList = props.cardData.filter((card) => {
+            let filtered;
+            if(isTemplateActive){ //templates
+                filtered = card.subject === "Culture" && card.textType === "template"
+            } else if(setIsPoemActive){ //poems
+                filtered = card.subject === "Culture" && card.textType === "poem";
+            } else{
+                filtered = card.subject === "Culture";
+            }
+            return (filtered);
+        });
+        setFilteredCardList(newFilteredCardList);
+    }
+
+    const handleEthnicChecked = function(){
+        setIsEthnicActive(true);
+        let newFilteredCardList = props.cardData.filter((card) => {
+            let filtered;
+            if(isTemplateActive){ //templates
+                filtered = card.subject === "Ethnic" && card.textType === "template"
+            } else if(setIsPoemActive){ //poems
+                filtered = card.subject === "Ethnic" && card.textType === "poem";
+            } else{
+                filtered = card.subject === "Ethnic";
+            }
+            return (filtered);
+        });
+        setFilteredCardList(newFilteredCardList);
+    }
+
+    const handlePoliticsChecked = function(){
+        setIsPoliticsActive(true);
+        let newFilteredCardList = props.cardData.filter((card) => {
+            let filtered;
+            if(isTemplateActive){ //templates
+                filtered = card.subject === "Politics" && card.textType === "template"
+            } else if(setIsPoemActive){ //poems
+                filtered = card.subject === "Politics" && card.textType === "poem";
+            } else{
+                filtered = card.subject === "Politics";
+            }
+            return (filtered);
+        });
+        setFilteredCardList(newFilteredCardList);
+    }
+
+    const handleDramaChecked = function(){
+        setIsDramaActive(true);
+        let newFilteredCardList = props.cardData.filter((card) => {
+            let filtered;
+            if(isTemplateActive){ //templates
+                filtered = card.subject === "Drama" && card.textType === "template"
+            } else if(setIsPoemActive){ //poems
+                filtered = card.subject === "Drama" && card.textType === "poem";
+            } else{
+                filtered = card.subject === "Drama";
+            }
+            return (filtered);
+        });
+        setFilteredCardList(newFilteredCardList);
     }
 
     let cardList = filteredCardList.map((textObj) => {
@@ -93,6 +164,7 @@ export function ExploreFilterList(props){
                                         name="Culture"
                                         type={type}
                                         id={`inline-${type}-Culture`}
+                                        onChange={handleCultureChecked}
                                     />
                                     <Form.Check
                                         inline
@@ -100,6 +172,7 @@ export function ExploreFilterList(props){
                                         name="Ethnic"
                                         type={type}
                                         id={`inline-${type}-Ethnic`}
+                                        onChange={handleEthnicChecked}
                                     />
                                     <Form.Check
                                         inline
@@ -107,6 +180,7 @@ export function ExploreFilterList(props){
                                         name="Politics"
                                         type={type}
                                         id={`inline-${type}-Politics`}
+                                        onChange={handlePoliticsChecked}
                                     />
                                     <Form.Check
                                         inline
@@ -114,6 +188,7 @@ export function ExploreFilterList(props){
                                         name="Drama"
                                         type={type}
                                         id={`inline-${type}-Drama`}
+                                        onChange={handleDramaChecked}
                                     />
                                 </div>
                             ))}

@@ -36,27 +36,7 @@ export function ExploreSearchBar(props){
             }
             setSearchHistoryArray([event.target.value, ...searchHistoryArray]); // Either way, put the searched value on top 
             event.target.value = ""; // Remove the search value from the search bar
-            searchingCards(TEMPLATES);
         }
-    }
-
-    //traversing through the card list to find titles that match the input typed into the search bar
-    // this is not working I will try later to send a fetch request
-    function searchingCards(cardsArray){
-        // let input = document.getElementById('mySearch');
-        // input = input.toLowerCase();
-        // let elements = cardsArray;
-        // let newTemplateArr = [];
-        // for(let i = 0; i < elements.length; i++){
-        //     let cardTitle = elements[i].title;
-        //     if(!cardTitle.toLowerCase().includes(input)){
-        //         elements[i].style.display="none";
-        //     } else{
-        //         elements[i].style.display="";
-        //         newTemplateArr.push(elements[i]);
-        //     }
-        // }
-        // return newTemplateArr;
     }
 
     // On search submit, don't cause the button to clear history and also update the search history array
