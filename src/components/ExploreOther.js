@@ -17,9 +17,9 @@ export function ExploreFilterList(props){
     const [filteredCardList, setFilteredCardList] = useState(props.freshCards); 
 
     // Handles whether the button is currently "active" highlighted. Very hard-coded approach
-    const [isPoemActive, setIsPoemActive] = useState(true);
-    const [isTemplateActive, setIsTemplateActive] = useState(false); // default all blackout poems are showed
-    const [isAllActive, setIsAllActive] = useState(false);
+    const [isPoemActive, setIsPoemActive] = useState(false);
+    const [isTemplateActive, setIsTemplateActive] = useState(false); 
+    const [isAllActive, setIsAllActive] = useState(true); // default all blackout poems are showed
 
     const handleClickPoems = function(){
         let newFilteredCardList = props.cardData.filter((card) => {
