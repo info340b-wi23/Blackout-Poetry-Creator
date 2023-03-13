@@ -35,9 +35,13 @@ function App() {
     const db = getDatabase();
     const poemsRef = ref(db, "0/poems");
 
-    onAuthStateChanged(getAuth(), function(firebaseUser) {
-      console.log("someone logged in or logged out!");        
-      setCurrentUser(firebaseUser);
+    const unregisterFunction = onAuthStateChanged(getAuth(), function(firebaseUser) {    
+      if(firebaseUser){ //firebaseUser defined: is logged in
+        console.log('logged in', firebaseUser.displayName);
+        setCurrentUser(firebaseUser);
+      } else { //firebaseUser is undefined: is not logged in
+        console.log('logged out');
+      }
     })
 
     onValue(poemsRef, (snapshot) => {
@@ -49,11 +53,14 @@ function App() {
       });
       setPoemArray(objArray);
     });
+
+    function cleanup() {
+      unregisterFunction(); //call the unregister function
+    }
+    return cleanup; //effect hook callback returns the cleanup function
+
   }, []);
 
-  console.log(currentUser);
-  const isLoggedIn = currentUser!==null;
-  console.log(isLoggedIn);
   // Change the focused poem (if selected from the explore page and also remove all blackouts)
   // Update all the fields in the creating tab to be cleared out
   const handleFocusedPoem = (poemObj) => {
@@ -101,18 +108,17 @@ function App() {
         {/* Catch-all route */}
         <Route path="*" element={<Explore cardData={poemArray} handlePreviewPoem={handlePreviewPoem}/>}/>
 
-        {/* Sign-in page */}
-        <Route path="signIn" element={<SignInPage />} />
+        <Route path="signin" element={<SignInPage />} />
 
         {/* Add a 'Route' to the name of your page and the element used to render it */}
-        <Route path="creating" element={<Creating handlePoems = {handlePoemArrayChange} focusedPoem = {focusedPoem} handleFocusedPoem={handleFocusedPoem}/>}>
+        <Route path="creating" element={<Creating currentUser={currentUser} handlePoems = {handlePoemArrayChange} focusedPoem = {focusedPoem} handleFocusedPoem={handleFocusedPoem}/>}>
           <Route path="upload" key="upload" element={[<UploadTab/>, <CreatingPreview/>]}/>
           <Route path="blackout" key="blackout" element={[<BlackoutTab/>, <CreatingPreview/>]}/>
           <Route path="finalizing" key="finalizing" element={[<FinalizingTab/>, <CreatingPreview/>]}/>     
           <Route index element={[<UploadTab/>, <CreatingPreview/>]}/>   
         </Route>
 
-        <Route path="/index" element={<Explore cardData={poemArray} handlePreviewPoem={handlePreviewPoem}/>}/>
+        <Route path="/explore" element={<Explore cardData={poemArray} handlePreviewPoem={handlePreviewPoem}/>}/>
         <Route path="ExplorePreview" element={<ExplorePreview previewPoem={previewPoem} handleFocusedPoem={handleFocusedPoem}/>}/>
 
         <Route path="menu" element={<MenuBar/>}/>
@@ -122,7 +128,7 @@ function App() {
         <Route path="about/instructions" element={<AboutInstructionPage />} />
         <Route path="about/what-is-blackout-poetry" element={<AboutArticle />} />
 
-        <Route path="userprofile/:username?" element={<UserProfile/>}/>
+        <Route path={`userprofile/${currentUser.displayName}`} element={<UserProfile userName={currentUser.displayName}/>}/>
 
       </Routes>
       <Footer/>

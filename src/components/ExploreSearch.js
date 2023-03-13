@@ -2,15 +2,13 @@ import { React, useState } from 'react';
 
 import { Link } from 'react-router-dom';
 
-import TEMPLATES from "../data/poems.json";
-
 export function ExploreSearchBar(props){
     const [searchHistoryArray, setSearchHistoryArray] = useState([]);
 
     let recentlySearched = searchHistoryArray.map((element, i) => { // Clicking on element will search for those; clicking on x deletes that element from search history
         let item =(<div key={i} className="history"> 
-            <Link to="/index" className="sidebar" onClick={(element) => props.handleSearchQuery(element.target.innerText)}>{element}</Link>
-            <Link to="/index" className="delete" onClick={(event) => deleteSearchListItem(event, element)}>x</Link>
+            <Link to="/explore" className="sidebar" onClick={(element) => props.handleSearchQuery(element.target.innerText)}>{element}</Link>
+            <Link to="/explore" className="delete" onClick={(event) => deleteSearchListItem(event, element)}>x</Link>
         </div>);
         return item;
     });

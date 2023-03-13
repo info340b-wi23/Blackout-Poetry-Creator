@@ -42,7 +42,7 @@ export function Creating(props) {
     return (
     <main>
         <div className="flexbox-container">
-          <Outlet context={[handleTextChange, words, props.handlePoems, changeClickedWords, clickedWords, props.focusedPoem]}/>
+          <Outlet context={[handleTextChange, words, props.handlePoems, changeClickedWords, clickedWords, props.focusedPoem, props.currentUser]}/>
         </div>
     </main>
   );

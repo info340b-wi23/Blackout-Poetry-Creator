@@ -47,7 +47,7 @@ export function ExplorePreview(props){
 
                             <div className="tab-item">
                                 <div className="back-button">
-                                    <Link to="/index"><button type="button" className="navigation-buttons btn btn-primary">Back to Explore Page</button></Link>
+                                    <Link to="/explore"><button type="button" className="navigation-buttons btn btn-primary">Back to Explore Page</button></Link>
                                 </div>
                             </div>
                         </div>

@@ -1,7 +1,7 @@
 import{React, useState, useEffect} from 'react';
+import {Formik, Field, Form} from 'formik'; // 3RD PARTY LIBRARY REQUIREMENT https://formik.org/
 
 import { Link } from 'react-router-dom';
-import Form from 'react-bootstrap/Form';
 
 export function ExploreFilterList(props){
 
@@ -14,12 +14,31 @@ export function ExploreFilterList(props){
         setIsAllActive(true);
     }, [props.cardData]);
 
-    const [filteredCardList, setFilteredCardList] = useState(props.freshCards); 
+    const [filteredCardList, setFilteredCardList] = useState(props.cardData); 
 
     // Handles whether the button is currently "active" highlighted. Very hard-coded approach
     const [isPoemActive, setIsPoemActive] = useState(true);
     const [isTemplateActive, setIsTemplateActive] = useState(false); // default all blackout poems are showed
     const [isAllActive, setIsAllActive] = useState(false);
+
+    // keeps track of the filter checkboxes that were clicked
+    const [filterSubject, setFilterSubject] = useState("All");
+
+    useEffect(() => {
+        let newFilteredCardList = props.cardData
+        if (filterSubject[0] !== "All") {
+            newFilteredCardList = props.cardData.filter((card) => {
+                return card.subject.toLowerCase() === filterSubject[0].toLowerCase();
+            });
+        } else {
+            newFilteredCardList = props.cardData;
+        }
+        setIsTemplateActive(false);
+        setIsPoemActive(false);
+        setIsAllActive(true);
+        setFilteredCardList(newFilteredCardList);
+    }, [filterSubject, props.cardData])
+
 
     const handleClickPoems = function(){
         let newFilteredCardList = props.cardData.filter((card) => {
@@ -58,70 +77,6 @@ export function ExploreFilterList(props){
         setFilteredCardList(props.freshCards);
     } 
 
-    const handleCultureChecked = function(){
-        setIsCultureActive(true);
-        let newFilteredCardList = props.cardData.filter((card) => {
-            let filtered;
-            if(isTemplateActive){ //templates
-                filtered = card.subject === "Culture" && card.textType === "template"
-            } else if(setIsPoemActive){ //poems
-                filtered = card.subject === "Culture" && card.textType === "poem";
-            } else{
-                filtered = card.subject === "Culture";
-            }
-            return (filtered);
-        });
-        setFilteredCardList(newFilteredCardList);
-    } 
-
-    const handleEthnicChecked = function(){
-        setIsEthnicActive(true);
-        let newFilteredCardList = props.cardData.filter((card) => {
-            let filtered;
-            if(isTemplateActive){ //templates
-                filtered = card.subject === "Ethnic" && card.textType === "template"
-            } else if(setIsPoemActive){ //poems
-                filtered = card.subject === "Ethnic" && card.textType === "poem";
-            } else{
-                filtered = card.subject === "Ethnic";
-            }
-            return (filtered);
-        });
-        setFilteredCardList(newFilteredCardList);
-    }
-
-    const handlePoliticsChecked = function(){
-        setIsPoliticsActive(true);
-        let newFilteredCardList = props.cardData.filter((card) => {
-            let filtered;
-            if(isTemplateActive){ //templates
-                filtered = card.subject === "Politics" && card.textType === "template"
-            } else if(setIsPoemActive){ //poems
-                filtered = card.subject === "Politics" && card.textType === "poem";
-            } else{
-                filtered = card.subject === "Politics";
-            }
-            return (filtered);
-        });
-        setFilteredCardList(newFilteredCardList);
-    }
-
-    const handleDramaChecked = function(){
-        setIsDramaActive(true);
-        let newFilteredCardList = props.cardData.filter((card) => {
-            let filtered;
-            if(isTemplateActive){ //templates
-                filtered = card.subject === "Drama" && card.textType === "template"
-            } else if(setIsPoemActive){ //poems
-                filtered = card.subject === "Drama" && card.textType === "poem";
-            } else{
-                filtered = card.subject === "Drama";
-            }
-            return (filtered);
-        });
-        setFilteredCardList(newFilteredCardList);
-    }
-
     let cardList = filteredCardList.map((textObj) => {
         return <ExploreTextCard textObj={textObj} handlePreviewPoem={props.handlePreviewPoem} key={textObj.key} />
     })
@@ -148,44 +103,77 @@ export function ExploreFilterList(props){
                 {/* //Filter button check box */}
                     <div id="filter" className="filter-check filter-buttons" tabIndex="100">
                         <span className="filter-title">Filter</span>
-                        <Form>
-                            {['checkbox'].map((type) => (
-                                <div key={`inline-${type}`} className="mb-3">
-                                    <Form.Check
-                                        inline
-                                        label="Culture"
-                                        name="Culture"
-                                        type={type}
-                                        id={`inline-${type}-Culture`}
-                                        onChange={handleCultureChecked}
-                                    />
-                                    <Form.Check
-                                        inline
-                                        label="Ethnic"
-                                        name="Ethnic"
-                                        type={type}
-                                        id={`inline-${type}-Ethnic`}
-                                        onChange={handleEthnicChecked}
-                                    />
-                                    <Form.Check
-                                        inline
-                                        label="Politics"
-                                        name="Politics"
-                                        type={type}
-                                        id={`inline-${type}-Politics`}
-                                        onChange={handlePoliticsChecked}
-                                    />
-                                    <Form.Check
-                                        inline
-                                        label="Drama"
-                                        name="Drama"
-                                        type={type}
-                                        id={`inline-${type}-Drama`}
-                                        onChange={handleDramaChecked}
-                                    />
+                        <Formik
+                            initialValues={{
+                                toggle: false,
+                                checked: [],
+                                filterBy: ["All"],
+                            }}
+                            onSubmit={(values) => {
+                                setFilterSubject(values.filterBy);      
+                            }}> 
+                            {(formik) => (
+                            <Form onSubmit={formik.handleSubmit}>
+                                <div role="group" aria-labelledby="checkbox-group">
+                                    <label for="All">
+                                    <Field type="radio" name="checked" value="All" 
+                                    checked={formik.values.filterBy.includes("All")}
+                                    onChange={(event) => {
+                                        formik.setFieldValue("filterBy", event.target.checked 
+                                            ? formik.values.filterBy = [event.target.value] 
+                                            : formik.values.filterBy.filter((value) => value !== event.target.value));
+                                        formik.submitForm();
+                                    }}/>
+                                        All
+                                    </label>
+                                    <label for="Culture">
+                                    <Field type="radio" name="checked" value="Culture" 
+                                    checked={formik.values.filterBy.includes("Culture")}
+                                    onChange={(event) => {
+                                        formik.setFieldValue("filterBy", event.target.checked 
+                                            ? formik.values.filterBy = [event.target.value] 
+                                            : formik.values.filterBy.filter((value) => value !== event.target.value));
+                                        formik.submitForm();
+                                    }}/>
+                                        Culture
+                                    </label>
+                                    <label for="Ethnic">
+                                    <Field type="radio" name="checked" value="Ethnic"
+                                    checked={formik.values.filterBy.includes("Ethnic")}
+                                    onChange={(event) => {
+                                        formik.setFieldValue("filterBy", event.target.checked 
+                                            ? formik.values.filterBy = [event.target.value] 
+                                            : formik.values.filterBy.filter((value) => value !== event.target.value));
+                                        formik.submitForm();
+                                    }}/>
+                                        Ethnic
+                                    </label>
+                                    <label for="Politics">
+                                    <Field type="radio" name="checked" value="Politics"
+                                    checked={formik.values.filterBy.includes("Politics")}
+                                    onChange={(event) => {
+                                        formik.setFieldValue("filterBy", event.target.checked 
+                                            ? formik.values.filterBy = [event.target.value] 
+                                            : formik.values.filterBy.filter((value) => value !== event.target.value));
+                                        formik.submitForm();
+                                    }}/>
+                                        Politics
+                                    </label>
+                                    <label for="Drama">
+                                    <Field type="radio" name="checked" value="Drama"   
+                                    checked={formik.values.filterBy.includes("Drama")}                                  
+                                    onChange={(event) => {
+                                        formik.setFieldValue("filterBy", event.target.checked 
+                                            ? formik.values.filterBy = [event.target.value] 
+                                            : formik.values.filterBy.filter((value) => value !== event.target.value));
+                                        formik.submitForm();
+                                    }}/>
+                                        Drama
+                                    </label>
                                 </div>
-                            ))}
-                        </Form>
+                            </Form>
+                            )}
+                        </Formik>
                     </div>
                 </ul>
             </nav>

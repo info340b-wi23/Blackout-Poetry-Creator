@@ -10,7 +10,7 @@ export function MenuBar() {
         </header>
         <main className="menu">
             <ul className="options">
-                <li className="container menu"><Link className="menu" to="/index">EXPLORE</Link></li>
+                <li className="container menu"><Link className="menu" to="/explore">EXPLORE</Link></li>
                 <li className="container menu"><Link className="menu" to="/creating">CREATE</Link></li>
                 <li className="container menu"><Link className="menu" to="/about">ABOUT</Link></li>
             </ul>

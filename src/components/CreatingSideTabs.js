@@ -26,7 +26,7 @@ export function UploadTab() {
             </div>
             <div className="tab-item">
                 <p>b. Browse the community</p>
-                <Link to="/index"><button type="button" className="btn d-inline mx-md-0 d-md-inline-block btn-primary">Browse</button></Link>
+                <Link to="/explore"><button type="button" className="btn d-inline mx-md-0 d-md-inline-block btn-primary">Browse</button></Link>
             </div>
             <div className="tab-item d-none d-md-block">
                 <Link to="/creating/blackout"><button type="button" className="navigation-buttons submit btn btn-primary">Next</button></Link>
@@ -234,14 +234,14 @@ export function FinalizingTab() {
                             <Link to="/creating/blackout"><button type="button" className="navigation-buttons btn btn-primary">Back</button></Link>
                         </div>          
                         <div className="col">
-                            <a href="/index"><button type="button" className="navigation-buttons submit btn btn-primary" onClick={handleClick}>Submit</button></a>
+                            <a href="/explore"><button type="button" className="navigation-buttons submit btn btn-primary" onClick={handleClick}>Submit</button></a>
                         </div>
                     </div>
                 </div>
             </div>
             <div className="flexbox-container d-block d-md-none">
                 <Link to="/creating/blackout"><button type="button" className="px-5 navigation-buttons btn btn-primary">Back</button></Link>
-                <a href="/index"><button type="button" onClick={handleClick} className="px-5 navigation-buttons submit btn btn-primary">Submit</button></a>
+                <a href="/explore"><button type="button" onClick={handleClick} className="px-5 navigation-buttons submit btn btn-primary">Submit</button></a>
             </div>
         </div>
     );
