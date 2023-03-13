@@ -1,16 +1,14 @@
 import React from "react";
 
 import { getAuth, signOut } from "firebase/auth";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 // Private function which will render the poem based on what is in the array
 // Use a map to make divs with each poem and then it will add it to the list
-function Poem(props) {
-    let source = props.sourceInfo.map((attribute) => {
-        return <li>{attribute}</li>
-    });
+function Poem({poem}) {
+    console.log(poem);
 
-    let text = props.textContent;
+    let text = poem.textContent;
 
     if (text.includes("{")) {
         const jsonHTMLElement = JSON.parse(text); // Parse the JSON to be an HTML string
@@ -21,6 +19,13 @@ function Poem(props) {
         )
     }
 
+    const title = poem.title;
+    const sourceAuthor = poem.sourceAuthor;
+    const sourceTitle = poem.sourceTitle;
+    const subject = poem.subject;
+
+
+
     return (
     <div className="col-md-6">
        <div className="explore-card-user-profile"> 
@@ -29,7 +34,10 @@ function Poem(props) {
                    {text}
                </p>
                <ul className="description-card">
-                   {source}
+                   <li><b>Title: </b>{title}</li>
+                   <li><b>Source Title: </b>{sourceTitle}</li>
+                   <li><b>Source Author: </b>{sourceAuthor}</li>
+                   <li><b>Subject: </b>{subject}</li>
                </ul>
         </Link>
        </div>
@@ -38,14 +46,21 @@ function Poem(props) {
 }
 
 // This function uses the username and links the user account to the webapp by identifing it.
-export function UserProfile() {
-    const params = useParams();
-    const username = params.username !== undefined ? params.username : "Username"; // If username is in the URL then it will replace the placeholder
+export function UserProfile(props) {
+    const username = props.currentUser !== null ? props.currentUser.displayName : "Guest"; // If username is in the URL then it will replace the placeholder
 
     const handleSignOut = () => {
         console.log("signing out");
         signOut(getAuth())
             .catch(err => console.log(err));
+    }
+
+    // Handles users created poems
+    let createdPoems = [];
+    for (let poem of props.poemArray) {
+        if (poem.author === username) {
+            createdPoems.push(<Poem poem={poem}/>)
+        }
     }
 
     return (
@@ -55,7 +70,7 @@ export function UserProfile() {
                 <h1>{username}</h1>
                 <img src="/img/profile-icon.png" width="100" height="100" className="d-md-inline-block align-top"
                             alt="Your profile icon"/>
-                <button className="btn btn-secondary ms-2" onClick={handleSignOut}><Link to="/explore">Sign Out</Link></button>
+                <button className="btn btn-secondary ms-2 sign-out-button" onClick={handleSignOut}><Link to="/explore">Sign Out</Link></button>
             </div>
             <div className="tab-selection">
                 <ul className="nav nav-tabs" id="myTab" role="tablist">
@@ -70,17 +85,7 @@ export function UserProfile() {
                 </ul>
                 <div className="tab-content" id="myTabContent">
                     <div className="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabIndex="0">
-                                <Poem textContent="Hermione stopped dead; Harry had heard it too.
-                                                Somebody had moved close behind them among the
-                                                dark bookshelves. They waited, and a moment later
-                                                the vulturelike countenance of Madam Pince
-                                                appeared around the corner, her sunken cheeks, her
-                                                skin like parchment, and her long hooked nose
-                                                illuminated unflatteringly by the lamp she was
-                                                carrying.“The library is now closed,” she said. “Mind you
-                                                return anything you have borrowed to the correct —
-                                                what have you been doing to that book, you depraved
-                                                boy?”" sourceInfo={["Harry Potter, Page 345", "JK Rowling", "#HarryPotter"]}/>                                                       
+                        {createdPoems}                                    
                     </div>
                     <div className="tab-pane fade" id="liked-tab-pane" role="tabpanel" aria-labelledby="liked-tab" tabIndex="0">
                     </div>

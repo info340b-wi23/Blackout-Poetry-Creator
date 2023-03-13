@@ -148,6 +148,7 @@ export function FinalizingTab(props) {
         // Create a new poem object for our array
         // Use the uuid library which will assign unique keys
         // https://stackoverflow.com/questions/39549424/how-to-create-unique-keys-for-react-elements
+        const username = props.currentUser !== null ? props.currentUser.displayName : "A user";
         const poemObj = {
             "key": v4(),
             "subject": selectedValue,
@@ -158,7 +159,7 @@ export function FinalizingTab(props) {
             "textContent": wordTagWithoutHandler,
             "rawText": words,
             "textType": "poem",
-            "author": props.currentUser.displayName
+            "author": username
         };
         changePoemArray(poemObj);
     }
@@ -180,6 +181,7 @@ export function FinalizingTab(props) {
                                 <option value="Ethnics">Ethnics</option>
                                 <option value="Politics">Politics</option>
                                 <option value="Drama">Drama</option>
+                                <option value="Other">Other</option>
                             </select>
                         </div>
                     </div>

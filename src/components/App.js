@@ -33,16 +33,7 @@ function App() {
 
   useEffect(() => {
     const db = getDatabase();
-    const poemsRef = ref(db, "0/poems");
-
-    const unregisterFunction = onAuthStateChanged(getAuth(), function(firebaseUser) {    
-      if(firebaseUser){ //firebaseUser defined: is logged in
-        console.log('logged in', firebaseUser.displayName);
-      } else { //firebaseUser is undefined: is not logged in
-        console.log('logged out');
-      }
-      setCurrentUser(firebaseUser);
-    })
+    const poemsRef = ref(db, "poems");
   
     onValue(poemsRef, (snapshot) => {
       const poemsObj = snapshot.val(); 
@@ -54,6 +45,15 @@ function App() {
       setPoemArray(objArray);
     });
 
+    const unregisterFunction = onAuthStateChanged(getAuth(), function(firebaseUser) {    
+      if(firebaseUser){ //firebaseUser defined: is logged in
+        console.log('logged in', firebaseUser.displayName);
+      } else { //firebaseUser is undefined: is not logged in
+        console.log('logged out');
+      }
+      setCurrentUser(firebaseUser);
+    })
+
     function cleanup() {
       unregisterFunction(); //call the unregister function
     }
@@ -63,7 +63,7 @@ function App() {
 
   // Change the focused poem (if selected from the explore page and also remove all blackouts)
   // Update all the fields in the creating tab to be cleared out
-  const handleFocusedPoem = (poemObj) => {
+  const handleFocusedPoem = (poemObj) => { 
     setFocusedPoem(poemObj);
     if (Array.isArray(poemObj.textContent)) { // if the text content is actually a json object
       sessionStorage.setItem("words", JSON.stringify(poemObj.rawText)); // use the raw text without any HTML as the text
@@ -88,7 +88,7 @@ function App() {
     setPoemArray([...poemArray, PoemObj]);
     
     const db = getDatabase();
-    const poemsRef = ref(db, "0/poems");
+    const poemsRef = ref(db, "poems");
     firebasePush(poemsRef, PoemObj)
       .then(() => console.log("Data saved successfully!"))
       .catch(err => console.log(err));
@@ -111,10 +111,10 @@ function App() {
         <Route path="signin" element={<SignInPage />} />
 
         {/* Add a 'Route' to the name of your page and the element used to render it */}
-        <Route path="creating" element={<Creating currentUser = {currentUser} handlePoems = {handlePoemArrayChange} focusedPoem = {focusedPoem} handleFocusedPoem={handleFocusedPoem}/>}>
+        <Route path="creating" element={<Creating handlePoems = {handlePoemArrayChange} focusedPoem = {focusedPoem} handleFocusedPoem={handleFocusedPoem}/>}>
           <Route path="upload" key="upload" element={[<UploadTab/>, <CreatingPreview/>]}/>
           <Route path="blackout" key="blackout" element={[<BlackoutTab/>, <CreatingPreview/>]}/>
-          <Route path="finalizing" key="finalizing" element={[<FinalizingTab/>, <CreatingPreview/>]}/>     
+          <Route path="finalizing" key="finalizing" element={[<FinalizingTab currentUser = {currentUser}/>, <CreatingPreview/>]}/>     
           <Route index element={[<UploadTab/>, <CreatingPreview/>]}/>   
         </Route>
 
@@ -128,7 +128,7 @@ function App() {
         <Route path="about/instructions" element={<AboutInstructionPage />} />
         <Route path="about/what-is-blackout-poetry" element={<AboutArticle />} />
 
-        <Route path={`userprofile`} element={<UserProfile userName={currentUser !== null ? currentUser.displayName : "Username"}/>}/>
+        <Route path={`userprofile`} element={<UserProfile currentUser={currentUser} poemArray={poemArray}/>}/>
 
       </Routes>
       <Footer/>

@@ -9,9 +9,6 @@ export function ExploreFilterList(props){
     // https://stackoverflow.com/questions/41446560/react-setstate-not-updating-state
     useEffect(() => {
         setFilteredCardList(props.cardData);
-        setIsTemplateActive(false);
-        setIsPoemActive(false);
-        setIsAllActive(true);
     }, [props.cardData]);
 
     const [filteredCardList, setFilteredCardList] = useState(props.cardData); 
@@ -22,10 +19,9 @@ export function ExploreFilterList(props){
     const [isAllActive, setIsAllActive] = useState(true);
 
     // keeps track of the filter checkboxes that were clicked
-    const [filterSubject, setFilterSubject] = useState("All");
-
+    const [filterSubject, setFilterSubject] = useState(["All"]);
     useEffect(() => {
-        let newFilteredCardList = props.cardData
+        let newFilteredCardList = props.cardData;
         if (filterSubject[0] !== "All") {
             newFilteredCardList = props.cardData.filter((card) => {
                 return card.subject.toLowerCase() === filterSubject[0].toLowerCase();
@@ -84,6 +80,11 @@ export function ExploreFilterList(props){
     if (cardList.length === 0) { // If the search query had nothing in it
         cardList = <p className="nothing-text">We've found nothing!</p>
     }
+
+    let searchQueryTag = "";
+    if (props.searchQuery !== "") {
+        searchQueryTag = <p className="search-query-tag">Searching for "{props.searchQuery}"</p>
+    }
     
     return (
         <div>
@@ -103,6 +104,7 @@ export function ExploreFilterList(props){
                 {/* //Filter button check box */}
                     <div id="filter" className="filter-check filter-buttons" tabIndex="100">
                         <span className="filter-title">Filter</span>
+                        {/* Using 3rd party library Formik to create a filter checkbox*/}
                         <Formik
                             initialValues={{
                                 toggle: false,
@@ -137,17 +139,6 @@ export function ExploreFilterList(props){
                                     }}/>
                                         Culture
                                     </label>
-                                    <label htmlFor="Ethnic">
-                                    <Field type="radio" name="checked" value="Ethnic"
-                                    checked={formik.values.filterBy.includes("Ethnic")}
-                                    onChange={(event) => {
-                                        formik.setFieldValue("filterBy", event.target.checked 
-                                            ? formik.values.filterBy = [event.target.value] 
-                                            : formik.values.filterBy.filter((value) => value !== event.target.value));
-                                        formik.submitForm();
-                                    }}/>
-                                        Ethnic
-                                    </label>
                                     <label htmlFor="Politics">
                                     <Field type="radio" name="checked" value="Politics"
                                     checked={formik.values.filterBy.includes("Politics")}
@@ -170,6 +161,17 @@ export function ExploreFilterList(props){
                                     }}/>
                                         Drama
                                     </label>
+                                    <label htmlFor="Other">
+                                    <Field type="radio" name="checked" value="Other"   
+                                    checked={formik.values.filterBy.includes("Other")}                                  
+                                    onChange={(event) => {
+                                        formik.setFieldValue("filterBy", event.target.checked 
+                                            ? formik.values.filterBy = [event.target.value] 
+                                            : formik.values.filterBy.filter((value) => value !== event.target.value));
+                                        formik.submitForm();
+                                    }}/>
+                                        Other
+                                    </label>
                                 </div>
                             </Form>
                             )}
@@ -179,6 +181,7 @@ export function ExploreFilterList(props){
             </nav>
             <div className="explore-container">
                 {/* set of cards */}
+                {searchQueryTag}
                 {cardList}
             </div>
         </div>
@@ -206,11 +209,11 @@ function ExploreTextCard(props) {
         )
     }
 
+    // This is for getting the user who wrote the poem
     let author = "";
-    if (textObj.textType === "template") {
-        author = <em>Blackout Poetry Developers</em>
+    if (textObj.textType === "poem") {
+        author = <li><b>Author: </b>{textObj.author}</li>
     } 
-    // else if it is a poem, get the user id of who wrote it, but this will be added when creating a poem to a new field
 
     return(
         <div className="explore-card" > 
@@ -221,8 +224,8 @@ function ExploreTextCard(props) {
                     {text}
                 </p>
                 <ul className="description-card">
-                    <li className='card-title'><b>Title: </b>{textObj.title}</li>
-                    <li><b>Author: </b>{author}</li>
+                    <li><b>Title: </b>{textObj.title}</li>
+                    {author}
                     <li><b>Source: </b>{textObj.sourceTitle}</li>
                     <li><b>Source Author: </b>{textObj.sourceAuthor}</li>
                     <li><b>Description: </b>{textObj.description}</li>

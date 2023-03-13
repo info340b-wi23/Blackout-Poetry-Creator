@@ -38,6 +38,13 @@ p {
     color: black;
 }
 
+p.username {
+    color: white;
+    margin-bottom: 0;
+    font-size: 24px;
+    font-weight: bold;
+}
+
 a {
     color: white;
 }
@@ -290,6 +297,10 @@ main.explore-main {
     display: inline-block;
     flex: 1;
     padding-top: 10rem;
+}
+
+.search-query-tag {
+    font-weight:bold;
 }
 
 html.explore {
@@ -642,6 +653,19 @@ a.menu {
 .user-profile.flexbox-container {
     background-color: white;
     height: 100%;
+}
+
+.sign-out-button {
+    margin-bottom: 2rem;
+    margin-right: 0.5rem;
+    background-color: #DBCEB4;
+}
+
+.sign-out-button a {
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+
 }
 
 .user-info {

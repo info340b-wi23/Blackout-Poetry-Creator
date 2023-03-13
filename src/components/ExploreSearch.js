@@ -3,8 +3,7 @@ import { React, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 export function ExploreSearchBar(props){
-    const [searchHistoryArray, setSearchHistoryArray] = useState([]);
-
+    const [searchHistoryArray, setSearchHistoryArray] = useState(JSON.parse(sessionStorage.getItem("searchHistory")) || []);
     let recentlySearched = searchHistoryArray.map((element, i) => { // Clicking on element will search for those; clicking on x deletes that element from search history
         let item =(<div key={i} className="history"> 
             <Link to="/explore" className="sidebar" onClick={(element) => props.handleSearchQuery(element.target.innerText)}>{element}</Link>
@@ -17,12 +16,14 @@ export function ExploreSearchBar(props){
         event.preventDefault();
         let newSearchArr = searchHistoryArray.filter((item) => item !== element);
         setSearchHistoryArray(newSearchArr);
+        sessionStorage.setItem("searchHistory", JSON.stringify(newSearchArr));
     }
 
     function clearHistory(event) { // should help clear search history 
         event.preventDefault();
         let searchHistoryArray = [];
         setSearchHistoryArray(searchHistoryArray);
+        sessionStorage.setItem("searchHistory", JSON.stringify(searchHistoryArray));
     }
 
     // When the ENTER key is pressed in the search bar...
@@ -33,6 +34,7 @@ export function ExploreSearchBar(props){
                 searchHistoryArray.splice(searchHistoryArray.indexOf(event.target.value), 1); // Get rid of the value
             }
             setSearchHistoryArray([event.target.value, ...searchHistoryArray]); // Either way, put the searched value on top 
+            sessionStorage.setItem("searchHistory", JSON.stringify([event.target.value, ...searchHistoryArray]));
             event.target.value = ""; // Remove the search value from the search bar
         }
     }
