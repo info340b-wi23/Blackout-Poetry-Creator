@@ -1,5 +1,7 @@
 import { React, useState, useEffect } from 'react';
 
+import { getAuth, onAuthStateChanged } from 'firebase/auth'
+
 import { NavBar } from './Navbar.js';
 import { Footer } from './Footer.js';
 
@@ -26,10 +28,16 @@ function App() {
   const [poemArray, setPoemArray] = useState(templateArray); // Will hold blackout poems
   const [focusedPoem, setFocusedPoem] = useState({}); // Used if the user wants to use a template and hit "create" button in explore preview
   const [previewPoem, setPreviewPoem] = useState({}); // Used if user is in explore preview
+  const [currentUser, setCurrentUser] = useState(null);
 
   useEffect(() => {
     const db = getDatabase();
     const poemsRef = ref(db, "0/poems");
+
+    onAuthStateChanged(getAuth(), function(firebaseUser) {
+      console.log("someone logged in or logged out!");        
+      setCurrentUser(firebaseUser);
+    })
 
     onValue(poemsRef, (snapshot) => {
       const poemsObj = snapshot.val(); 
@@ -42,6 +50,9 @@ function App() {
     });
   }, []);
 
+  console.log(currentUser);
+  const isLoggedIn = currentUser!==null;
+  console.log(isLoggedIn);
   // Change the focused poem (if selected from the explore page and also remove all blackouts)
   // Update all the fields in the creating tab to be cleared out
   const handleFocusedPoem = (poemObj) => {
