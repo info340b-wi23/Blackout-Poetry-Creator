@@ -11,7 +11,7 @@ export function NavItems(props) {
     <Link className="nav-link active px-5" to={props.isLoggedIn("/creating/upload")}>Create</Link>
     : <Link className="nav-link px-5" to={props.isLoggedIn("/creating/upload")}>Create</Link>
 
-    const exploreNavItem = props.currPageID === "explore" ?
+    const exploreNavItem = props.currPageID === "explore" || props.currPageID === undefined ?
     <Link className={"nav-link active px-5"} to="/explore">Explore</Link>
     : <Link className="nav-link px-5" to="/explore">Explore</Link>
 

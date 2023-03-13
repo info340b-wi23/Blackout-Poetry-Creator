@@ -12,7 +12,7 @@ export function ExploreFilterList(props){
         setIsTemplateActive(false);
         setIsPoemActive(false);
         setIsAllActive(true);
-    }, [props.cardData, props.currentUser]);
+    }, [props.cardData]);
 
     const [filteredCardList, setFilteredCardList] = useState(props.cardData); 
 
