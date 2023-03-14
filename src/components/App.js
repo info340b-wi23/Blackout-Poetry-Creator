@@ -105,7 +105,6 @@ function App() {
     const db = getDatabase();
     const poemsRef = ref(db, "poems");
     firebasePush(poemsRef, PoemObj)
-      .then(() => console.log("Data saved successfully!"))
       .catch(err => console.log(err));
   }
 

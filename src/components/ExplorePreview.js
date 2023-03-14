@@ -45,7 +45,6 @@ export function ExplorePreview(props){
                     if (previewText.likedBy[key] === userId) { // If their userId matches the person who is liking it 
                         const likedByRef = ref(db, `poems/${previewText.key}/likedBy/${key}`);
                         remove(likedByRef) // Remove this person from the likedBy array
-                            .then(() => console.log("Removing like from post successful!"))
                             .catch((err) => console.log(err));
                     }
                 }
@@ -53,7 +52,6 @@ export function ExplorePreview(props){
                 previewText.likedBy = previewText.likedBy += ` ${userId}`; // Add this user
                 const poemsRef = ref(db, `poems/${previewText.key}/likedBy`);
                 firebasePush(poemsRef, props.currentUser.uid) // Push it to the database
-                    .then(() => console.log("Liking post saved successfully!"))
                     .catch(err => console.log(err));
             }
         }
@@ -77,8 +75,9 @@ export function ExplorePreview(props){
                             
                             <div className="tab-item">
                                 <div className="like-button">
-                                    {/* Note that if the user is in the likedBy array, the button will look different */}
-                                    <Link to={isLoggedIn("/explore")}>
+                                    {/* Note that if the user is in the likedBy array, the button will look different. window.scrollTo scrolls to the top */}
+                                    {/*https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollTo*/}
+                                    <Link to={isLoggedIn("/explore")} onClick={() => {window.scrollTo(0, 0)}}>
                                         {props.currentUser && previewText.likedBy &&  Object.values(previewText.likedBy).includes(props.currentUser.uid) ? (
                                                 <button type="button" className="navigation-buttons btn btn-primary liked" onClick={adjustLiked}>Liked &#10084;</button>
                                             ) : (
