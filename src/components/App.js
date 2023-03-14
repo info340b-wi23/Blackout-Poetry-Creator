@@ -110,7 +110,7 @@ function App() {
   }
 
   return (
-    <>
+    <div>
       <header>
         <Routes>
           <Route path=":currPage?/:subPage?" element={<NavBar currentUser={currentUser} />}/>
@@ -147,7 +147,7 @@ function App() {
 
       </Routes>
       <Footer/>
-    </>
+    </div>
   );
 }
 
