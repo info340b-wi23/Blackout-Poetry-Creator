@@ -27,12 +27,6 @@ export function Creating(props) {
         setClickedWords(clickedWordsArray); // Create an array that is the length of newWords and then set every value to be false
         sessionStorage.setItem("clickedWords", JSON.stringify(clickedWordsArray));
 
-        // sessionStorage.setItem("selectedValue", "culture");
-        // sessionStorage.setItem("title", "");
-        // sessionStorage.setItem("sourceTitle", "");
-        // sessionStorage.setItem("sourceAuthor", "");
-        // sessionStorage.setItem("description", "");
-
         props.handleFocusedPoem({});
     }
 
