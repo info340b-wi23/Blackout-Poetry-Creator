@@ -8,7 +8,7 @@ export function AboutArticle() {
         <main className="about">
             <article>
                 <header className="text-center">
-                    <img src="/img/glen-carrie-oHoBIbDj7lo-unsplash.jpg" alt="A bunch of words" width="300px" aria-label="A bunch of words"></img>
+                    <img src="/img/glen-carrie-oHoBIbDj7lo-unsplash.jpg" alt="A bunch of words" width="300px"></img>
                     <figcaption>
                         Photo by <cite><a className="text-dark" href="https://unsplash.com/photos/oHoBIbDj7lo">Glen Carrie</a></cite>
                     </figcaption>
