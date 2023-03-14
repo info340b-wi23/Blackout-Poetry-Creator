@@ -63,7 +63,7 @@ export function UserProfile(props) {
         if (poem.author === username) { // Finds the poems the user wrote
             createdPoems.push(<Poem key={poem.key} poem={poem}/>);
         }
-        if (props.currentUser && Object.values(poem.likedBy).includes(props.currentUser.uid)) { // Finds the user's liked poems
+        if (props.currentUser && poem.likedBy && Object.values(poem.likedBy).includes(props.currentUser.uid)) { // Finds the user's liked poems
             likedPoems.push(<Poem key={poem.key} poem={poem}/>);
         }
     }
