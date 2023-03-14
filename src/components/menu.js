@@ -15,13 +15,15 @@ export function MenuBar(props) {
     return (
     <div className="menu">
         <header>
-            <img src="/img/Menu-title.png" alt="homepage logo" className="menu center"/>
+            <img src="/img/Menu-title.png" alt="homepage logo home page" className="menu center"/>
         </header>
         <main className="menu">
             <ul className="options">
+	    
                 <li className="container menu"><Link className="menu" to="/explore">EXPLORE</Link></li>
                 <li className="container menu"><Link className="menu" to={isLoggedIn("/creating")}>CREATE</Link></li>
                 <li className="container menu"><Link className="menu" to="/about">ABOUT</Link></li>
+			
             </ul>
         </main>
     </div>
