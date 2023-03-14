@@ -22,16 +22,16 @@ export function ExploreFilterList(props){
     const [filterSubject, setFilterSubject] = useState(["All"]);
     useEffect(() => {
         let newFilteredCardList = props.cardData;
-        if (filterSubject[0] !== "All") {
-            newFilteredCardList = props.cardData.filter((card) => {
+        if (filterSubject[0] !== "All") { // If we are not choosing all
+            newFilteredCardList = props.cardData.filter((card) => { // Filter by the given radio group selected
                 return card.subject.toLowerCase() === filterSubject[0].toLowerCase();
             });
-        } else {
+        } else { // Else, we want all cards so return them all
             newFilteredCardList = props.cardData;
         }
         setIsTemplateActive(false);
         setIsPoemActive(false);
-        setIsAllActive(true);
+        setIsAllActive(true); // Reset the tab up top.
         setFilteredCardList(newFilteredCardList);
     }, [filterSubject, props.cardData])
 
@@ -55,6 +55,7 @@ export function ExploreFilterList(props){
         setIsAllActive(false);
         setFilteredCardList(newFilteredCardList);
     }
+
     const handleClickAll = function(){
         let newFilteredCardList = props.cardData;
         setIsTemplateActive(false);
@@ -73,6 +74,7 @@ export function ExploreFilterList(props){
         setFilteredCardList(props.freshCards);
     } 
 
+    // Create the card list
     let cardList = filteredCardList.map((textObj) => {
         return <ExploreTextCard textObj={textObj} handlePreviewPoem={props.handlePreviewPoem} key={textObj.key} />
     })
@@ -82,8 +84,10 @@ export function ExploreFilterList(props){
     }
 
     let searchQueryTag = "";
-    if (props.searchQuery !== "") {
-        searchQueryTag = <p className="search-query-tag">Searching for "{props.searchQuery}"</p>
+    if (props.searchQuery !== "") { // If the user searched for something, this will display to show it is filtering
+        searchQueryTag = <p className="search-query-tag">Searching for "{props.searchQuery}"<br/>Number of results: {filteredCardList.length}</p>
+    } else {
+        searchQueryTag = <p className="search-query-tag">Number of results: {filteredCardList.length}</p>
     }
     
     return (
@@ -209,7 +213,7 @@ function ExploreTextCard(props) {
         )
     }
 
-    // This is for getting the user who wrote the poem
+    // This is for getting the user who wrote the poem if the text is of poem type (since templates aren't authored)
     let author = "";
     if (textObj.textType === "poem") {
         author = <li><b>Author: </b>{textObj.author}</li>

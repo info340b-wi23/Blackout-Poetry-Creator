@@ -62,17 +62,20 @@ function App() {
   }, []);
 
   // Change the focused poem (if selected from the explore page and also remove all blackouts)
-  // Update all the fields in the creating tab to be cleared out
+  // Update all the fields in the creating tab to be cleared out ONLY if it is a template (because user-created poems should save progress)
   const handleFocusedPoem = (poemObj) => { 
     setFocusedPoem(poemObj);
     if (Array.isArray(poemObj.textContent)) { // if the text content is actually a json object
       sessionStorage.setItem("words", JSON.stringify(poemObj.rawText)); // use the raw text without any HTML as the text
     } else {
-      if (poemObj.textContent) {
+      if (poemObj.textContent) { // If the poem has text content, then we need to convert the text into a array. This prevents an error from typed text
         sessionStorage.setItem("words", JSON.stringify(poemObj.textContent.split(/\s+/)));
       }
     }
-    sessionStorage.setItem("clickedWords", JSON.stringify([]));
+    sessionStorage.setItem("clickedWords", JSON.stringify([])); // Empty the blacked out words since the text changed
+
+    // Everything below will fire if the text is a template or pre-existing poem
+    // We don't want to change these when text is entered because then it will always erase what the user put in it!
     if (poemObj.subject) {
       sessionStorage.setItem("selectedValue", poemObj.subject);
     }

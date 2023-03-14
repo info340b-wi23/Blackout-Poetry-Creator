@@ -146,8 +146,6 @@ export function FinalizingTab(props) {
         wordTagWithoutHandler = JSON.stringify(wordTagWithoutHandler);
 
         // Create a new poem object for our array
-        // Use the uuid library which will assign unique keys
-        // https://stackoverflow.com/questions/39549424/how-to-create-unique-keys-for-react-elements
         const username = props.currentUser !== null ? props.currentUser.displayName : "A user";
 
         let adjustedTitle = title;
@@ -155,6 +153,8 @@ export function FinalizingTab(props) {
             adjustedTitle = "My Poem";
         }
 
+        // Use the uuid library which will assign unique keys
+        // https://stackoverflow.com/questions/39549424/how-to-create-unique-keys-for-react-elements
         const key = v4();
 
         const poemObj = {

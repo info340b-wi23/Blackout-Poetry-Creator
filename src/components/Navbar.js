@@ -50,7 +50,7 @@ export function NavBar(props) {
         return;
     }
 
-    const username = props.currentUser !== null ? <p className="username">{props.currentUser.displayName}</p> : ""
+    const username = props.currentUser !== null ? <p className="username">{props.currentUser.displayName}</p> : "";
 
     return (
         <nav className="dark-bg navbar fixed-top navbar-expand-lg" role="navigation">
@@ -59,8 +59,12 @@ export function NavBar(props) {
                     <img src="/img/logo.svg" className="d-inline-block align-top" alt="Logo which links to homepage"/>
                 </Link>
                 <span className="d-inline-block d-md-none mr-10">
-                    <Link to={isLoggedIn("/userprofile")} aria-label="profile icon that links to user's profile"><img src="/img/profile-icon.png" width="50" height="50" className="d-md-inline-block align-top"
-                    alt="Logo which links to homepage"/></Link>
+                    <Link to={isLoggedIn("/userprofile")} aria-label="profile icon that links to user's profile"><img src="/img/profile-icon.png" width="50" height="50" className="d-md-inline-block mx-4"
+                    alt="Logo which links to homepage"/>
+                    </Link>
+                    <span className="mx-3">
+                        {username}
+                    </span>
                 </span>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -70,11 +74,13 @@ export function NavBar(props) {
                     <ul className="navbar-nav me-auto">
                         <NavItems currPageID={currPageID} isLoggedIn={isLoggedIn}/>
                     </ul>
-                    <span className="px-lg-5 d-none d-md-block">
+                    <div className="d-none d-md-inline">
+                        {username}
+                    </div>
+                    <span className="px-lg-5 d-none d-md-block"> 
                         <Link to={isLoggedIn("/userprofile") } aria-label="profile icon that links to user's profile">
                             <div>
-                                <img src="/img/profile-icon.png" width="50" height="50" className="d-md-inline-block align-top" alt="Logo which links to homepage"/>
-                                {username}
+                                <img src="/img/profile-icon.png" width="50" height="50" className="d-md-inline-block" alt="Logo which links to homepage"/>
                             </div>
                         </Link>
                     </span>

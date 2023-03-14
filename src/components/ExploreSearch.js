@@ -12,7 +12,7 @@ export function ExploreSearchBar(props){
         return item;
     });
 
-    function deleteSearchListItem(event, element) {
+    function deleteSearchListItem(event, element) { // Delete the item from search history if "x" button is clicked
         event.preventDefault();
         let newSearchArr = searchHistoryArray.filter((item) => item !== element);
         setSearchHistoryArray(newSearchArr);

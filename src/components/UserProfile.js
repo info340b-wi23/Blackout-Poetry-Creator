@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 function Poem({poem}) {
     let text = poem.textContent;
 
+    // This is if the text type is a poem so we have to convert the html
     if (text.includes("{")) {
         const jsonHTMLElement = JSON.parse(text); // Parse the JSON to be an HTML string
         text = ( // Then extract the necessary values to "reconstruct" the HTML it used to represent
@@ -71,9 +72,9 @@ export function UserProfile(props) {
         <main>
         <div className="user-profile flexbox-container">
             <div className="user-info">
-                <h1>{username}</h1>
                 <img src="/img/profile-icon.png" width="100" height="100" className="d-md-inline-block align-top"
                             alt="Your profile icon"/>
+                <h1>{username}</h1>
                 <button className="btn btn-secondary ms-2 sign-out-button" onClick={handleSignOut}><Link to="/explore">Sign Out</Link></button>
             </div>
             <div className="tab-selection">

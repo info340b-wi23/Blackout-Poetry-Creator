@@ -12,6 +12,7 @@ export function ExplorePreview(props){
         return <Navigate to ="/explore"/>;
     }
 
+    // If the text is a poem, we need to render the blackout elements. There isn't just text in these!
     if (previewText.textContent.includes("{")) {
         const jsonHTMLElement = JSON.parse(previewText.textContent); // Parse the JSON to be an HTML string
         previewText.textContent = ( // Then extract the necessary values to "reconstruct" the HTML it used to represent
@@ -26,6 +27,7 @@ export function ExplorePreview(props){
         props.handleFocusedPoem(previewText);
     }
 
+    // Make sure user is logged in if they want to like or create the previewed poem
     function isLoggedIn(destination) {
 	    if(props.currentUser === null) {
             return "/signin";

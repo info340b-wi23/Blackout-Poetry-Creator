@@ -1,9 +1,9 @@
 {
     "poems": [
         {
-            "key": "My Poem", 
+            "key": "Harry Potter", 
             "subject": "Drama", 
-            "title": "My Poem", 
+            "title": "Harry Potter", 
             "sourceTitle": "Harry Potter, Page 345", 
             "sourceAuthor": "JK Rowling", 
             "description": "#HarryPotter", 
@@ -17,14 +17,14 @@
             "title": "Shiny Moana", 
             "sourceTitle": "Moana, shiny lyrics", 
             "sourceAuthor": "Disney", 
-            "description": "#Moana #Disney", 
+            "description": "#Disney #Children #Song", 
             "textContent": "Well, Tatatoa hasn't always been this glam I was a drab little crab once Now I know I can be happy as a clam Because I'm beautiful, baby Did your granny say listen to your heart Be who you are on the inside I need three words to tear her argument apart Your granny lied I'd rather be Shiny Like a treasure from a sunken pirate wreck Scrub the deck and make it look Shiny I will sparkle like a wealthy woman's neck Just a sec Don't you know Fish are dumb, dumb, dumb They chase anything that glitters (beginners) Oh, and here they come, come, come To the brightest thing that glitters Mmm, fish dinners",
             "textType":"template",
             "likedBy": ""
         },
         {
-            "key": "Name of Poem", 
-            "subject": "Politics", 
+            "key": "Example Text", 
+            "subject": "Other", 
             "title": "Example Text", 
             "sourceTitle": "Lit Example", 
             "sourceAuthor": "No one", 
@@ -34,12 +34,12 @@
             "likedBy": ""
         },
         {
-            "key": "The Cat In the Hat", 
-            "subject": "Culture", 
+            "key": "Cat In the Hat", 
+            "subject": "Drama", 
             "title": "Cat In The Hat", 
             "sourceTitle": "The Cat In the Hat", 
             "sourceAuthor": "Dr.Seuss", 
-            "description": "#Dr.Seuss", 
+            "description": "#Dr.Seuss #Children", 
             "textContent": "The sun did not shine. It was too wet to play. So we sat in the house all that cold, cold, Wet day. I sat there with sally. We sat there, we two. And I said, 'how I wish we had something to do!' Too wet to go out and too cold to play ball. So we sat in the house. We did nothing at all. So all we could do was to Sit! Sit! Sit! Sit! And we did not like it. Not one little bit. And then something went BUMP! How that bump made us jump! We looked! Then we saw him step on the mat! We looked! And we saw him! The cat in the hat!",
             "textType":"template",
             "likedBy": ""
@@ -52,6 +52,193 @@
             "sourceAuthor": "Joel Ross", 
             "description": "#Info #College #code #css", 
             "textContent": "Web development is the process of implementing (programming) web sites and applications that users can access over the internet. However, the internet is a network involving many different computers all communicating with one another. These computers can be divided into two different groups servers store (“:host”) content and provide (“serve”) it to other computers, while clients request that content and then present it to the human users.",
+            "textType":"template",
+            "likedBy": ""
+        },
+        {
+            "key": "The Declaration of Independence", 
+            "subject": "Politics", 
+            "title": "The Declaration of Independence", 
+            "sourceTitle": "Declaration of Independence", 
+            "sourceAuthor": "Founding Fathers of the United States", 
+            "description": "#USA #Independence #History", 
+            "textContent": "The unanimous Declaration of the thirteen united States of America, When in the Course of human events, it becomes necessary for one people to dissolve the political bands which have connected them with another, and to assume among the powers of the earth, the separate and equal station to which the Laws of Nature and of Nature's God entitle them, a decent respect to the opinions of mankind requires that they should declare the causes which impel them to the separation. We hold these truths to be self-evident, that all men are created equal, that they are endowed by their Creator with certain unalienable Rights, that among these are Life, Liberty and the pursuit of Happiness.--That to secure these rights, Governments are instituted among Men, deriving their just powers from the consent of the governed, --That whenever any Form of Government becomes destructive of these ends, it is the Right of the People to alter or to abolish it, and to institute new Government, laying its foundation on such principles and organizing its powers in such form, as to them shall seem most likely to effect their Safety and Happiness. Prudence, indeed, will dictate that Governments long established should not be changed for light and transient causes; and accordingly all experience hath shewn, that mankind are more disposed to suffer, while evils are sufferable, than to right themselves by abolishing the forms to which they are accustomed. But when a long train of abuses and usurpations, pursuing invariably the same Object evinces a design to reduce them under absolute Despotism, it is their right, it is their duty, to throw off such Government, and to provide new Guards for their future security.--Such has been the patient sufferance of these Colonies; and such is now the necessity which constrains them to alter their former Systems of Government. The history of the present King of Great Britain is a history of repeated injuries and usurpations, all having in direct object the establishment of an absolute Tyranny over these States. To prove this, let Facts be submitted to a candid world.",
+            "textType":"template",
+            "likedBy": ""
+        },
+        {
+            "key": "The US Constitution", 
+            "subject": "Politics", 
+            "title": "The First Paragraph of the US Constitution", 
+            "sourceTitle": "The US Constitution", 
+            "sourceAuthor": "Founding Fathers of the United States", 
+            "description": "#USA #History", 
+            "textContent": "We the People of the United States, in Order to form a more perfect Union, establish Justice, insure domestic Tranquility, provide for the common defence, promote the general Welfare, and secure the Blessings of Liberty to ourselves and our Posterity, do ordain and establish this Constitution for the United States of America.",
+            "textType":"template",
+            "likedBy": ""
+        },
+        {
+            "key": "I Have a Dream (Speech)", 
+            "subject": "Politics", 
+            "title": "I Have a Dream (Speech)", 
+            "sourceTitle": "I Have a Dream", 
+            "sourceAuthor": "Martin Luther King Jr", 
+            "description": "#MLk #History #Equality", 
+            "textContent": "I say to you today, my friends, though, even though we face the difficulties of today and tomorrow, I still have a dream. It is a dream deeply rooted in the American dream. I have a dream that one day this nation will rise up, live out the true meaning of its creed: “We hold these truths to be self-evident, that all men are created equal.” I have a dream that one day on the red hills of Georgia sons of former slaves and the sons of former slave-owners will be able to sit down together at the table of brotherhood. I have a dream that one day even the state of Mississippi, a state sweltering with the heat of injustice, sweltering with the heat of oppression, will be transformed into an oasis of freedom and justice. I have a dream that my four little children will one day live in a nation where they will not be judged by the color of their skin but by the content of their character. I have a dream . . . I have a dream that one day in Alabama, with its vicious racists, with its governor having his lips dripping with the words of interposition and nullification, one day right there in Alabama little black boys and black girls will be able to join hands with little white boys and white girls as sisters and brothers. I have a dream today . . .",
+            "textType":"template",
+            "likedBy": ""
+        },
+        {
+            "key": "Alphabet", 
+            "subject": "Other", 
+            "title": "The Alphabet", 
+            "sourceTitle": "Alphabet", 
+            "sourceAuthor": "Unknown", 
+            "description": "#ABCs #Letters #Children", 
+            "textContent": "A B C D E F G H J K L M N O P Q R S T U V W X Y Z",
+            "textType":"template",
+            "likedBy": ""
+        },
+        {
+            "key": "Twinkle Twinkle Little Star", 
+            "subject": "Other", 
+            "title": "Twinkle Twinkle Little Star", 
+            "sourceTitle": "Twinkle Twinkle Little Star", 
+            "sourceAuthor": "Jane Taylor", 
+            "description": "#Children #Song", 
+            "textContent": "Twinkle, twinkle, little star,How I wonder what you are! Up above the world so high, Like a diamond in the sky. Twinkle, twinkle, little star, How I wonder what you are! When the blazing sun is gone, When he nothing shines upon, Then you show your little light, Twinkle, twinkle, all the night. Twinkle, twinkle, little star, How I wonder what you are! Then the traveller in the dark, Thanks you for your tiny spark, He could not see which way to go, If you did not twinkle so. Twinkle, twinkle, little star, How I wonder what you are! In the dark blue sky you keep, And often through my curtains peep, For you never shut your eye, Till the sun is in the sky. Twinkle, twinkle, little star, How I wonder what you are! As your bright and tiny spark, Lights the traveller in the dark,— Though I know not what you are, Twinkle, twinkle, little star. Twinkle, twinkle, little star, How I wonder what you are! ",
+            "textType":"template",
+            "likedBy": ""
+        },
+        {
+            "key": "Love Story Taylor Swift", 
+            "subject": "Drama", 
+            "title": "Love Story (song)", 
+            "sourceTitle": "Love Story", 
+            "sourceAuthor": "Taylor Swift", 
+            "description": "#Pop #Song", 
+            "textContent": "We were both young when I first saw you. I close my eyes and the flashback starts. I’m standing there. On a balcony in summer air. See the lights, see the party, the ball gowns. See you make your way through the crowd. And say 'Hello'. Little did I know. That you were Romeo, you were throwing pebbles. And my daddy said, ‘Stay away from Juliet’. And I was crying on the staircase. Begging you, ‘Please don't go’ And I said.’ Romeo take me somewhere we can be alone. I’ll be waiting, all there's left to do is run. You'll be the prince, and I'll be the princess. It's a love story, baby, just say yes’. So I sneak out to the garden to see you. We keep quiet 'cause we're dead if they knew. So close your eyes. Escape this town for a little while, oh, oh. ‘Cause you were Romeo, I was a scarlet letter. And my daddy said, 'Stay away from Juliet’. But you were everything to me. I was begging you, ‘Please don't go’. And I said ‘Romeo, take me somewhere we can be alone. I’ll be waiting, all there's left to do is run. You'll be the prince, and I'll be the princess. It's a love story, baby, just say yes’. Romeo, save me, they're trying to tell me how to feel. This love is difficult, but it's real. Don't be afraid, we'll make it out of this mess. It's a love story, baby, just say yes. Oh, oh-oh. I got tired of waiting. Wondering if you were ever coming around. My faith in you was fading. When I met you on the outskirts of town. And I said ‘Romeo, save me, I've been feeling so alone. I keep waiting for you, but you never come. Is this in my head? I don't know what to think’. He knelt to the ground and pulled out a ring. And said ‘Marry me, Juliet, you'll never have to be alone. I love you, and that's all I really know. I talked to your dad, go pick out a white dress It's a love story, baby, just say yes’. Oh, oh-oh Oh, oh-oh, oh. Cause we were both young when I first saw you",
+            "textType":"template",
+            "likedBy": ""
+        },
+        {
+            "key": "The Odyssey", 
+            "subject": "Cultural", 
+            "title": "The Odyssey", 
+            "sourceTitle": "The Odyssey", 
+            "sourceAuthor": "Homer", 
+            "description": "#Greek", 
+            "textContent": "Sing to me of the man, Muse, the man of twists and turns … driven time and again off course, once he had plundered the hallowed heights of Troy. Many cities of men he saw and learned their minds, many pains he suffered, heartsick on the open sea, fighting to save his life and bring his comrades home. But he could not save them from disaster, hard as he strove— the recklessness of their own ways destroyed them all, the blind fools, they devoured the cattle of the Sun and the Sungod blotted out the day of their return. Launch out on his story, Muse, daughter of Zeus, start from where you will—sing for our time too. By now, all the survivors, all who avoided headlong death were safe at home, escaped the wars and waves. But one man alone … his heart set on his wife and his return—Calypso, the bewitching nymph, the lustrous goddess, held him back, deep in her arching caverns, craving him for a husband. But then, when the wheeling seasons brought the year around, that year spun out by the gods when he should reach his home, Ithaca—though not even there would he be free of trials, even among his loved ones—then every god took pity, all except Poseidon. He raged on, seething against the great Odysseus till he reached his native land. But",
+            "textType":"template",
+            "likedBy": ""
+        },
+        {
+            "key": "Sonnet 18", 
+            "subject": "Drama", 
+            "title": "Sonnet 18: Shall I compare thee to a summer’s day?", 
+            "sourceTitle": "Sonnet 18", 
+            "sourceAuthor": "William Shakespeare", 
+            "description": "#Shakespeare #Sonnet", 
+            "textContent": "Shall I compare thee to a summer’s day? Thou art more lovely and more temperate: Rough winds do shake the darling buds of May, And summer’s lease hath all too short a date; Sometime too hot the eye of heaven shines, And often is his gold complexion dimm'd; And every fair from fair sometime declines, By chance or nature’s changing course untrimm'd; But thy eternal summer shall not fade, Nor lose possession of that fair thou ow’st; Nor shall death brag thou wander’st in his shade, When in eternal lines to time thou grow’st: So long as men can breathe or eyes can see, So long lives this, and this gives life to thee.",
+            "textType":"template",
+            "likedBy": ""
+        },
+        {
+            "key": "Mother Tongue", 
+            "subject": "Cultural", 
+            "title": "Excerpt from Mother Tongue", 
+            "sourceTitle": "Mother Tongue", 
+            "sourceAuthor": "Amy Tan", 
+            "description": "#Chinese #American", 
+            "textContent": "You should know that my mother's expressive command of English belies how much she actually understands. She reads the Forbes report, listens to Wall Street Week, converses daily with her stockbroker, reads all of Shirley MacLaine's books with ease--all kinds of things I can't begin to understand. Yet some of my friends tell me they understand 50 percent of what my mother says. Some say they understand 80 to 90 percent. Some say they understand none of it, as if she were speaking pure Chinese. But to me, my mother's English is perfectly clear, perfectly natural. It's my mother tongue. Her language, as I hear it, is vivid, direct, full of observation and imagery. That was the language that helped shape the way I saw things, expressed things, made sense of the world. Lately, I've been giving more thought to the kind of English my mother speaks. Like others, I have described it to people as 'broken’ or ‘fractured’ English. But I wince when I say that. It has always bothered me that I can think of no way to describe it other than ‘broken,’ as if it were damaged and needed to be fixed, as if it lacked a certain wholeness and soundness. I've heard other terms used, ‘limited English,’ for example. But they seem just as bad, as if everything is limited, including people's perceptions of the limited English speaker.",
+            "textType":"template",
+            "likedBy": ""
+        },
+        {
+            "key": "Cariño", 
+            "subject": "Cultural", 
+            "title": "Cariño (song)", 
+            "sourceTitle": "Cariño", 
+            "sourceAuthor": "The Marías", 
+            "description": "#Spanish #Song", 
+            "textContent": "Eres una obra de arte. Con solo mirarte. Algo que da paz. Cariño, eres un amor. Cariño, pintas en color. Quiero tanto devorarte. Esta vez besarte. Si es que soy capaz. Cariño, eres un amor. Cariño, pintas en color. Something about you, babe. Something about you, babe. I can be your babe if you won't let go. You can talk to me, but you already know. I can be your babe if you won't let go. Cariño, eres un amor. Cariñito, pintas en color. Something about you, babe. Something about you, babe. Cariño, eres un amor (something about you, babe). Cariño, eres un amor (something about you, babe). Something about you, babe. Something about you, babe. Something about you, babe. Something about you, babe.",
+            "textType":"template",
+            "likedBy": ""
+        },
+        {
+            "key": "I Felt a Funeral, in my Brain", 
+            "subject": "Drama", 
+            "title": "I Felt a Funeral, in my Brain (Poem)", 
+            "sourceTitle": "I Felt a Funeral, in my Brain", 
+            "sourceAuthor": "Emily Dickinson", 
+            "description": "#Sad", 
+            "textContent": "I felt a Funeral, in my Brain, And Mourners to and fro Kept treading - treading - till it seemed That Sense was breaking through - And when they all were seated, A Service, like a Drum - Kept beating - beating - till I thought My mind was going numb - And then I heard them lift a Box And creak across my Soul With those same Boots of Lead, again, Then Space - began to toll, As all the Heavens were a Bell, And Being, but an Ear, And I, and Silence, some strange Race, Wrecked, solitary, here - And then a Plank in Reason, broke, And I dropped down, and down - And hit a World, at every plunge, And Finished knowing - then -",
+            "textType":"template",
+            "likedBy": ""
+        },
+        {
+            "key": "Dancing Queen", 
+            "subject": "Other", 
+            "title": "Dancing Queen (Song)", 
+            "sourceTitle": "Dancing Queen", 
+            "sourceAuthor": "ABBA", 
+            "description": "#Song", 
+            "textContent": "Ooh You can dance You can jive Having the time of your life Ooh, see that girl Watch that scene Digging the dancing queen Friday night and the lights are low Looking out for a place to go Where they play the right music Getting in the swing You come to look for a king Anybody could be that guy Night is young and the music's high With a bit of rock music Everything is fine You're in the mood for a dance And when you get the chance You are the dancing queen Young and sweet Only seventeen Dancing queen Feel the beat from the tambourine, oh yeah You can dance You can jive Having the time of your life Ooh, see that girl Watch that scene Digging the dancing queen You're a teaser, you turn 'em on Leave 'em burning and then you're gone Looking out for another Anyone will do You're in the mood for a dance And when you get the chance You are the dancing queen Young and sweet Only seventeen Dancing queen Feel the beat from the tambourine, oh yeah You can dance You can jive Having the time of your life Ooh, see that girl Watch that scene Digging the dancing queen Digging the dancing queen",
+            "textType":"template",
+            "likedBy": ""
+        },
+        {
+            "key": "Let It Go", 
+            "subject": "Drama", 
+            "title": "Let It Go (Frozen, Song)", 
+            "sourceTitle": "Let It Go", 
+            "sourceAuthor": "Idina Menzel, Frozen", 
+            "description": "#Disney #Song #Children", 
+            "textContent": "The snow glows white on the mountain tonight Not a footprint to be seen A kingdom of isolation And it looks like I'm the queen The wind is howling like this swirling storm inside Couldn't keep it in, heaven knows I tried Don't let them in, don't let them see Be the good girl you always have to be Conceal, don't feel, don't let them know Well, now they know Let it go, let it go Can't hold it back anymore Let it go, let it go Turn away and slam the door I don't care what they're going to say Let the storm rage on The cold never bothered me anyway It's funny how some distance makes everything seem small And the fears that once controlled me can't get to me at all It's time to see what I can do To test the limits and break through No right, no wrong, no rules for me I'm free Let it go, let it go I am one with the wind and sky Let it go, let it go You'll never see me cry Here I stand and here I stay Let the storm rage on My power flurries through the air into the ground My soul is spiraling in frozen fractals all around And one thought crystallizes like an icy blast I’m never going back, the past is in the past Let it go, let it go And I'll rise like the break of dawn Let it go, let it go That perfect girl is gone Here I stand in the light of day Let the storm rage on The cold never bothered me anyway",
+            "textType":"template",
+            "likedBy": ""
+        },
+        {
+            "key": "Representation Matters", 
+            "subject": "Politics", 
+            "title": "Representation Matters (Debate)", 
+            "sourceTitle": "Representation Matters", 
+            "sourceAuthor": "Ilhan Omar", 
+            "description": "#Equality", 
+            "textContent": "This debate today, it's about who gets to be an American. What opinions do we get to have? Do we have to have to be counted as Americans? This is what this debate is about, madam speaker. There is this idea that you are suspected if you are an immigrant. or if you are from certain parts of the world or a certain skin tone or a Muslim… There is an idea out there that I am not -- that I do not have objective decision-making because of who I am, where I come from, and my perspective. But I reject that. We say there is nothing objective about policymaking. We all inject our perspective, our point of view, our lived experiences and the voices of our constituents. That's what democracy is about. So what is the work of the foreign affairs committee? It is not to co-sign the stated foreign policy of whatever administration is in power. It's about oversight, it's to critique and to advocate for a better path forward. But most importantly, it is to make the myth that American foreign policy is intrinsically moral a reality. So I will continue to speak up because representation matters. I will continue to speak up for little kids who wonder who is speaking up for them. I will continue to speak up for families around the world who are seeking justice. Whether they are displaced in refugee camps or they are hiding under their beds somewhere like I was, waiting for the bullets to stop. Because this child survivor of war would have wanted that, 10-year-old me would be disappointed if I didn't talk about the victims of conflict. Those that are experiencing unjust wars, atrocities, ethnic cleansing, occupation or displacement like I did.",
+            "textType":"template",
+            "likedBy": ""
+        },
+        {
+            "key": "Nineteenth Amendment", 
+            "subject": "Politics", 
+            "title": "Nineteenth Amendment of The Constitution of the United States", 
+            "sourceTitle": "Nineteenth Amendment", 
+            "sourceAuthor": "United States Congress", 
+            "description": "#USA #Equality", 
+            "textContent": "The right of citizens of the United States to vote shall not be denied or abridged by the United States or by any State on account of sex. Congress shall have power to enforce this article by appropriate legislation.",
+            "textType":"template",
+            "likedBy": ""
+        },
+        {
+            "key": "A Thousand Splendid Suns", 
+            "subject": "Culture", 
+            "title": "A Thousand Splendid Suns (Quote)", 
+            "sourceTitle": "A Thousand Splendid Suns", 
+            "sourceAuthor": "Khaled Hossein", 
+            "description": "#Afghan", 
+            "textContent": "I know you're still young but I want you to understand and learn this now. Marriage can wait, education cannot. You're a very very bright girl. Truly you are. You can be anything you want Laila. I know this about you. And I also know that when this war is over Afghanistan is going to need you as much as its men maybe even more. Because a society has no chance of success if its women are uneducated Laila. No chance. (Hosseini, 114)",
+            "textType":"template",
+            "likedBy": ""
+        },
+        {
+            "key": "The World Es Mi Familia", 
+            "subject": "Culture", 
+            "title": "The World Es Mi Familia (Coco, Song)", 
+            "sourceTitle": "The World Es Mi Familia", 
+            "sourceAuthor": "Antonio Sol, Anthony Gonzalez, Disney", 
+            "description": "#Disney #Spanish #Children", 
+            "textContent": "Señoras y señores Buenas tardes, buenas noches Buenas tardes, buenas noches Señoritas y señores To be here with you tonight brings me joy, que alegria For this music is my language, and the world es mi familia For this music is my language, and the world es mi familia For this music is my language And the world es mi familia For this music is my language",
             "textType":"template",
             "likedBy": ""
         }

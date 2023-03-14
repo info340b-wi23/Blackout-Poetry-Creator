@@ -1,12 +1,13 @@
 import React from "react";
 
-import {getAuth, EmailAuthProvider} from 'firebase/auth'
+import {getAuth, EmailAuthProvider, GoogleAuthProvider} from 'firebase/auth'
 
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
 
 const firebaseUIConfig = {
     signInOptions: [ // Array of sign in options supported
       // Array can include just "Provider IDs", or objects with the IDs and options
+      GoogleAuthProvider.PROVIDER_ID,
       { provider: EmailAuthProvider.PROVIDER_ID, requiredDisplayName: true },
     ],
     signInFlow: 'popup', //don't redirect to authenticate
@@ -19,7 +20,7 @@ const firebaseUIConfig = {
     }
 }
 
-export function SignInPage(props) {
+export function SignInPage() {
     const auth = getAuth();
  
     return (
