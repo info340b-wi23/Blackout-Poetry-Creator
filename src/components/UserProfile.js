@@ -75,7 +75,7 @@ export function UserProfile(props) {
                 <img src="/img/profile-icon.png" width="100" height="100" className="d-md-inline-block align-top"
                             alt="Your profile icon"/>
                 <h1>{username}</h1>
-                <button className="btn btn-secondary ms-2 sign-out-button" onClick={handleSignOut}><Link to="/explore">Sign Out</Link></button>
+                <Link to="/explore"><button className="btn btn-secondary ms-2 sign-out-button" onClick={handleSignOut}>Sign Out</button></Link>
             </div>
             <div className="tab-selection">
                 <ul className="nav nav-tabs" id="myTab" role="tablist">
