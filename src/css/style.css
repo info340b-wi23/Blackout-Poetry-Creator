@@ -298,6 +298,7 @@ main.explore-main {
     display: inline-block;
     flex: 1;
     padding-top: 10rem;
+    margin-top: 2rem;
 }
 
 .search-query-tag {
@@ -832,6 +833,7 @@ a.menu {
 
     main.explore-main {
         display: flex;
+        margin-top: 0;
     }
 
     .btn.active {
